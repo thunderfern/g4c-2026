@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerAction : MonoBehaviour {
 
     public float speed = 0.5f;
+    public float maxSpeed = 0.5f;
     
     private Rigidbody rb;
     private bool isGrounded;
@@ -12,24 +13,24 @@ public class PlayerAction : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         playerData = GetComponent<PlayerData>();
-        Cursor.lockState = CursorLockMode.None;
         isGrounded = false;
     }
 
     
     void Update() {
-        ApplyMovement();
+        ApplyAction();
     }
 
     
 
-    void ApplyMovement() {
-        if (playerData.playerAnimal == PlayerAnimal.FOX) ApplyFoxMovement();
-        //else if (playerData.playerAnimal == PlayerAnimal.EAGLE) ApplyEagleMovement();
-        else ApplyFishMovement();
+    void ApplyAction() {
+        if (playerData.playerAnimal == PlayerAnimal.FOX) ApplyFoxAction();
+        else if (playerData.playerAnimal == PlayerAnimal.EAGLE) ApplyEagleAction();
+        else ApplyFishAction();
     }
 
-    void ApplyFishMovement() {
+
+    void ApplyFishAction() {
         float deltaTime = Time.deltaTime;
 
         float yAngleRadians = transform.rotation.eulerAngles.y * Mathf.PI / 180;
@@ -59,30 +60,21 @@ public class PlayerAction : MonoBehaviour {
             else isGrounded = false;
         }
         else isGrounded = false;
-        ApplyRotationHorizontal();
-        ApplyRotationVertical();
-
-        
+        BaseAction.ApplyRotationHorizontal(transform);
+        BaseAction.ApplyRotationVertical(transform);
     }
 
 
-    void ApplyFoxMovement() {
+    void ApplyFoxAction() {
         float deltaTime = Time.deltaTime;
 
-        float yAngleRadians = transform.rotation.eulerAngles.y * Mathf.PI / 180;
-        Vector3 forward = new Vector3(Mathf.Cos(yAngleRadians), 0f, -Mathf.Sin(Mathf.PI - yAngleRadians));
-        Vector3 left = new Vector3(-Mathf.Sin(Mathf.PI + yAngleRadians), 0f, Mathf.Cos(yAngleRadians));
-        if (Input.GetKey(KeyCode.W)) {
-            rb.linearVelocity += forward * deltaTime * speed;
-        }
-        if (Input.GetKey(KeyCode.S)) {
-            rb.linearVelocity += -forward * deltaTime * speed;
-        }
-        if (Input.GetKey(KeyCode.D)) {
-            rb.linearVelocity += -left * deltaTime * speed;
-        }
-        if (Input.GetKey(KeyCode.A)) {
-            rb.linearVelocity += left * deltaTime * speed;
+        // Applying jump
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            if (isGrounded) {
+                rb.linearVelocity += new Vector3(0, 6f, 0);
+                isGrounded = false;
+            }
+            //rb.linearVelocity += new Vector3(0, 3f, 0); flying
         }
 
         // checking if isGrounded
@@ -93,26 +85,30 @@ public class PlayerAction : MonoBehaviour {
         }
         else isGrounded = false;
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            if (isGrounded) {
-                rb.linearVelocity += new Vector3(0, 6f, 0);
-                isGrounded = false;
-            }
-            //rb.linearVelocity += new Vector3(0, 3f, 0); flying
+        if (Input.GetKey(KeyCode.W)) {
+            BaseAction.ApplyMovement(transform, rb, MovementDirection.FORWARD, speed);
         }
-        rb.linearVelocity += new Vector3(0, -6f * deltaTime, 0);
-        rb.linearVelocity = new Vector3(Mathf.Min(rb.linearVelocity.x, speed), Mathf.Max(rb.linearVelocity.y, -9.81f), Mathf.Min(rb.linearVelocity.z, speed));
+        if (Input.GetKey(KeyCode.S)) {
+            BaseAction.ApplyMovement(transform, rb, MovementDirection.BACKWARD, speed);
+        }
+        if (Input.GetKey(KeyCode.D)) {
+            BaseAction.ApplyMovement(transform, rb, MovementDirection.RIGHT, speed);
+        }
+        if (Input.GetKey(KeyCode.A)) {
+            BaseAction.ApplyMovement(transform, rb, MovementDirection.LEFT, speed);
+        }
+
+        BaseAction.ApplyResistence(rb, speed, -9.81f, 10f);
+
+        BaseAction.ApplyRotationHorizontal(transform);
+    }
+
+    void ApplyEagleAction()
+    {
         
-        ApplyRotationHorizontal();
     }
 
-    void ApplyRotationHorizontal() {
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, Input.mousePositionDelta.x + transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
-    }
 
-    void ApplyRotationVertical() {
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z + Input.mousePositionDelta.y);
-    }
 
     void ApplyResistance() {
         // Gravity
