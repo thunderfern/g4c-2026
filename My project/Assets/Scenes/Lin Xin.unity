@@ -414,7 +414,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0498e87cd6493ff4b8d97f2592500836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAction
-  speed: 30
+  FoxSpeed: 10
+  FoxSprint: 50
+  FoxMaxSpeed: 50
+  FoxJump: 10
+  FoxGravity: -9.81
+  FoxTerminalVelocity: -20
+  FoxResistence: 25
+  FishSpeed: 30
 --- !u!1 &431792867
 GameObject:
   m_ObjectHideFlags: 0
