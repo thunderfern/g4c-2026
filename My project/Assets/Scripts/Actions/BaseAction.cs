@@ -33,8 +33,6 @@ public static class BaseAction {
         rb.linearVelocity = rb.linearVelocity * Mathf.Min(currentSpeed + speed * deltaTime, speed);
 
         return rb.linearVelocity;
-
-
     }
 
     public static float ApplyGravity(Rigidbody rb, float oldGravity, float gravity, float terminalVelocity) {

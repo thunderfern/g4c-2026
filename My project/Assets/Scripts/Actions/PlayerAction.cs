@@ -78,7 +78,6 @@ public class PlayerAction : MonoBehaviour {
                 oldGravity = FoxJump;
             }
         }
-        //Debug.Log(rb.linearVelocity);
         if (!isGrounded) oldGravity = BaseAction.ApplyGravity(rb, oldGravity, FoxGravity, FoxTerminalVelocity);
         BaseAction.ApplyRotationHorizontal(transform, mouseDelta);
     }
