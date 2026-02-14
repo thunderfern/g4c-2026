@@ -77,7 +77,7 @@ public static class BaseAction {
         else rb.linearVelocity = new Vector3(rb.linearVelocity.x, rb.linearVelocity.y, 0);*/
     }
     public static void ApplyRotationHorizontal(Transform transform, Vector3 mouseDelta) {
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, mouseDelta.x + transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, mouseDelta.x / 5 + transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
     }
 
     public static void ApplyRotationVertical(Transform transform, Vector3 mouseDelta) {

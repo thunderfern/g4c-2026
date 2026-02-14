@@ -1,6 +1,11 @@
 using UnityEngine;
 
 public class FoodInteraction : Interaction {
+
+    void Update()
+    {
+        
+    }
     
     public override void EnterRange() {
         Debug.Log("ok\n");
