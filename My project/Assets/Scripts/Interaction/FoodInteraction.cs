@@ -2,16 +2,19 @@ using UnityEngine;
 
 public class FoodInteraction : Interaction {
 
-    void Update()
-    {
+    void Update() {
         
     }
     
     public override void EnterRange() {
-        Debug.Log("ok\n");
+        
     }
 
     public override void LeaveRange()  {
-        Debug.Log("nok\n");
+        
+    }
+
+    public override void Selected() {
+        Debug.Log("F");
     }
 }

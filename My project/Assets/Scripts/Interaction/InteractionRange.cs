@@ -4,17 +4,17 @@ public class InteractionRange : MonoBehaviour {
     
     public GameObject Source;
 
-    private Interaction sourceInteraction;
+    public Interaction SourceInteraction;
 
     void Start() {
-        sourceInteraction = Source.GetComponent<Interaction>();
+        SourceInteraction = Source.GetComponent<Interaction>();
     }
 
     public void EnterRange(string tag) {
-        sourceInteraction.EnterRange();
+        SourceInteraction.EnterRange();
     }
 
     public void LeaveRange(string tag) {
-        sourceInteraction.LeaveRange();
+        SourceInteraction.LeaveRange();
     }
 }

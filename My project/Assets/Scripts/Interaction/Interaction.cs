@@ -3,6 +3,8 @@ using UnityEngine;
 public class Interaction : MonoBehaviour {
     
     public bool Interactable;
+    public bool Selectable;
+    public string SelectableText;
     public GameObject InteractionRange;
 
     public virtual void EnterRange() {
@@ -10,6 +12,11 @@ public class Interaction : MonoBehaviour {
     }
 
     public virtual void LeaveRange() {
+        
+    }
+
+    public virtual void Selected()
+    {
         
     }
 
