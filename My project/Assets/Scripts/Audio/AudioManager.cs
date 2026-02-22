@@ -87,8 +87,15 @@ public class AudioManager : MonoBehaviour {
         }
     }
 
-    public void PlaySound(AudioType audio) {
+    public void PlaySound(AudioType audio, AudioPlayType audioPlayType = AudioPlayType.Override) {
         if (audio == AudioType.Null) return;
+        switch (audioPlayType) {
+            case AudioPlayType.Override:
+                break;
+            case AudioPlayType.Yield:
+            case AudioPlayType.Overlap:
+                break;
+        }
         if (!checkPlaying(audio)) {
             playFirst(audio);
         }

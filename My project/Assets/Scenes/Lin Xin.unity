@@ -6426,7 +6426,7 @@ MonoBehaviour:
   AudioSources:
   - {fileID: 21910624}
   BGVolume: 0
-  SFXVolume: 0
+  SFXVolume: 1
 --- !u!4 &1509063780
 Transform:
   m_ObjectHideFlags: 0
