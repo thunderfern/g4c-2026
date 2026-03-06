@@ -36,8 +36,8 @@ public class PlayerAction : MonoBehaviour {
     }
 
     void ApplyAction() {
-        if (playerData.playerAnimal == PlayerAnimal.FOX) ApplyFoxAction();
-        else if (playerData.playerAnimal == PlayerAnimal.EAGLE) ApplyEagleAction();
+        if (playerData.playerAnimal == PlayerAnimal.Fox) ApplyFoxAction();
+        else if (playerData.playerAnimal == PlayerAnimal.Eagle) ApplyEagleAction();
         else ApplyFishAction();
     }
 

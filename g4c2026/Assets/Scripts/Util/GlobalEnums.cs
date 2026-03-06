@@ -39,7 +39,13 @@ public enum Item {
     
 }
 
-public enum Location
-{
+public enum Location {
+    
+}
+
+// Dialogue
+
+public enum CharacterBackground {
+    BLUE
     
 }

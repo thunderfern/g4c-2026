@@ -11,21 +11,11 @@ public class PhotoManager : MonoBehaviour {
     public float rotateSensitivity = 1.0f;
     public float zoomSensitivity = 1.0f;
 
-    public TMP_Text modeText;
     public TMP_Text aimingText;
     
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Z)) {
-            if (GameManager.CurrentGameState == GameState.Picture) {
-                GameManager.CurrentGameState = GameState.Movement;
-                modeText.GetComponent<TMP_Text>().text = "Movement";
-            }
-            else {
-                GameManager.CurrentGameState = GameState.Picture;
-                modeText.GetComponent<TMP_Text>().text = "Picture";
-            }
-        }
-        if (GameManager.CurrentGameState != GameState.Picture) return;
+        
+        if (GameManager.I().CurrentGameState != GameState.Picture) return;
 
         MoveCamera();
         ZoomCamera();
