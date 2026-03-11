@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 
 // Audio
 
@@ -17,6 +18,7 @@ public enum GameState {
     Movement,
     Dialogue,
     Picture,
+    Photobook,
     Settings,
     MainMenu
 }
@@ -28,10 +30,16 @@ public enum GoalType {
     Picture
 }
 
+public struct Goal {
+    public GoalType GoalType;
+    public List<string> Arguments;
+}
+
 // Item
 
 public enum Character {
-    
+    Player,
+    Narrator,
 }
 
 
@@ -46,6 +54,31 @@ public enum Location {
 // Dialogue
 
 public enum CharacterBackground {
-    BLUE
+    Blue
     
 }
+
+// Picture
+public enum ThreatSection {
+    Forest1,
+    Forest2,
+    None,
+}
+
+public enum ThreatSubSection {
+
+    // Forest1
+    Forest1A,
+    Forest1B,
+    Forest1HabitatA,
+    Forest2HabitatB,
+
+    // Forest2
+    Forest2A,
+    Forest2B,
+}
+
+
+
+
+
