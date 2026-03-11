@@ -1,7 +1,11 @@
 using UnityEngine;
 using TMPro;
+using System.IO;
+using System.Collections.Generic;
 
 public class PhotoManager : MonoBehaviour {
+
+    // camera settings
 
     public int resWidth = 2550; 
     public int resHeight = 3300;
@@ -11,7 +15,9 @@ public class PhotoManager : MonoBehaviour {
     public float rotateSensitivity = 1.0f;
     public float zoomSensitivity = 1.0f;
 
+    // aiming
     public TMP_Text aimingText;
+    private PhotoCandidate photoCandidate;
     
     void Update() {
         
@@ -27,6 +33,8 @@ public class PhotoManager : MonoBehaviour {
         }
     }
 
+
+    // Taking Photos
     void MoveCamera() {
         float deltaTime = Time.deltaTime;
         Vector3 newCameraPos = camera.transform.position;
@@ -48,20 +56,18 @@ public class PhotoManager : MonoBehaviour {
     }
 
     void SenseObjects() {
-        bool found = false;
+        photoCandidate = null;
         PhotoCandidate[] photoCandidates = FindObjectsByType<PhotoCandidate>(FindObjectsSortMode.None);
         for (int i = 0; i < photoCandidates.Length; i++) {
-            if (photoCandidates[i].gameObject.name == "box") {
-                Debug.Log(camera.WorldToViewportPoint(photoCandidates[i].gameObject.transform.position));
-                Debug.Log(photoCandidates[i].gameObject.transform.position);
-            }
             if (camera.WorldToViewportPoint(photoCandidates[i].gameObject.transform.position).x > 0 && camera.WorldToViewportPoint(photoCandidates[i].gameObject.transform.position).x < 1 && camera.WorldToViewportPoint(photoCandidates[i].gameObject.transform.position).y > 0 && camera.WorldToViewportPoint(photoCandidates[i].gameObject.transform.position).y < 1) {
-                aimingText.GetComponent<TMP_Text>().text = photoCandidates[i].gameObject.name;
-                found = true;
+                photoCandidate = photoCandidates[i];
                 break;
             }
         }
-        if (!found) aimingText.GetComponent<TMP_Text>().text = "None";
+        if (!photoCandidate) aimingText.GetComponent<TMP_Text>().text = "None";
+        else {
+            aimingText.GetComponent<TMP_Text>().text = photoCandidate.PhotoTitle;
+        }
     }
 
     void TakePhoto() {
@@ -75,8 +81,44 @@ public class PhotoManager : MonoBehaviour {
         RenderTexture.active = null; // JC: added to avoid errors
         Destroy(rt);
         byte[] bytes = screenShot.EncodeToPNG();
-        string filename = "hi.png";
+        string filename = GetScreenshotName();
         System.IO.File.WriteAllBytes(filename, bytes);
         Debug.Log(string.Format("Took screenshot to: {0}", filename));
+
+        GameManager.I().PerformedAction(new Goal {
+            GoalType = GoalType.Picture, 
+            Arguments = new List<string>() {
+                photoCandidate.ThreatSubSection.ToString()
+            }
+        });
     }
+
+    string GetScreenshotName() {
+        string folderPath = "Screenshots/";
+        if (photoCandidate) folderPath += photoCandidate.ThreatSection.ToString() + "/" + photoCandidate.ThreatSubSection.ToString();
+        else folderPath += "All";
+        if (!Directory.Exists(folderPath)) {
+            Directory.CreateDirectory(folderPath);
+        }
+        int fileCount = Directory.GetFiles(folderPath).Length;
+        return folderPath + "/Screenshot" + fileCount + ".png";
+    }
+
+    // Management
+
+    // storage
+
+    public static List<PhotoCandidate> PhotoCandidates = new List<PhotoCandidate>();
+
+    public static void RegisterPhotoCandidate(PhotoCandidate photoCandidate) {
+        PhotoCandidates.Add(photoCandidate);
+    }
+
+    public static ThreatSection GetThreatSection(ThreatSubSection threatSubSection) {
+        for (int i = 0 ; i < PhotoCandidates.Count; i++) {
+            if (PhotoCandidates[i].ThreatSubSection == threatSubSection) return PhotoCandidates[i].ThreatSection;
+        }
+        return ThreatSection.None;
+    }
+
 }

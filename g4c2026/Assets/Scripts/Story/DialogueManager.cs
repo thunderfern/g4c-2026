@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections.Generic;
 using TMPro;
 
@@ -9,6 +10,7 @@ public struct DialogueInformation {
 
 public struct CharacterDisplay {
     public string characterName;
+    public CharacterBackground characterBackground;
 }
 
 public class DialogueManager : MonoBehaviour {
@@ -34,10 +36,11 @@ public class DialogueManager : MonoBehaviour {
     public GameObject dialogueObject;
 
     // dialogue customizations
+    [Serializable]
     public struct CharacterDisplayInspector {
-        Character character;
-        CharacterBackground characterBackground;
-        string displayName;
+        public Character character;
+        public CharacterBackground characterBackground;
+        public string characterName;
     }
     
     // inspector initializers
@@ -46,6 +49,16 @@ public class DialogueManager : MonoBehaviour {
     private List<DialogueInformation> dialogueStream;
     private Dictionary<Character, CharacterDisplay> characterDisplayLookup;
     private float curTextTimer;
+
+    void Awake() {
+        characterDisplayLookup = new Dictionary<Character, CharacterDisplay>();
+        for (int i = 0; i < CharacterNameBackground.Count; i++) {
+            characterDisplayLookup[CharacterNameBackground[i].character] = new CharacterDisplay() {
+                characterName = CharacterNameBackground[i].characterName,
+                characterBackground = CharacterNameBackground[i].characterBackground,
+            };
+        }
+    }
 
     void Update() {
         if (GameManager.I().CurrentGameState != GameState.Dialogue) return;
@@ -60,6 +73,7 @@ public class DialogueManager : MonoBehaviour {
     }
 
     public void UpdateDialogue(List<DialogueInformation> dialogueStream) {
+        dialogueObject.SetActive(true);
         this.dialogueStream = dialogueStream;
         display();
     }
