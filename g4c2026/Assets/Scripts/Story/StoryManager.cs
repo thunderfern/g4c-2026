@@ -25,6 +25,8 @@ public class StoryManager : MonoBehaviour {
 
     void Awake() {
         StoryDialogue = new Dictionary<string, List<DialogueInformation>>();
+        StoryGoal = new Dictionary<string, List<Goal>>();
+        StoryNext = new Dictionary<string, List<string>>();
         for (int sf = 0; sf < StoryFiles.Count; sf++) {
             // setup
             var file = StoryFiles[sf];
@@ -43,18 +45,18 @@ public class StoryManager : MonoBehaviour {
                         currentName = parsedLine[1];
                         break;
                     case "Goal":
-                        GoalType goalType = (GoalType)System.Enum.Parse(typeof(GoalType), parsedLine[0]);
+                        GoalType goalType = (GoalType)System.Enum.Parse(typeof(GoalType), parsedLine[1]);
                         parsedLine.RemoveAt(0);
                         Goal goal = new Goal() {
-                            character = goalType,
-                            dialogue = parsedLine,
+                            GoalType = goalType,
+                            Arguments = parsedLine,
                         };
                         if (!StoryGoal.TryGetValue(currentName, out var tmp)) StoryGoal[currentName] = new List<Goal>();
                         StoryGoal[currentName].Add(goal);
                         break;
                     case "Next":
-                        if (!StoryNext.TryGetValue(currentName, out var tmp)) StoryNext[currentName] = new List<DialogueInformation>();
-                        StoryNext[currentName] = parsedLine[1];
+                        if (!StoryNext.TryGetValue(currentName, out var tmp1)) StoryNext[currentName] = new List<string>();
+                        StoryNext[currentName].Add(parsedLine[1]);
                         break;
                     case "Setup":
                         break;
@@ -66,7 +68,7 @@ public class StoryManager : MonoBehaviour {
                         };
                         // todo: out of bounds checking
                         // checking if the thing exists in StoryDialogue
-                        if (!StoryDialogue.TryGetValue(currentName, out var tmp)) StoryDialogue[currentName] = new List<DialogueInformation>();
+                        if (!StoryDialogue.TryGetValue(currentName, out var tmp2)) StoryDialogue[currentName] = new List<DialogueInformation>();
                         StoryDialogue[currentName].Add(dialogueInformation);
                         break;
                 }
