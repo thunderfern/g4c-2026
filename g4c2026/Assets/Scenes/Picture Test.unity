@@ -596,7 +596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PhotoCandidate
   ThreatSection: 0
   ThreatSubSection: 0
-  PhotoTitle: 
+  PhotoTitle: bad
 --- !u!1 &827549392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,7 +1271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 57, y: 696.49994}
+  m_AnchoredPosition: {x: 57, y: 667.49927}
   m_SizeDelta: {x: 183, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1496801765
