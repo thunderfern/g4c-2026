@@ -26,7 +26,6 @@ public class PhotoManager : MonoBehaviour {
         MoveCamera();
         ZoomCamera();
         SenseObjects();
-        //RotateCamera();
 
         if (Input.GetKeyDown(KeyCode.Space)) {
             TakePhoto();
@@ -44,10 +43,6 @@ public class PhotoManager : MonoBehaviour {
         if (Input.GetKey(KeyCode.D)) newCameraPos += new Vector3(deltaTime * 1.0f, 0, 0) * moveSensitivity;
         camera.transform.position = newCameraPos;
     }
-
-    /*void RotateCamera() {
-
-    }*/
 
     void ZoomCamera() {
         float deltaTime = Time.deltaTime;

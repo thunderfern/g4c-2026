@@ -46,10 +46,17 @@ public class StoryManager : MonoBehaviour {
                         break;
                     case "Goal":
                         GoalType goalType = (GoalType)System.Enum.Parse(typeof(GoalType), parsedLine[1]);
+                        string goalDesc = parsedLine[parsedLine.Count - 1];
+                        // line type
                         parsedLine.RemoveAt(0);
+                        // goal type
+                        parsedLine.RemoveAt(0);
+                        // description
+                        parsedLine.RemoveAt(parsedLine.Count - 1);
                         Goal goal = new Goal() {
                             GoalType = goalType,
                             Arguments = parsedLine,
+                            GoalDescription = goalDesc,
                         };
                         if (!StoryGoal.TryGetValue(currentName, out var tmp)) StoryGoal[currentName] = new List<Goal>();
                         StoryGoal[currentName].Add(goal);
