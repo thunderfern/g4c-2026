@@ -30,9 +30,22 @@ public enum GoalType {
     Picture
 }
 
+public struct StoryGoals {
+    public string StoryName;
+    public List<Goal> Goals;
+}
+
 public struct Goal {
     public GoalType GoalType;
     public List<string> Arguments;
+    public string GoalDescription;
+
+    public bool Equals(Goal other) {
+        if (GoalType != other.GoalType) return false;
+        if (Arguments.Count != other.Arguments.Count) return false;
+        for (int i = 0; i < Arguments.Count; i++) if (Arguments[i] != other.Arguments[i]) return false;
+        return true;
+    }
 }
 
 // Item
