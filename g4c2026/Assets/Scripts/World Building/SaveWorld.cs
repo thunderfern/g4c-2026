@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using System;
 
 public class SaveWorld : MonoBehaviour {
     public Button SaveWorldButton;
@@ -26,12 +27,24 @@ public class SaveWorld : MonoBehaviour {
 
             StreamWriter sr = File.CreateText(FinalSavePath);
 
+            int maxX = 0, maxZ = 0;
+
+            for (int i = 0; i < saveObjects.Length; i++) {
+                Transform currentTransform = saveObjects[i].gameObject.transform;
+                maxX = Math.Max(maxX, (int)Math.Abs(currentTransform.position.x));
+                maxZ = Math.Max(maxZ, (int)Math.Abs(currentTransform.position.z));
+            }
+
+            sr.WriteLine(maxX);
+            sr.WriteLine(maxZ);
+
             for (int i = 0; i < saveObjects.Length; i++) {
                 sr.WriteLine(saveObjects[i].ObjectType);
                 Transform currentTransform = saveObjects[i].gameObject.transform;
                 sr.WriteLine(saveObjects[i].SavePosition ? currentTransform.position : Vector3.zero);
                 sr.WriteLine(saveObjects[i].SaveRotation ? currentTransform.rotation : Vector3.zero);
                 sr.WriteLine(saveObjects[i].SaveScale ? currentTransform.localScale : Vector3.zero);
+                sr.WriteLine(saveObjects[i].SpawnInRange);
             }
             sr.Close();
 

@@ -11,10 +11,6 @@ public class SaveObject : MonoBehaviour {
     public bool SaveRotation = true;
     public bool SaveScale = true;
     public ObjectType ObjectType;
+    public bool SpawnInRange = true;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 }
