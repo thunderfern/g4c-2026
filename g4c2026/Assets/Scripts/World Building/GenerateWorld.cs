@@ -3,24 +3,13 @@ using System;
 using System.Collections.Generic;
 
 public class GenerateWorld : MonoBehaviour {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public TextAsset WorldFile;
-    public List<GameObject> ObjectPrefabs;
-    // size of a chunk
-    public static int SquareSize = 2;
-
-    public static int MaxX;
-    public static int MaxZ;
-
-    /*public int maxX;
-    public int maxZ;*/
-    public int squareSize;
-    public int renderDistance;
-    public static int MaxXChunk;
-    public static int MaxZChunk;
-
-    List<List<GenerateObjectData>> ChunkInformation;
-    List<List<GameObject>> ChunkGameObjects;
+    
+    // for inspector
+    [Serializable]
+    public struct ObjectPrefabsInspector {
+        public ObjectType ObjectType;
+        public GameObject ObjectPrefab;
+    }
 
     public struct GenerateObjectData {
         public ObjectType type;
@@ -35,22 +24,52 @@ public class GenerateWorld : MonoBehaviour {
         }
     }
 
+    public TextAsset WorldFile;
+    // size of a chunk
+    public int squareSize;
+    public int renderDistance;
+    public List<ObjectPrefabsInspector> ObjectPrefabsI;
+    
+    public static int SquareSize = 2;
+
+    public static int MaxXChunk;
+    public static int MaxZChunk;
+
+    List<List<GenerateObjectData>> ChunkInformation;
+    List<List<GameObject>> ChunkGameObjects;
+    List<ObjectPool> ObjectPools;
+
+    void Awake() {
+        // // object pool
+        // ObjectPools = new List<ObjectPool>();
+        // for (int i = 0; i < ObjectPrefabsI.Count; i++) ObjectPools.Add(new ObjectPool());
+        // for (int i = 0; i < ObjectPrefabsI.Count; i++) {
+        //     ObjectPools[(int)ObjectPrefabsI[i].ObjectType].SetPrefab(ObjectPrefabsI[i].ObjectPrefab);
+        // }
+    }
+
     void Start() {
-        /*MaxX = maxX;
-        MaxZ = maxZ;*/
-        SquareSize = squareSize;
         if (WorldFile == null) Debug.LogError("World file not assigned! Cannot load world.");
+
+        // object pool
+        ObjectPools = new List<ObjectPool>();
+        for (int i = 0; i < ObjectPrefabsI.Count; i++) ObjectPools.Add(new ObjectPool());
+        for (int i = 0; i < ObjectPrefabsI.Count; i++) {
+            ObjectPools[(int)ObjectPrefabsI[i].ObjectType].SetPrefab(ObjectPrefabsI[i].ObjectPrefab);
+        }
+        Debug.Log("linx" + ObjectPools.Count);
 
         string fileContents = WorldFile.text;
         string[] lines = fileContents.Split('\n');
 
-        MaxX = int.Parse(lines[0]);
-        MaxZ = int.Parse(lines[1]);
+        SquareSize = squareSize;
+
+        int MaxX = int.Parse(lines[0]);
+        int MaxZ = int.Parse(lines[1]);
         MaxXChunk = (MaxX + SquareSize) / SquareSize * 2;
         MaxZChunk = (MaxZ + SquareSize) / SquareSize * 2;
 
-        // initialize list
-
+        // initialize lists
         ChunkInformation = new List<List<GenerateObjectData>>();
         ChunkGameObjects = new List<List<GameObject>>();
         for (int i = 0; i < MaxXChunk * MaxZChunk; i++) {
@@ -67,8 +86,11 @@ public class GenerateWorld : MonoBehaviour {
             // not spawn on command
             lines[i + 4] = lines[i + 4].Trim();
             if (lines[i + 4] != "True") {
-                GameObject obj = Instantiate(ObjectPrefabs[(int)type], position, rotation);
+                GameObject obj = ObjectPools[(int)type].GetObject();
+                obj.transform.position = position;
+                obj.transform.rotation = rotation;
                 obj.transform.localScale = scale;
+                obj.SetActive(true);
             }
             else {
                 GenerateObjectData tmp = new GenerateObjectData() {
@@ -95,66 +117,56 @@ public class GenerateWorld : MonoBehaviour {
 
         // bottom row
         if (startZ > 0) {
-            for (int i = startX; i <= endX; i++) {
-                if (i >= MaxXChunk || i < 0) continue;
-                SpawnChunk(GetChunkNumberFromIndex(i, startZ));
-            }
             if (startZ - 1 > 0) {
                 for (int i = startX; i <= endX; i++) {
                     if (i >= MaxXChunk || i < 0) continue;
                     DespawnChunk(GetChunkNumberFromIndex(i, startZ - 1));
                 }
             }
-        }
-
-        // top row
-        if (endZ < MaxZChunk) {
             for (int i = startX; i <= endX; i++) {
                 if (i >= MaxXChunk || i < 0) continue;
-                SpawnChunk(GetChunkNumberFromIndex(i, endZ));
+                SpawnChunk(GetChunkNumberFromIndex(i, startZ));
             }
+        }
+        // top row
+        if (endZ < MaxZChunk) {
             if (endZ + 1 < MaxZChunk) {
                 for (int i = startX; i <= endX; i++) {
                     if (i >= MaxXChunk || i < 0) continue;
                     DespawnChunk(GetChunkNumberFromIndex(i, endZ + 1));
                 }
             }
+            for (int i = startX; i <= endX; i++) {
+                if (i >= MaxXChunk || i < 0) continue;
+                SpawnChunk(GetChunkNumberFromIndex(i, endZ));
+            }
         }
-        
         // left col
         if (startX > 0) {
-            for (int i = startZ; i <= endZ; i++) {
-                if (i >= MaxZChunk || i < 0) continue;
-                SpawnChunk(GetChunkNumberFromIndex(startX, i));
-            }
             if (startX - 1 > 0) {
                 for (int i = startZ; i <= endZ; i++) {
                     if (i >= MaxZChunk || i < 0) continue;
                     DespawnChunk(GetChunkNumberFromIndex(startX - 1, i));
                 }
             }
+            for (int i = startZ; i <= endZ; i++) {
+                if (i >= MaxZChunk || i < 0) continue;
+                SpawnChunk(GetChunkNumberFromIndex(startX, i));
+            }
         }
         // right col
         if (endX < MaxXChunk) {
-            for (int i = startZ; i <= endZ; i++) {
-                if (i >= MaxZChunk || i < 0) continue;
-                SpawnChunk(GetChunkNumberFromIndex(endX, i));
-            }
             if (endX + 1 < MaxXChunk) {
                 for (int i = startZ; i <= endZ; i++) {
                     if (i >= MaxZChunk || i < 0) continue;
                     DespawnChunk(GetChunkNumberFromIndex(endX + 1, i));
                 }
             }
+            for (int i = startZ; i <= endZ; i++) {
+                if (i >= MaxZChunk || i < 0) continue;
+                SpawnChunk(GetChunkNumberFromIndex(endX, i));
+            }
         }
-        
-
-        
-        /*for (int i = 0; i < ChunkInformation.Count; i++) {
-            if (i == idx) continue;
-            DespawnChunk(i);
-        }
-        SpawnChunk(idx);*/
     }
 
     void SpawnChunk(int chunkNum) {
@@ -164,14 +176,22 @@ public class GenerateWorld : MonoBehaviour {
             var position = ChunkInformation[chunkNum][i].position;
             var rotation = ChunkInformation[chunkNum][i].rotation;
             var scale = ChunkInformation[chunkNum][i].scale;
-            GameObject obj = Instantiate(ObjectPrefabs[(int)type], position, rotation);
+
+            GameObject obj = ObjectPools[(int)type].GetObject();
+            obj.transform.position = position;
+            obj.transform.rotation = rotation;
             obj.transform.localScale = scale;
+            obj.SetActive(true);
+
             ChunkGameObjects[chunkNum].Add(obj);
         }
     }
 
     void DespawnChunk(int chunkNum) {
-        for (int i = 0; i < ChunkGameObjects[chunkNum].Count; i++) Destroy(ChunkGameObjects[chunkNum][i]);
+        for (int i = 0; i < ChunkGameObjects[chunkNum].Count; i++) {
+            ObjectType currentType = ChunkInformation[chunkNum][i].type;
+            ObjectPools[(int)currentType].ReturnObject(ChunkGameObjects[chunkNum][i]);
+        }
         ChunkGameObjects[chunkNum] = new List<GameObject>();
     }
 

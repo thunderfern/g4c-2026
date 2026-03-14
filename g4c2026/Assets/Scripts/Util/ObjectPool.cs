@@ -1,15 +1,23 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-// we are only using object pool for gameobjects anyways
+// we are only using object pool for GameObjects anyways
 public class ObjectPool {
 
     private List<GameObject> pool;
     private GameObject prefab;
     private int poolSize;
 
+    public ObjectPool() {
+        pool = new List<GameObject>();
+    }
+
     public ObjectPool(GameObject obj) {
         pool = new List<GameObject>();
+        prefab = obj;
+    }
+
+    public void SetPrefab(GameObject obj) {
         prefab = obj;
     }
     
@@ -17,6 +25,7 @@ public class ObjectPool {
         if (pool.Count != 0) {
             GameObject obj = pool[pool.Count - 1];
             pool.RemoveAt(pool.Count - 1);
+            return obj;
         }
         poolSize++;
         return Object.Instantiate(prefab);

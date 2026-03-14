@@ -262,12 +262,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GenerateWorld
   WorldFile: {fileID: 4900000, guid: 838fac59f9fed7d409a9d518653d7883, type: 3}
-  ObjectPrefabs:
-  - {fileID: 8265312951224196032, guid: 324baf1437c19304092848464da1e6dd, type: 3}
-  - {fileID: 8823257519052315318, guid: 6381f58cd44e2484884fb4b5ad69cbb9, type: 3}
-  - {fileID: 9217412805119261599, guid: aca8475fd7e9fb641b309ad143a00b20, type: 3}
   squareSize: 2
-  renderDistance: 0
+  renderDistance: 3
+  ObjectPrefabsI:
+  - ObjectType: 0
+    ObjectPrefab: {fileID: 8265312951224196032, guid: 324baf1437c19304092848464da1e6dd, type: 3}
+  - ObjectType: 1
+    ObjectPrefab: {fileID: 8823257519052315318, guid: 6381f58cd44e2484884fb4b5ad69cbb9, type: 3}
+  - ObjectType: 2
+    ObjectPrefab: {fileID: 9217412805119261599, guid: aca8475fd7e9fb641b309ad143a00b20, type: 3}
 --- !u!4 &1083984234
 Transform:
   m_ObjectHideFlags: 0

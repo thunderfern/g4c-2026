@@ -91,7 +91,12 @@ public enum ThreatSubSection {
     Forest2B,
 }
 
-
+// World Generation
+public enum ObjectType {
+    TREE1 = 0,
+    TREE2,
+    TREETRUNK
+}
 
 
 
