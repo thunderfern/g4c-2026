@@ -10,6 +10,8 @@ public class PlayerData : MonoBehaviour {
 
     public PlayerAnimal playerAnimal;
 
+    public static Vector3 PlayerPosition;
+
     private Renderer renderer1;
     void Start() {
         playerAnimal = PlayerAnimal.Fox;
@@ -18,6 +20,7 @@ public class PlayerData : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        PlayerPosition = transform.position;
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
             playerAnimal = PlayerAnimal.Fox;
         }
