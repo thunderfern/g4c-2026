@@ -11,8 +11,7 @@ public class GrassSpawner : MonoBehaviour
     float grassx, grassz;
     int grassnum;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    void Start() {
         scale = transform.localScale;
         pos = transform.position;
         for(int i = 0; i < density; i++)
@@ -20,13 +19,12 @@ public class GrassSpawner : MonoBehaviour
             grassnum = Random.Range(0, grassType.Count);
             grassx = Random.Range((float)pos.x - (float)(scale.x*10), (float)pos.x + (float)(scale.x*10));
             grassz = Random.Range((float)pos.z - (float)(scale.z*10), (float)pos.z + (float)(scale.z*10));
-            GameObject grass = Instantiate(grassType[grassnum], new Vector3(grassx, transform.position.y, grassz), Quaternion.identity);
+            GameObject grass = Instantiate(grassType[grassnum], new Vector3(grassx, transform.position.y, grassz), Quaternion.Euler(0, 0, 90), transform);
         }
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         
     }
 }
