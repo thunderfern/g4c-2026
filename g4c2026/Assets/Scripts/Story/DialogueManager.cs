@@ -70,6 +70,7 @@ public class DialogueManager : MonoBehaviour {
             }
             else if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)) displayNext();
         }
+        else GameManager.I().CurrentGameState = GameState.Movement;
     }
 
     public void UpdateDialogue(List<DialogueInformation> dialogueStream) {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System.IO;
 using System.Collections.Generic;
@@ -6,22 +7,59 @@ using System;
 
 public class Photobook : MonoBehaviour {
 
-    public int width = 2550; 
-    public int height = 3300;
+    // Singleton
 
-    private int currentPage;
-    public GameObject myObject;
-    private bool gotImage = false;
+    private static Photobook _instance;
+
+    private Photobook() {
+        _instance = this;
+    }
+
+    public static Photobook I() {
+        if (_instance == null) {
+            Photobook instance = new Photobook();
+            _instance = instance;
+        }
+        return _instance;
+    }
+
+    public int width = 512; 
+    public int height = 512;
+
+    private int currentPage = 0;
 
     // Photobook pages
     private List<List<ThreatSubSection>> PhotobookPages = new List<List<ThreatSubSection>> {
         new List<ThreatSubSection>{ThreatSubSection.Forest1A, ThreatSubSection.Forest1B},
+        new List<ThreatSubSection>{ThreatSubSection.Forest1A, ThreatSubSection.Forest1B},
+        new List<ThreatSubSection>{ThreatSubSection.Forest1HabitatA, ThreatSubSection.Forest1B},
     };
 
     // Images Store
-    private Dictionary<ThreatSubSection, Texture2D> ImageCache = new Dictionary<ThreatSubSection, Texture2D>();
+    public Dictionary<ThreatSubSection, Texture2D> ImageCache = new Dictionary<ThreatSubSection, Texture2D>();
+
+    // UI
+
+    public Button BackButton;
+    public Button ForwardButton;
+
+    public GameObject PhotobookObject;
+    public GameObject LeftPage;
+    public GameObject RightPage;
+    public Texture2D UndiscoveredImageTexture;
+
 
     void Start() {
+        GetCurrentPage();
+        BackButton.onClick.AddListener(() => {
+            currentPage = Math.Max(currentPage - 1, 0);
+            GetCurrentPage();
+        });
+        ForwardButton.onClick.AddListener(() => {
+            currentPage = Math.Min(currentPage + 1, PhotobookPages.Count / 2);
+            GetCurrentPage();
+        });
+
         // loading all images
         /*var values = Enum.GetValues(typeof(ThreatSubSection)).Cast<ThreatSubSection>().ToArray();
         foreach (var v in values) {
@@ -29,25 +67,38 @@ public class Photobook : MonoBehaviour {
         }*/
     }
     void Update() {
-        if (GameManager.I().CurrentGameState == GameState.Photobook && !gotImage) {
-            GetCurrentPage();
-            gotImage = true;
+        if (GameManager.I().CurrentGameState == GameState.Photobook && !PhotobookObject.activeInHierarchy) {
+            PhotobookObject.SetActive(true);
+        }
+        else if (GameManager.I().CurrentGameState != GameState.Photobook) {
+            PhotobookObject.SetActive(false);
         }
     }
 
     private Texture2D GetImage(ThreatSubSection threatSubSection) {
-        byte[] bytes = File.ReadAllBytes("Screenshots/Forest1/Forest1A/screenshot0.png");
-        Texture2D texture = new Texture2D(width, height, TextureFormat.RGB24, false) {
+        /*byte[] bytes = File.ReadAllBytes("Screenshots/Forest1/Forest1HabitatA/Screenshot29.png");
+        Texture2D texture = new Texture2D(4000, 4000, TextureFormat.RGB24, false) {
             filterMode = FilterMode.Trilinear
         };
         texture.LoadImage(bytes);
-        return texture;
+        return texture;*/
+        // /Photobook.I().ImageCache[photoCandidate.ThreatSubSection] = screenShot;
+        if (!ImageCache.TryGetValue(threatSubSection, out var tmp)) return UndiscoveredImageTexture;
+
+        Debug.Log("linx found");
+
+        return tmp;
     }
 
     public void GetCurrentPage() {
-        //Sprite sprite = Sprite.Create(GetImage(), new Rect(0,0,width, height), new Vector2(0.5f,0.0f), 1.0f);
-
-        //myObject.GetComponent<UnityEngine.UI.Image>().sprite = sprite;
+        List<Texture2D> leftTextures = new List<Texture2D>();
+        for (int i = 0; i < PhotobookPages[currentPage].Count; i++) {
+            leftTextures.Add(GetImage(PhotobookPages[currentPage * 2][i]));
+        }
+        LeftPage.GetComponent<Page>().UpdatePage(leftTextures, true, currentPage == 0);
+        // two transition
+        // six transition
+        // six blank
     }
 
 }

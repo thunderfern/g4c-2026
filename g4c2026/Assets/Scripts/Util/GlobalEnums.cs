@@ -89,6 +89,9 @@ public enum ThreatSubSection {
     // Forest2
     Forest2A,
     Forest2B,
+
+    // Miscellaneous
+    Misc1
 }
 
 // World Generation

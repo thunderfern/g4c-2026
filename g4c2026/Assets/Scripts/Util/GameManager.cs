@@ -41,17 +41,6 @@ public class GameManager : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.D)) {
-            if (CurrentGameState == GameState.Dialogue) {
-                CurrentGameState = GameState.Movement;
-                modeText.GetComponent<TMP_Text>().text = "Movement";
-            }
-            else if (CurrentGameState == GameState.Movement) {
-                CurrentGameState = GameState.Dialogue;
-                modeText.GetComponent<TMP_Text>().text = "Dialogue";
-            }
-        }
-
         if (Input.GetKeyDown(KeyCode.B)) {
             if (CurrentGameState == GameState.Photobook) {
                 CurrentGameState = GameState.Movement;

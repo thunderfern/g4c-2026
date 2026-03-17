@@ -40,24 +40,16 @@ public class GenerateWorld : MonoBehaviour {
     List<ObjectPool> ObjectPools;
 
     void Awake() {
-        // // object pool
-        // ObjectPools = new List<ObjectPool>();
-        // for (int i = 0; i < ObjectPrefabsI.Count; i++) ObjectPools.Add(new ObjectPool());
-        // for (int i = 0; i < ObjectPrefabsI.Count; i++) {
-        //     ObjectPools[(int)ObjectPrefabsI[i].ObjectType].SetPrefab(ObjectPrefabsI[i].ObjectPrefab);
-        // }
-    }
-
-    void Start() {
-        if (WorldFile == null) Debug.LogError("World file not assigned! Cannot load world.");
-
         // object pool
         ObjectPools = new List<ObjectPool>();
         for (int i = 0; i < ObjectPrefabsI.Count; i++) ObjectPools.Add(new ObjectPool());
         for (int i = 0; i < ObjectPrefabsI.Count; i++) {
             ObjectPools[(int)ObjectPrefabsI[i].ObjectType].SetPrefab(ObjectPrefabsI[i].ObjectPrefab);
         }
-        Debug.Log("linx" + ObjectPools.Count);
+    }
+
+    void Start() {
+        if (WorldFile == null) Debug.LogError("World file not assigned! Cannot load world.");
 
         string fileContents = WorldFile.text;
         string[] lines = fileContents.Split('\n');
