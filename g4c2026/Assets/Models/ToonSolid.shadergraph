@@ -262,7 +262,7 @@
             },
             "m_InputSlot": {
                 "m_Node": {
-                    "m_Id": "7532bf968b3c47a99ccde45fb9581a9c"
+                    "m_Id": "dcffe1b888ee4fa28c618921a47e27ee"
                 },
                 "m_SlotId": 0
             }
@@ -349,20 +349,6 @@
                     "m_Id": "03af0a5d5d364b4f9301d70db6010f95"
                 },
                 "m_SlotId": 1
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "7532bf968b3c47a99ccde45fb9581a9c"
-                },
-                "m_SlotId": 2
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "dcffe1b888ee4fa28c618921a47e27ee"
-                },
-                "m_SlotId": 0
             }
         },
         {
@@ -1153,10 +1139,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 2777.33349609375,
-            "y": 874.0000610351563,
-            "width": 209.333251953125,
-            "height": 303.99993896484377
+            "x": 3097.0,
+            "y": 911.0,
+            "width": 208.0,
+            "height": 302.0001220703125
         }
     },
     "m_Slots": [
@@ -1563,7 +1549,7 @@
     "m_LiteralFloatMode": false,
     "m_RangeValues": {
         "x": 0.0,
-        "y": 2.0
+        "y": 1.0
     },
     "m_SliderType": 0,
     "m_SliderPower": 3.0,
