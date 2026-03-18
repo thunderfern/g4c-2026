@@ -82,8 +82,10 @@ public class GameManager : MonoBehaviour {
                 GoalList[i].Goals.RemoveAt(idx);
             }
             // finished all goals, can start next section
-            Debug.Log("linx" + curList.Goals.Count);
             if (curList.Goals.Count == 0) {
+                // removes the list if it is empty
+                GoalList.RemoveAt(i);
+                i--;
                 if (StoryManager.StoryNext.TryGetValue(curList.StoryName, out var nextStoryList)) {
                     foreach (var nextStory in nextStoryList) {
                         StartStorySection(nextStory);

@@ -10,10 +10,8 @@ public class InteractionRigidbody : MonoBehaviour {
         interactions = new List<Collider>();
     }
     
-    void Update()
-    {
-        if (currentCollider && Input.GetKeyDown(KeyCode.F))
-        {
+    void Update() {
+        if (currentCollider && Input.GetKeyDown(KeyCode.F)) {
             currentCollider.GetComponent<InteractionRange>()?.SourceInteraction.Selected();
         }
     }

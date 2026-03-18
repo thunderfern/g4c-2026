@@ -27,6 +27,7 @@ public enum GoalType {
     Interact,
     Give,
     Go,
+    Obtain,
     Picture
 }
 
@@ -48,16 +49,24 @@ public struct Goal {
     }
 }
 
+// Interaction
+
+public enum CharacterInteractionType { // this is what they expect the players to do to them
+    Dialogue,
+    Give,
+    Get,
+}
+
 // Item
 
 public enum Character {
     Player,
     Narrator,
+    Forest1HabitatA,
 }
 
-
 public enum Item {
-    
+    None
 }
 
 public enum Location {
@@ -100,6 +109,5 @@ public enum ObjectType {
     TREE2,
     TREETRUNK
 }
-
 
 
