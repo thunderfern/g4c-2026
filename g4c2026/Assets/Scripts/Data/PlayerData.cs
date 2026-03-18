@@ -11,6 +11,7 @@ public class PlayerData : MonoBehaviour {
     public PlayerAnimal playerAnimal;
 
     public static Vector3 PlayerPosition;
+    public static Item PlayerInventory;
 
     private Renderer renderer1;
     void Start() {
