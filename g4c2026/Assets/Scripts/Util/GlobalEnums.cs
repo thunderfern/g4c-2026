@@ -73,13 +73,6 @@ public enum Location {
     
 }
 
-// Dialogue
-
-public enum CharacterBackground {
-    Blue
-    
-}
-
 // Picture
 public enum ThreatSection {
     Forest1,
@@ -109,5 +102,3 @@ public enum ObjectType {
     TREE2,
     TREETRUNK
 }
-
-
