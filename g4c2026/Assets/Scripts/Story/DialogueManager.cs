@@ -10,7 +10,7 @@ public struct DialogueInformation {
 
 public struct CharacterDisplay {
     public string characterName;
-    public CharacterBackground characterBackground;
+    public Color characterBackground;
 }
 
 public class DialogueManager : MonoBehaviour {
@@ -34,12 +34,13 @@ public class DialogueManager : MonoBehaviour {
     public TMP_Text dialogueText;
     public TMP_Text characterText;
     public GameObject dialogueObject;
+    public GameObject characterBackgroundObject;
 
     // dialogue customizations
     [Serializable]
     public struct CharacterDisplayInspector {
         public Character character;
-        public CharacterBackground characterBackground;
+        public Color characterBackground;
         public string characterName;
     }
     
@@ -81,6 +82,9 @@ public class DialogueManager : MonoBehaviour {
 
     void display() {
         if (dialogueStream.Count == 0) return;
+
+        // background display
+        characterBackgroundObject.GetComponent<UnityEngine.UI.Image>().color = characterDisplayLookup[dialogueStream[0].character].characterBackground;
 
         // text display
         characterText.GetComponent<TMP_Text>().text = characterDisplayLookup[dialogueStream[0].character].characterName;
