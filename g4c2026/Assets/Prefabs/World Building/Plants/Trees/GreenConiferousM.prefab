@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 8790915400303313274}
   - component: {fileID: 1064209452115933368}
   m_Layer: 0
-  m_Name: GreenConiferous
+  m_Name: GreenConiferousM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -477,7 +477,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.45, y: 1.45, z: 1.45}
+  m_LocalScale: {x: 1.9999999, y: 1.9999999, z: 1.9999999}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2873114607882421306}

@@ -81,6 +81,6 @@ public static class BaseAction {
     }
 
     public static void ApplyRotationVertical(Transform transform, Vector3 mouseDelta) {
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z + mouseDelta.y);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z + mouseDelta.y  / 5);
     }
 }

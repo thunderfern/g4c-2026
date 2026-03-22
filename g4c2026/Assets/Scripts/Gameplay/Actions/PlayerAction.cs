@@ -66,20 +66,21 @@ public class PlayerAction : MonoBehaviour {
         // checking if isGrounded
         if (Physics.Raycast(transform.position, -Vector3.up, out RaycastHit hit)) {
             // might need to make actual feet
-            if (hit.distance <= 1.5f) isGrounded = true;
+            if (hit.distance <= 1.5f ) isGrounded = true;
             else isGrounded = false;
         }
         else isGrounded = false;
 
         // Applying jump
         if (Input.GetKey(KeyCode.Space)) {
-            if (isGrounded) {
+            if (isGrounded && oldGravity < 0) {
                 isGrounded = false;
                 oldGravity = FoxJump;
             }
         }
         if (!isGrounded) oldGravity = BaseAction.ApplyGravity(rb, oldGravity, FoxGravity, FoxTerminalVelocity);
         BaseAction.ApplyRotationHorizontal(transform, mouseDelta);
+        BaseAction.ApplyRotationVertical(transform, mouseDelta);
     }
 
     void ApplyFishAction() {
