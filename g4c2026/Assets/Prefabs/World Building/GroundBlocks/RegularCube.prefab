@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RegularCube
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: df9b9d3be7db14b2387e96cd14f63585, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

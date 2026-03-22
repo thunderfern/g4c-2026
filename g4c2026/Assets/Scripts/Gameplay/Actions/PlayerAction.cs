@@ -64,9 +64,9 @@ public class PlayerAction : MonoBehaviour {
         }
 
         // checking if isGrounded
-        if (Physics.Raycast(transform.position, -Vector3.up, out RaycastHit hit))
-        {
-            if (hit.distance <= 0.50001) isGrounded = true;
+        if (Physics.Raycast(transform.position, -Vector3.up, out RaycastHit hit)) {
+            // might need to make actual feet
+            if (hit.distance <= 1.5f) isGrounded = true;
             else isGrounded = false;
         }
         else isGrounded = false;
