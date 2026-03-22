@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour {
 
+    public GameObject Camera;
+    public GameObject AnimalGameObject;
+    public GameObject Feet;
+
     public float FoxSpeed;
     public float FoxSprint;
-    public float FoxMaxSpeed;
     public float FoxJump;
     public float FoxGravity;
-    public float FoxTerminalVelocity;
-    public float FoxResistence;
 
     public float FishSpeed;
     
@@ -17,21 +18,20 @@ public class PlayerAction : MonoBehaviour {
     private PlayerData playerData;
 
     private float oldGravity;
-    private Vector3 oldMovement;
-    private Vector3 oldMouse;
-    private Vector3 mouseDelta;
     
-    void Start()
-    {
+    void Start() {
         rb = GetComponent<Rigidbody>();
         playerData = GetComponent<PlayerData>();
         isGrounded = false;
-        oldMouse = Input.mousePosition;
+    }
+
+    void Update() {
+        BaseAction.ApplyRotationHorizontal(Camera.transform, Input.mousePositionDelta, transform.position);
+        BaseAction.ApplyRotationVertical(Camera.transform, Input.mousePositionDelta, transform.position);
+        BaseAction.ApplyCameraZoom(Camera.transform, Input.mouseScrollDelta, transform.position);
     }
 
     void FixedUpdate() {
-        mouseDelta = Input.mousePosition - oldMouse;
-        oldMouse = Input.mousePosition;
         ApplyAction();
     }
 
@@ -45,28 +45,26 @@ public class PlayerAction : MonoBehaviour {
 
         // Applying movement
 
+        Vector3 movementDirection = new Vector3();
+
         if (Input.GetKey(KeyCode.W)) {
-            oldMovement = BaseAction.ApplyMovement(transform, rb, MovementDirection.FORWARD, FoxSpeed, oldMovement);
+            movementDirection += new Vector3(0, 0, 1);
         }
-        else if (Input.GetKey(KeyCode.S)) {
-            oldMovement = BaseAction.ApplyMovement(transform, rb, MovementDirection.BACKWARD, FoxSpeed, oldMovement);
+        if (Input.GetKey(KeyCode.S)) {
+            movementDirection += new Vector3(0, 0, -1);
         }
-        else if (Input.GetKey(KeyCode.D)) {
-            oldMovement = BaseAction.ApplyMovement(transform, rb, MovementDirection.RIGHT, FoxSpeed, oldMovement);
+        if (Input.GetKey(KeyCode.D)) {
+            movementDirection += new Vector3(1, 0, 0);
         }
-        else if (Input.GetKey(KeyCode.A)) {
-            oldMovement = BaseAction.ApplyMovement(transform, rb, MovementDirection.LEFT, FoxSpeed, oldMovement);
+        if (Input.GetKey(KeyCode.A)) {
+            movementDirection += new Vector3(-1, 0, 0);
         }
-        else
-        {
-            rb.linearVelocity = new Vector3();
-            oldMovement = new Vector3();
-        }
+        BaseAction.ApplyMovement(AnimalGameObject.transform, rb, transform.position - Camera.transform.position, movementDirection, FoxSpeed);
 
         // checking if isGrounded
-        if (Physics.Raycast(transform.position, -Vector3.up, out RaycastHit hit)) {
+        if (Physics.Raycast(Feet.transform.position, -Vector3.up, out RaycastHit hit)) {
             // might need to make actual feet
-            if (hit.distance <= 1.5f ) isGrounded = true;
+            if (hit.distance <= 0.5f) isGrounded = true;
             else isGrounded = false;
         }
         else isGrounded = false;
@@ -78,9 +76,7 @@ public class PlayerAction : MonoBehaviour {
                 oldGravity = FoxJump;
             }
         }
-        if (!isGrounded) oldGravity = BaseAction.ApplyGravity(rb, oldGravity, FoxGravity, FoxTerminalVelocity);
-        BaseAction.ApplyRotationHorizontal(transform, mouseDelta);
-        BaseAction.ApplyRotationVertical(transform, mouseDelta);
+        if (!isGrounded) oldGravity = BaseAction.ApplyGravity(rb, oldGravity, FoxGravity);
     }
 
     void ApplyFishAction() {
@@ -113,8 +109,6 @@ public class PlayerAction : MonoBehaviour {
             else isGrounded = false;
         }
         else isGrounded = false;
-        BaseAction.ApplyRotationHorizontal(transform, mouseDelta);
-        BaseAction.ApplyRotationVertical(transform, mouseDelta);
     }
 
 

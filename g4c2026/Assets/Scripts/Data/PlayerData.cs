@@ -16,7 +16,7 @@ public class PlayerData : MonoBehaviour {
     private Renderer renderer1;
     void Start() {
         playerAnimal = PlayerAnimal.Fox;
-        renderer1 = GetComponent<Renderer>();
+        //renderer1 = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -32,8 +32,8 @@ public class PlayerData : MonoBehaviour {
             playerAnimal = PlayerAnimal.Fish;
         }
 
-        if (playerAnimal == PlayerAnimal.Fox) renderer1.material.color = new Color(1, 0.64f, 0);
+        /*if (playerAnimal == PlayerAnimal.Fox) renderer1.material.color = new Color(1, 0.64f, 0);
         else if (playerAnimal == PlayerAnimal.Eagle) renderer1.material.color = new Color(0.62f, 0.16f, 0.40f);
-        else renderer1.material.color = new Color(0.53f, 0.81f, 0.94f);
+        else renderer1.material.color = new Color(0.53f, 0.81f, 0.94f);*/
     }
 }
