@@ -17,7 +17,14 @@ public class InteractionRigidbody : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        if (interactions.Count != 0) currentCollider = interactions[0];
+        if (interactions.Count != 0) {
+            currentCollider = interactions[0];
+            // destoryed gameObjects
+            if (interactions[0] == null || interactions[0].gameObject == null) {
+                interactions.RemoveAt(0);
+                currentCollider = null;
+            }
+        }
         else currentCollider = null;
 
         

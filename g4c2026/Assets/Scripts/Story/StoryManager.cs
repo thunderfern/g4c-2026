@@ -22,11 +22,13 @@ public class StoryManager : MonoBehaviour {
     public static Dictionary<string, List<DialogueInformation>> StoryDialogue;
     public static Dictionary<string, List<Goal>> StoryGoal;
     public static Dictionary<string, List<string>> StoryNext;
+    public static Dictionary<string, List<Setup>> StorySetup;
 
     void Awake() {
         StoryDialogue = new Dictionary<string, List<DialogueInformation>>();
         StoryGoal = new Dictionary<string, List<Goal>>();
         StoryNext = new Dictionary<string, List<string>>();
+        StorySetup = new Dictionary<string, List<Setup>>(); 
         for (int sf = 0; sf < StoryFiles.Count; sf++) {
             // setup
             var file = StoryFiles[sf];
@@ -66,6 +68,15 @@ public class StoryManager : MonoBehaviour {
                         StoryNext[currentName].Add(parsedLine[1]);
                         break;
                     case "Setup":
+                        SetupType setupType = (SetupType)System.Enum.Parse(typeof(SetupType), parsedLine[1]);
+                        parsedLine.RemoveAt(0);
+                        parsedLine.RemoveAt(0);
+                        Setup setup = new Setup() {
+                            SetupType = setupType,
+                            Arguments = parsedLine,
+                        };
+                        if (!StorySetup.TryGetValue(currentName, out var tmp2)) StorySetup[currentName] = new List<Setup>();
+                        StorySetup[currentName].Add(setup);
                         break;
                     default:
                         // this is character dialogue
@@ -75,7 +86,7 @@ public class StoryManager : MonoBehaviour {
                         };
                         // todo: out of bounds checking
                         // checking if the thing exists in StoryDialogue
-                        if (!StoryDialogue.TryGetValue(currentName, out var tmp2)) StoryDialogue[currentName] = new List<DialogueInformation>();
+                        if (!StoryDialogue.TryGetValue(currentName, out var tmp3)) StoryDialogue[currentName] = new List<DialogueInformation>();
                         StoryDialogue[currentName].Add(dialogueInformation);
                         break;
                 }

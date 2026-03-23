@@ -24,11 +24,26 @@ public enum GameState {
 }
 
 public enum GoalType {
+    Enter,
+    Heal,
     Interact,
+    Inform,
     Give,
-    Go,
     Obtain,
-    Picture
+    Picture,
+    Turn,
+    Wait
+}
+
+public enum SetupType {
+    Path,
+    Inform,
+    Interact
+}
+
+public struct Setup {
+    public SetupType SetupType;
+    public List<string> Arguments;
 }
 
 public struct StoryGoals {
@@ -55,6 +70,7 @@ public enum CharacterInteractionType { // this is what they expect the players t
     Dialogue,
     Give,
     Get,
+    Inform,
 }
 
 // Item
@@ -63,10 +79,15 @@ public enum Character {
     Player,
     Narrator,
     Forest1HabitatA,
+    Forest1,
+    Fishing1,
+    Fishing2,
+    Fishing3
 }
 
 public enum Item {
-    None
+    None,
+    Berry
 }
 
 public enum Location {
@@ -86,7 +107,9 @@ public enum ThreatSubSection {
     Forest1A,
     Forest1B,
     Forest1HabitatA,
-    Forest2HabitatB,
+    Forest1HabitatB,
+    Forest1HabitatC,
+   Forest2HabitatB,
 
     // Forest2
     Forest2A,

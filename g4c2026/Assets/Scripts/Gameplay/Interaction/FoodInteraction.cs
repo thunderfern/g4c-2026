@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class FoodInteraction : Interaction {
 
+    public Item ItemType;
+
     void Update() {
         
     }
@@ -15,6 +17,7 @@ public class FoodInteraction : Interaction {
     }
 
     public override void Selected() {
-        Debug.Log("F");
+        PlayerData.PlayerInventory = ItemType;
+        Destroy(gameObject);
     }
 }

@@ -1,15 +1,31 @@
 using UnityEngine;
 using TMPro;
+using System;
 using System.IO;
 using System.Collections.Generic;
 
 public class PhotoManager : MonoBehaviour {
+
+    private static PhotoManager _instance;
+
+    private PhotoManager() {
+        _instance = this;
+    }
+
+    public static PhotoManager I() {
+        if (_instance == null) {
+            PhotoManager instance = new PhotoManager();
+            _instance = instance;
+        }
+        return _instance;
+    }
 
     // camera settings
 
     private int resWidth = 4000; 
     private int resHeight = 4000;
     public Camera camera;
+    public Camera PlayerCamera;
 
     public float moveSensitivity = 1.0f;
     public float rotateSensitivity = 1.0f;
@@ -18,13 +34,19 @@ public class PhotoManager : MonoBehaviour {
     // aiming
     public TMP_Text aimingText;
     private PhotoCandidate photoCandidate;
+    private Vector3 CameraDelta;
+    private Transform CameraOrigin;
+
+    void Start() {
+        CameraDelta = new();
+        CameraOrigin = PlayerCamera.transform;
+    }
     
     void Update() {
         
         if (GameManager.I().CurrentGameState != GameState.Picture) return;
 
         MoveCamera();
-        ZoomCamera();
         SenseObjects();
 
         if (Input.GetKeyDown(KeyCode.Space)) {
@@ -32,31 +54,38 @@ public class PhotoManager : MonoBehaviour {
         }
     }
 
+    public void ResetDelta() {
+        CameraDelta = new();
+    }
+
 
     // Taking Photos
     void MoveCamera() {
         float deltaTime = Time.deltaTime;
-        Vector3 newCameraPos = camera.transform.position;
-        if (Input.GetKey(KeyCode.W)) newCameraPos += new Vector3(0, deltaTime * 1.0f, 0) * moveSensitivity;
-        if (Input.GetKey(KeyCode.A)) newCameraPos += new Vector3(deltaTime * -1.0f, 0, 0) * moveSensitivity;
-        if (Input.GetKey(KeyCode.S)) newCameraPos += new Vector3(0, deltaTime * -1.0f, 0) * moveSensitivity;
-        if (Input.GetKey(KeyCode.D)) newCameraPos += new Vector3(deltaTime * 1.0f, 0, 0) * moveSensitivity;
-        camera.transform.position = newCameraPos;
-    }
-
-    void ZoomCamera() {
-        float deltaTime = Time.deltaTime;
-        Vector3 newCameraPos = camera.transform.position + new Vector3(0, 0, Input.mouseScrollDelta.y) * zoomSensitivity;
-        camera.transform.position = newCameraPos;
+        if (Input.GetKey(KeyCode.W)) CameraDelta += new Vector3(0, deltaTime * 1.0f, 0) * moveSensitivity;
+        if (Input.GetKey(KeyCode.A)) CameraDelta += new Vector3(deltaTime * -1.0f, 0, 0) * moveSensitivity;
+        if (Input.GetKey(KeyCode.S)) CameraDelta += new Vector3(0, deltaTime * -1.0f, 0) * moveSensitivity;
+        if (Input.GetKey(KeyCode.D)) CameraDelta += new Vector3(deltaTime * 1.0f, 0, 0) * moveSensitivity;
+        // zooming
+        CameraDelta += new Vector3(0, 0, Input.mouseScrollDelta.y) * zoomSensitivity;
+        CameraDelta = new Vector3(Math.Min(Math.Max(CameraDelta.x, -3), 3), Math.Min(Math.Max(CameraDelta.y, -3), 3), Math.Min(Math.Max(CameraDelta.z, -3), 3));
+        camera.transform.position = CameraOrigin.transform.position + CameraDelta.z * CameraOrigin.forward.normalized + CameraDelta.y * CameraOrigin.up.normalized + CameraDelta.x * CameraOrigin.right.normalized;
     }
 
     void SenseObjects() {
         photoCandidate = null;
         PhotoCandidate[] photoCandidates = FindObjectsByType<PhotoCandidate>(FindObjectsSortMode.None);
+        float distance = -1.0f;
+        // prioritize the ones that are closer to the player
         for (int i = 0; i < photoCandidates.Length; i++) {
-            if (camera.WorldToViewportPoint(photoCandidates[i].gameObject.transform.position).x > 0 && camera.WorldToViewportPoint(photoCandidates[i].gameObject.transform.position).x < 1 && camera.WorldToViewportPoint(photoCandidates[i].gameObject.transform.position).y > 0 && camera.WorldToViewportPoint(photoCandidates[i].gameObject.transform.position).y < 1) {
-                photoCandidate = photoCandidates[i];
-                break;
+            float viewpointX = camera.WorldToViewportPoint(photoCandidates[i].transform.position).x;
+            float viewpointY = camera.WorldToViewportPoint(photoCandidates[i].transform.position).y;
+            float viewpointZ = camera.WorldToViewportPoint(photoCandidates[i].transform.position).z;
+            if (viewpointX > 0 && viewpointX < 1 && viewpointY > 0 && viewpointY < 1 && viewpointZ > 0.5) {
+                if (distance == -1 || (photoCandidates[i].transform.position - camera.transform.position).magnitude < distance) {
+                    photoCandidate = photoCandidates[i];
+                    distance = (photoCandidates[i].transform.position - camera.transform.position).magnitude;
+                }
             }
         }
         if (!photoCandidate) aimingText.GetComponent<TMP_Text>().text = "None";

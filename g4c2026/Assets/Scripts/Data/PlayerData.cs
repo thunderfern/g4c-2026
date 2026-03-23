@@ -3,7 +3,8 @@ using UnityEngine;
 public enum PlayerAnimal {
     Fox,
     Eagle,
-    Fish
+    Fish,
+    Rabbit,
 };
 
 public class PlayerData : MonoBehaviour {

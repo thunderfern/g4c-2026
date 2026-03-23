@@ -15,8 +15,7 @@ public class Interaction : MonoBehaviour {
         
     }
 
-    public virtual void Selected()
-    {
+    public virtual void Selected() {
         
     }
 

@@ -85,8 +85,6 @@ public class Photobook : MonoBehaviour {
         // /Photobook.I().ImageCache[photoCandidate.ThreatSubSection] = screenShot;
         if (!ImageCache.TryGetValue(threatSubSection, out var tmp)) return UndiscoveredImageTexture;
 
-        Debug.Log("linx found");
-
         return tmp;
     }
 

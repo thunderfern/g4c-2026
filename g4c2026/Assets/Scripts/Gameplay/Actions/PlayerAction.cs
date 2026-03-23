@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerAction : MonoBehaviour {
 
@@ -26,13 +27,32 @@ public class PlayerAction : MonoBehaviour {
     }
 
     void Update() {
+        if (GameManager.I().CurrentGameState != GameState.Movement) return;
         BaseAction.ApplyRotationHorizontal(Camera.transform, Input.mousePositionDelta, transform.position);
         BaseAction.ApplyRotationVertical(Camera.transform, Input.mousePositionDelta, transform.position);
         BaseAction.ApplyCameraZoom(Camera.transform, Input.mouseScrollDelta, transform.position);
+        TransformAnimal();
     }
 
     void FixedUpdate() {
+        if (GameManager.I().CurrentGameState != GameState.Movement) return;
         ApplyAction();
+    }
+
+    void TransformAnimal() {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) {
+            playerData.playerAnimal = PlayerAnimal.Fox;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2)) {
+            playerData.playerAnimal = PlayerAnimal.Rabbit;
+            GameManager.I().PerformedAction(new Goal {
+                GoalType = GoalType.Turn, 
+                Arguments = new List<string>() {
+                    "Rabbit"
+                }
+            });
+
+        }
     }
 
     void ApplyAction() {
@@ -64,7 +84,7 @@ public class PlayerAction : MonoBehaviour {
         // checking if isGrounded
         if (Physics.Raycast(Feet.transform.position, -Vector3.up, out RaycastHit hit)) {
             // might need to make actual feet
-            if (hit.distance <= 0.5f) isGrounded = true;
+            if (hit.distance <= 0.1f) isGrounded = true;
             else isGrounded = false;
         }
         else isGrounded = false;

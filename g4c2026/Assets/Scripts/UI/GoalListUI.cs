@@ -28,13 +28,16 @@ public class GoalListUI : MonoBehaviour {
             Destroy(CurrentGoalList[i]);
         }
         List<StoryGoals> goalList = GameManager.I().GoalList;
+        CurrentGoalList = new List<GameObject>();
         for (int i = 0; i < goalList.Count; i++) {
             List<Goal> curEntry = goalList[i].Goals;
             for (int j = 0; j < curEntry.Count; j++) {
                 GameObject tmp = Instantiate(GoalListEntry, GoalListObject.transform);
                 tmp.GetComponent<TMP_Text>().text = curEntry[j].GoalDescription;
+                tmp.transform.position = new Vector3(tmp.transform.position.x, tmp.transform.position.y + CurrentGoalList.Count * 5, tmp.transform.position.z);
                 CurrentGoalList.Add(tmp);
             }
         }
+        Debug.Log(CurrentGoalList.Count);
     }
 }

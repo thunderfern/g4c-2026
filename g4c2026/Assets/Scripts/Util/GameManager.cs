@@ -24,9 +24,12 @@ public class GameManager : MonoBehaviour {
 
     public TMP_Text modeText;
 
+    public Camera PlayerCam;
+    public Camera PhotoCam;
+
     void Start() {
         GoalList = new List<StoryGoals>();
-        StartStorySection("New Beginnings 1");
+        //StartStorySection("New Beginnings 6");
     }
 
     void Update() {
@@ -34,10 +37,17 @@ public class GameManager : MonoBehaviour {
             if (CurrentGameState == GameState.Picture) {
                 CurrentGameState = GameState.Movement;
                 modeText.GetComponent<TMP_Text>().text = "Movement";
+                PhotoCam.enabled = false;
+                PlayerCam.enabled = true;
             }
-            else {
+            else if (CurrentGameState == GameState.Movement) {
                 CurrentGameState = GameState.Picture;
                 modeText.GetComponent<TMP_Text>().text = "Picture";
+                PhotoCam.transform.position = PlayerCam.transform.position;
+                PhotoCam.transform.rotation = PlayerCam.transform.rotation;
+                PhotoManager.I().ResetDelta();
+                PhotoCam.enabled = true;
+                PlayerCam.enabled = false;
             }
         }
 
@@ -55,13 +65,21 @@ public class GameManager : MonoBehaviour {
 
     public void StartStorySection(string storyName) {
         if (StoryManager.StoryDialogue.TryGetValue(storyName, out var dialogueInformation)) {
-            CurrentGameState = GameState.Dialogue;
             DialogueManager.I().UpdateDialogue(dialogueInformation);
         }
         if (StoryManager.StoryGoal.TryGetValue(storyName, out var goalList)) {
             UpdateGoals(storyName, goalList);
         }
+        if (StoryManager.StorySetup.TryGetValue(storyName, out var setupList)) {
+            UpdateSetup(setupList);
+        }
         
+    }
+
+    public void UpdateSetup(List<Setup> setupList) {
+        foreach (Setup s in setupList) {
+            SetupManager.I().Setup(s);
+        }
     }
 
     public void UpdateGoals(string storyName, List<Goal> goalList) {
@@ -74,6 +92,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void PerformedAction(Goal goal) {
+        if (goal.GoalType == GoalType.Enter) SetupManager.I().TrailEnter(goal.Arguments[0]);
         for (int i = 0; i < GoalList.Count; i++) {
             StoryGoals curList = GoalList[i];
             int idx = -1;

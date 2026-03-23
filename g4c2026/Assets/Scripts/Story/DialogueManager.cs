@@ -59,6 +59,7 @@ public class DialogueManager : MonoBehaviour {
                 characterBackground = CharacterNameBackground[i].characterBackground,
             };
         }
+        dialogueStream = new List<DialogueInformation>();
     }
 
     void Update() {
@@ -75,8 +76,9 @@ public class DialogueManager : MonoBehaviour {
     }
 
     public void UpdateDialogue(List<DialogueInformation> dialogueStream) {
+        GameManager.I().CurrentGameState = GameState.Dialogue;
         dialogueObject.SetActive(true);
-        this.dialogueStream = dialogueStream;
+        foreach (DialogueInformation dialogueInformation in dialogueStream) this.dialogueStream.Add(dialogueInformation);
         display();
     }
 

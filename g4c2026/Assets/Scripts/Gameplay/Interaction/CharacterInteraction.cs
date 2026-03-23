@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class CharacterInteraction : Interaction {
 
-    CharacterInteractionType characterInteractionType;
+    public CharacterInteractionType characterInteractionType;
     public Character character;
     public string selectionText;
 
@@ -11,13 +11,26 @@ public class CharacterInteraction : Interaction {
     public string dialogue;
     public Item giveItem;
     public Item getItem;
+    public List<ThreatSubSection> InformList;
+
+    void Start() {
+        SetupManager.I().CharacterInteractionList.Add(this);
+    }
 
     void Update() {
         
     }
     
+    public override void EnterRange() {
+        GameManager.I().PerformedAction(new Goal {
+            GoalType = GoalType.Enter, 
+            Arguments = new List<string>() {
+                character.ToString()
+            }
+        });
+    }
+    
     public override void Selected() {
-        Debug.Log("selected!");
         switch (characterInteractionType) {
             case CharacterInteractionType.Give:
                 if (PlayerData.PlayerInventory == giveItem) {
@@ -25,10 +38,11 @@ public class CharacterInteraction : Interaction {
                     GameManager.I().PerformedAction(new Goal {
                         GoalType = GoalType.Give, 
                         Arguments = new List<string>() {
-                            giveItem.ToString()
+                            character.ToString(), giveItem.ToString()
                         }
                     });
                 }
+                else ShowDialogue();
                 break;
             case CharacterInteractionType.Get:
                 if (PlayerData.PlayerInventory == Item.None) {
@@ -36,7 +50,23 @@ public class CharacterInteraction : Interaction {
                     // update goal
                 }
                 break;
+            case CharacterInteractionType.Inform:
+                bool foundAll = true;
+                for (int i = 0; i < InformList.Count; i++) {
+                    if (!Photobook.I().ImageCache.TryGetValue(InformList[i], out var tmp)) foundAll = false;
+                }
+                if (foundAll) {
+                    GameManager.I().PerformedAction(new Goal {
+                        GoalType = GoalType.Inform, 
+                        Arguments = new List<string>() {
+                            character.ToString()
+                        }
+                    });
+                }
+                else ShowDialogue();
+                break;
             default:
+                ShowDialogue();
                 GameManager.I().PerformedAction(new Goal {
                     GoalType = GoalType.Interact, 
                     Arguments = new List<string>() {
@@ -45,5 +75,13 @@ public class CharacterInteraction : Interaction {
                 });
             break;
         }
+    }
+
+    void ShowDialogue() {
+        if (dialogue == "") return;
+        DialogueManager.I().UpdateDialogue(new List<DialogueInformation>() { new DialogueInformation {
+            character = this.character,
+            dialogue = this.dialogue,
+        }});
     }
 }
