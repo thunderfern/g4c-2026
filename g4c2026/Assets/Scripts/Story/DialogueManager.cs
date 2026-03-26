@@ -85,11 +85,13 @@ public class DialogueManager : MonoBehaviour {
     void display() {
         if (dialogueStream.Count == 0) return;
 
+        CharacterDisplay charDisplay = characterDisplayLookup[dialogueStream[0].character];
+
         // background display
-        characterBackgroundObject.GetComponent<UnityEngine.UI.Image>().color = characterDisplayLookup[dialogueStream[0].character].characterBackground;
+        characterBackgroundObject.GetComponent<UnityEngine.UI.Image>().color = charDisplay.characterBackground;
 
         // text display
-        characterText.GetComponent<TMP_Text>().text = characterDisplayLookup[dialogueStream[0].character].characterName;
+        characterText.GetComponent<TMP_Text>().text = charDisplay.characterName;
         dialogueText.GetComponent<TMP_Text>().text = dialogueStream[0].dialogue;
         dialogueText.GetComponent<TMP_Text>().maxVisibleCharacters = 0;
         curTextTimer = 0;

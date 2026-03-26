@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
 
     void Start() {
         GoalList = new List<StoryGoals>();
-        //StartStorySection("New Beginnings 6");
+        StartStorySection("New Beginnings 1");
     }
 
     void Update() {
