@@ -66,7 +66,7 @@ Player: "Your work is harming a lot of animals in the area. Their habitats are b
 Forest1: "..."
 Forest1: "What can I do to help?"
 Player: "Well for starters, maybe we can stop cutting down the trees. Then maybe we can start replanting some of the trees."
-Goal: Heal Forest1A "Replant the trees for this section of the forest."
+Goal: Heal Forest1 "Replant the trees for this section of the forest."
 Goal: Picture Forest1B "Take a picture of your work."
 Next: "The First Healing 2"
 

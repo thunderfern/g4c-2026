@@ -27,7 +27,7 @@ public class PlayerAction : MonoBehaviour {
     }
 
     void Update() {
-        if (GameManager.I().CurrentGameState != GameState.Movement) return;
+        if (GameManager.I().CurrentGameState != GameState.Movement || Input.GetKey(KeyCode.LeftControl)) return;
         BaseAction.ApplyRotationHorizontal(Camera.transform, Input.mousePositionDelta, transform.position);
         BaseAction.ApplyRotationVertical(Camera.transform, Input.mousePositionDelta, transform.position);
         BaseAction.ApplyCameraZoom(Camera.transform, Input.mouseScrollDelta, transform.position);

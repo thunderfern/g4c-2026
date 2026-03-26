@@ -71,6 +71,12 @@ public enum CharacterInteractionType { // this is what they expect the players t
     Give,
     Get,
     Inform,
+    None,
+}
+
+public enum TreeInteractionType {
+    Grow,
+    None,
 }
 
 // Item

@@ -42,10 +42,12 @@ public class Photobook : MonoBehaviour {
 
     public Button BackButton;
     public Button ForwardButton;
+    public Button ExitButton;
 
     public GameObject PhotobookObject;
     public GameObject LeftPage;
     public GameObject RightPage;
+    
     public Texture2D UndiscoveredImageTexture;
 
 
@@ -58,6 +60,9 @@ public class Photobook : MonoBehaviour {
         ForwardButton.onClick.AddListener(() => {
             currentPage = Math.Min(currentPage + 1, PhotobookPages.Count / 2);
             GetCurrentPage();
+        });
+        ExitButton.onClick.AddListener(() => {
+            GameManager.I().CurrentGameState = GameState.Movement;
         });
 
         // loading all images
