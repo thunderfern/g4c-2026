@@ -1,0 +1,183 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5124337766426879689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3080088977338410889}
+  - component: {fileID: 3970600302814943156}
+  - component: {fileID: 7877498409861507933}
+  - component: {fileID: 4773302707775125505}
+  - component: {fileID: 3498448278237793379}
+  - component: {fileID: 6526163145755632942}
+  - component: {fileID: 484223541806664158}
+  - component: {fileID: 4554632108736947416}
+  - component: {fileID: 4599257840980638974}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3080088977338410889
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5124337766426879689}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3970600302814943156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5124337766426879689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b845e69ca007aef4f88b0e15daefb4ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  CurrentGameState: 0
+  modeText: {fileID: 0}
+  PlayerCam: {fileID: 0}
+  PhotoCam: {fileID: 0}
+--- !u!114 &7877498409861507933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5124337766426879689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3324c8d0368cf764db51a3752961e53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StoryManager
+  StoryFiles:
+  - {fileID: 4900000, guid: d9c895851f0654346b6eac493fbf29e8, type: 3}
+--- !u!114 &4773302707775125505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5124337766426879689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2cad4a318287c64fb4d69e0327ff0c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhotoManager
+  camera: {fileID: 0}
+  PlayerCamera: {fileID: 0}
+  moveSensitivity: 2
+  rotateSensitivity: 1
+  zoomSensitivity: 0.5
+  aimingText: {fileID: 0}
+--- !u!114 &3498448278237793379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5124337766426879689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed063a6a70ad2540935d20353d48ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  dialogueText: {fileID: 0}
+  characterText: {fileID: 0}
+  dialogueObject: {fileID: 0}
+  characterBackgroundObject: {fileID: 0}
+  CharacterNameBackground:
+  - character: 0
+    characterBackground: {r: 0.8160377, g: 0.12702475, b: 0.12702475, a: 1}
+    characterName: Player
+  - character: 1
+    characterBackground: {r: 0.1530349, g: 0.5466775, b: 0.8537736, a: 1}
+    characterName: Narrator
+  - character: 2
+    characterBackground: {r: 0.1994482, g: 0.509434, b: 0.32639563, a: 1}
+    characterName: Forest 1 Habitat A
+  - character: 3
+    characterBackground: {r: 0.42780554, g: 0.14840688, b: 0.6839622, a: 1}
+    characterName: Forest 1
+--- !u!114 &6526163145755632942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5124337766426879689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92206f8ba74203438f079fcf2ac76e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoalListUI
+  CurrentGoalList: []
+  GoalListObject: {fileID: 0}
+  GoalListEntry: {fileID: 0}
+--- !u!114 &484223541806664158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5124337766426879689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705d6a3605f7f664dbe0b8bdeb599e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Photobook
+  width: 2550
+  height: 3300
+  BackButton: {fileID: 0}
+  ForwardButton: {fileID: 0}
+  ExitButton: {fileID: 0}
+  PhotobookObject: {fileID: 0}
+  LeftPage: {fileID: 0}
+  RightPage: {fileID: 0}
+  UndiscoveredImageTexture: {fileID: 2800000, guid: bbac67a2b9ba19b489a55916c4b7b8d1, type: 3}
+--- !u!114 &4554632108736947416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5124337766426879689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0a859d18003094b9e52487e8571de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetupManager
+  TrailLine: {fileID: 0}
+  CurrentTrailPoint: {fileID: 0}
+  TrailPointEnds: []
+  Player: {fileID: 0}
+  CharacterInteractionList: []
+--- !u!114 &4599257840980638974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5124337766426879689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23201f2861237024ba35eee154762595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorManager
