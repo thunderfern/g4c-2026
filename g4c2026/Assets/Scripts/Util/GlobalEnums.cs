@@ -129,5 +129,12 @@ public enum ThreatSubSection {
 public enum ObjectType {
     TREE1 = 0,
     TREE2,
-    TREETRUNK
+    TREEBARE,
+    TREETRUNK,
+    GROUNDCORNER,
+    GROUNDCENTER,
+    GROUNDROUNDED,
+    GROUNDGREEN,
+    GROUNDBARE,
+    GROUNDSIDE
 }

@@ -88,5 +88,5 @@ MonoBehaviour:
   SavePosition: 1
   SaveRotation: 1
   SaveScale: 1
-  ObjectType: 2
+  ObjectType: 3
   SpawnInRange: 1

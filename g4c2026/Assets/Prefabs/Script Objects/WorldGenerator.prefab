@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58882a7df4271084d8349dd3fad634ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GenerateWorld
-  WorldFile: {fileID: 4900000, guid: 838fac59f9fed7d409a9d518653d7883, type: 3}
-  squareSize: 2
+  WorldFile: {fileID: 4900000, guid: 8a7284431f7f6264ebb4d9a99797bfef, type: 3}
+  squareSize: 5
   renderDistance: 3
   ObjectPrefabsI:
   - ObjectType: 0
@@ -53,4 +53,18 @@ MonoBehaviour:
   - ObjectType: 1
     ObjectPrefab: {fileID: 8823257519052315318, guid: 6381f58cd44e2484884fb4b5ad69cbb9, type: 3}
   - ObjectType: 2
+    ObjectPrefab: {fileID: 8265312951224196032, guid: 05243d2f562244b34880c95b451c45a4, type: 3}
+  - ObjectType: 3
     ObjectPrefab: {fileID: 9217412805119261599, guid: aca8475fd7e9fb641b309ad143a00b20, type: 3}
+  - ObjectType: 4
+    ObjectPrefab: {fileID: 7037726432292901170, guid: 449a921e424984c54a782ed9b9324cb2, type: 3}
+  - ObjectType: 5
+    ObjectPrefab: {fileID: 4465842405387856247, guid: 426ef73e7b68846d79b9732a02961bb7, type: 3}
+  - ObjectType: 6
+    ObjectPrefab: {fileID: 7473318826614033463, guid: da5f161891475454284a9f5f8d3df5a2, type: 3}
+  - ObjectType: 7
+    ObjectPrefab: {fileID: 2976873744054001865, guid: 4b071a7985df540e1ae7478bc811c553, type: 3}
+  - ObjectType: 8
+    ObjectPrefab: {fileID: 5543565583954183035, guid: 962cfdeeebbc6451b8f7a1ef04084732, type: 3}
+  - ObjectType: 9
+    ObjectPrefab: {fileID: 774456783326247327, guid: 553293823439841dfa22ca70ab032f15, type: 3}
