@@ -12,25 +12,25 @@ public class Page : MonoBehaviour {
 
     }
 
-    public void UpdatePage(List<Texture2D> textures, bool transition, bool twoPage) {
+    public void UpdatePage(List<Sprite> sprites, bool transition, bool twoPage) {
         ResetPages();
         if (twoPage) {
-            for (int i = 0; i < textures.Count; i += 2) {
-                twoPageObjects[i].GetComponent<UnityEngine.UI.Image>().sprite = GetSprite(textures[i]);
+            for (int i = 0; i < sprites.Count; i += 2) {
+                twoPageObjects[i].GetComponent<UnityEngine.UI.Image>().sprite = sprites[i];
                 twoPageObjects[i].SetActive(true);
-                if (i + 1 < textures.Count) {
-                    twoPageObjects[i + 1].GetComponent<UnityEngine.UI.Image>().sprite = GetSprite(textures[i + 1]);
+                if (i + 1 < sprites.Count) {
+                    twoPageObjects[i + 1].GetComponent<UnityEngine.UI.Image>().sprite = sprites[i + 1];
                     twoPageObjects[i + 1].SetActive(true);
                 }
                 if (transition) twoPageArrows[i / 2].SetActive(true);
             }
         }
         else {
-            for (int i = 0; i < textures.Count; i += 2) {
-                sixPageObjects[i].GetComponent<UnityEngine.UI.Image>().sprite = GetSprite(textures[i]);
+            for (int i = 0; i < sprites.Count; i += 2) {
+                sixPageObjects[i].GetComponent<UnityEngine.UI.Image>().sprite = sprites[i];
                 sixPageObjects[i].SetActive(true);
-                if (i + 1 < textures.Count) {
-                    sixPageObjects[i + 1].GetComponent<UnityEngine.UI.Image>().sprite = GetSprite(textures[i + 1]);
+                if (i + 1 < sprites.Count) {
+                    sixPageObjects[i + 1].GetComponent<UnityEngine.UI.Image>().sprite = sprites[i + 1];
                     sixPageObjects[i + 1].SetActive(true);
                 }
                 if (transition) sixPageArrows[i / 2].SetActive(true);
@@ -43,12 +43,5 @@ public class Page : MonoBehaviour {
         for (int i = 0; i < twoPageArrows.Count; i++) twoPageArrows[i].SetActive(false);
         for (int i = 0; i < sixPageObjects.Count; i++) sixPageObjects[i].SetActive(false);
         for (int i = 0; i < sixPageArrows.Count; i++) sixPageArrows[i].SetActive(false);
-    }
-
-    Sprite GetSprite(Texture2D texture) {
-        Debug.Log(texture.width);
-        Sprite sprite = Sprite.Create(texture, new Rect(0,0,texture.width, texture.height), new Vector2(0.5f,0.5f), 1.0f);
-        return sprite;
-        //myObject.GetComponent<UnityEngine.UI.Image>().sprite = sprite;
     }
 }

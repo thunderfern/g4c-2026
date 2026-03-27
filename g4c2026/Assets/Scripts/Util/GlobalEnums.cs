@@ -136,5 +136,6 @@ public enum ObjectType {
     GROUNDROUNDED,
     GROUNDGREEN,
     GROUNDBARE,
-    GROUNDSIDE
+    GROUNDSIDE,
+    DEFORESTATION1,
 }

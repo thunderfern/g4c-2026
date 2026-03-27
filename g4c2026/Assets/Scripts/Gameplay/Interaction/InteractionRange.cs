@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class InteractionRange : MonoBehaviour {
     
-    public GameObject Source;
+    [HideInInspector] public GameObject Source;
 
-    public Interaction SourceInteraction;
+    [HideInInspector] public Interaction SourceInteraction;
 
     void Start() {
         SourceInteraction = Source.GetComponent<Interaction>();

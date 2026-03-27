@@ -112,9 +112,6 @@ public class PhotoManager : MonoBehaviour {
         Debug.Log(string.Format("Took screenshot to: {0}", filename));
 
         //Photobook.I().ImageCache[photoCandidate.ThreatSubSection] = screenShot;
-        Debug.Log(photoCandidate.ThreatSubSection);
-
-        Debug.Log(Photobook.I().ImageCache[photoCandidate.ThreatSubSection]);
 
         GameManager.I().PerformedAction(new Goal {
             GoalType = GoalType.Picture, 

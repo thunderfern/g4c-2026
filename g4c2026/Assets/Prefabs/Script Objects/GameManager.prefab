@@ -151,6 +151,7 @@ MonoBehaviour:
   PhotobookObject: {fileID: 0}
   LeftPage: {fileID: 0}
   RightPage: {fileID: 0}
+  UndiscoveredImageSprite: {fileID: 52169203, guid: bbac67a2b9ba19b489a55916c4b7b8d1, type: 3}
   UndiscoveredImageTexture: {fileID: 2800000, guid: bbac67a2b9ba19b489a55916c4b7b8d1, type: 3}
 --- !u!114 &4554632108736947416
 MonoBehaviour:

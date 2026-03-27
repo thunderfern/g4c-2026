@@ -48,8 +48,7 @@ public class Photobook : MonoBehaviour {
     public GameObject LeftPage;
     public GameObject RightPage;
     
-    public Texture2D UndiscoveredImageTexture;
-
+    public Sprite UndiscoveredImageSprite;
 
     void Start() {
         GetCurrentPage();
@@ -80,7 +79,7 @@ public class Photobook : MonoBehaviour {
         }
     }
 
-    private Texture2D GetImage(ThreatSubSection threatSubSection) {
+    private Sprite GetSpriteFromThreatSubSection(ThreatSubSection threatSubSection) {
         /*byte[] bytes = File.ReadAllBytes("Screenshots/Forest1/Forest1HabitatA/Screenshot29.png");
         Texture2D texture = new Texture2D(4000, 4000, TextureFormat.RGB24, false) {
             filterMode = FilterMode.Trilinear
@@ -88,20 +87,26 @@ public class Photobook : MonoBehaviour {
         texture.LoadImage(bytes);
         return texture;*/
         // /Photobook.I().ImageCache[photoCandidate.ThreatSubSection] = screenShot;
-        if (!ImageCache.TryGetValue(threatSubSection, out var tmp)) return UndiscoveredImageTexture;
+        if (!ImageCache.TryGetValue(threatSubSection, out var tmp)) return UndiscoveredImageSprite;
 
-        return tmp;
+        return GetSpriteFromTexture(tmp);
     }
 
     public void GetCurrentPage() {
-        List<Texture2D> leftTextures = new List<Texture2D>();
+        List<Sprite> leftSprites = new List<Sprite>();
         for (int i = 0; i < PhotobookPages[currentPage].Count; i++) {
-            leftTextures.Add(GetImage(PhotobookPages[currentPage * 2][i]));
+            leftSprites.Add(GetSpriteFromThreatSubSection(PhotobookPages[currentPage * 2][i]));
         }
-        LeftPage.GetComponent<Page>().UpdatePage(leftTextures, true, currentPage == 0);
+        LeftPage.GetComponent<Page>().UpdatePage(leftSprites, true, currentPage == 0);
         // two transition
         // six transition
         // six blank
+    }
+
+    Sprite GetSpriteFromTexture(Texture2D texture) {
+        Sprite sprite = Sprite.Create(texture, new Rect(0,0,texture.width, texture.height), new Vector2(0.5f,0.5f), 1.0f);
+        return sprite;
+        //myObject.GetComponent<UnityEngine.UI.Image>().sprite = sprite;
     }
 
 }

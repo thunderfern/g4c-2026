@@ -68,3 +68,5 @@ MonoBehaviour:
     ObjectPrefab: {fileID: 5543565583954183035, guid: 962cfdeeebbc6451b8f7a1ef04084732, type: 3}
   - ObjectType: 9
     ObjectPrefab: {fileID: 774456783326247327, guid: 553293823439841dfa22ca70ab032f15, type: 3}
+  - ObjectType: 10
+    ObjectPrefab: {fileID: 7247002242062902864, guid: e056a69bee93e264a8754698e9146f2b, type: 3}

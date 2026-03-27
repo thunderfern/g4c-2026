@@ -7,6 +7,10 @@ public class Interaction : MonoBehaviour {
     public string SelectableText;
     public GameObject InteractionRange;
 
+    void Awake() {
+        InteractionRange.GetComponent<InteractionRange>().Source = gameObject;
+    }
+
     public virtual void EnterRange() {
         
     }
