@@ -51,7 +51,11 @@ public class SetupManager : MonoBehaviour {
             case SetupType.Path:
                 TrailLine.enabled = true;
                 var name = arguments[0];
-                for (int i = 0; i < TrailPointEnds.Count; i++) if (TrailPointEnds[i].TrailPointName == name) CurrentTrailPoint = TrailPointEnds[i];
+                for (int i = 0; i < TrailPointEnds.Count; i++) {
+                    if (TrailPointEnds[i].TrailPointName == name) {
+                        CurrentTrailPoint = TrailPointEnds[i];
+                    }
+                }
                 break;
             case SetupType.Interact:
                 // finding the character interaction;
@@ -61,15 +65,18 @@ public class SetupManager : MonoBehaviour {
                 switch (arguments[1]) {
                     case "Dialogue":
                         characterInteraction.dialogue = arguments[2];
+                        characterInteraction.Selectable = true;
                         break;
                     case "Give":
                         characterInteraction.giveItem = (Item)System.Enum.Parse(typeof(Item), arguments[2]);
                         characterInteraction.characterInteractionType = CharacterInteractionType.Give;
+                        characterInteraction.Selectable = true;
                         break;
                     case "Inform":
                         characterInteraction.InformList = new List<ThreatSubSection>();
                         for (int i = 2; i < arguments.Count; i++) characterInteraction.InformList.Add((ThreatSubSection)System.Enum.Parse(typeof(ThreatSubSection), arguments[i]));
                         characterInteraction.characterInteractionType = CharacterInteractionType.Inform;
+                        characterInteraction.Selectable = true;
                         break;
                     default:
                         break;

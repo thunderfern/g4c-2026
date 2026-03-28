@@ -65,6 +65,8 @@ public class CharacterInteraction : Interaction {
                         }
                     });
                     Selectable = false;
+                    // set up healing
+                    GetComponent<ThreatAreaMain>().SetupHealing();
                 }
                 else ShowDialogue();
                 break;

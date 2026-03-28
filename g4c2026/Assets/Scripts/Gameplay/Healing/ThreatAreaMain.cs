@@ -11,7 +11,8 @@ public class ThreatAreaMain : MonoBehaviour {
     public bool healed = false;
 
     void Start() {
-        SetupHealing();
+        // to do: make the healing happen after informing.
+        //SetupHealing();
     }
 
     void Update() {

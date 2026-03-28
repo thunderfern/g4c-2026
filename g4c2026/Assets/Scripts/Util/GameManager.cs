@@ -27,13 +27,20 @@ public class GameManager : MonoBehaviour {
     public Camera PlayerCam;
     public Camera PhotoCam;
 
+    private bool startedStory = false;
+
     void Start() {
         GoalList = new List<StoryGoals>();
-        StartStorySection("New Beginnings 1");
-        //StartStorySection("The First Healing 1");
+        
+        
     }
 
     void Update() {
+        if (!startedStory) {
+            //StartStorySection("The First Healing 1");
+            StartStorySection("New Beginnings 7");
+            startedStory = true;
+        }
         if (Input.GetKeyDown(KeyCode.Z)) {
             if (CurrentGameState == GameState.Picture) {
                 CurrentGameState = GameState.Movement;

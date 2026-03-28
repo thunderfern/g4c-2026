@@ -77,7 +77,7 @@ Forest1: "I can do that!"
 Player: "Thank you so much!"
 Player: "Hmm… I’ve taken a lot of photos already. I want to view the pictures I’ve taken."
 Player: "Let me head back to my truck. I can use ‘T’ to toggle on and off the path back."
-Goal: Interact Photobook "Open your photobook."
+Goal: Open Photobook "Open your photobook."
 Name: "The First Healing 3"
 
 Name: "The First Healing 3"

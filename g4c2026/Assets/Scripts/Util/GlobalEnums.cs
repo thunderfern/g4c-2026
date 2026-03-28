@@ -30,6 +30,7 @@ public enum GoalType {
     Inform,
     Give,
     Obtain,
+    Open,
     Picture,
     Turn,
     Wait
