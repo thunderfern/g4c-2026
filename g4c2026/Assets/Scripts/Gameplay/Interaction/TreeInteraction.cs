@@ -14,9 +14,16 @@ public class TreeInteraction : Interaction {
         switch (treeInteractionType) {
             case TreeInteractionType.Grow:
                 treeMain.TreeState = TreeState.Growing;
+                Selectable = false;
                 break;
             default:
                 break;
         }
+    }
+
+    public void RegrowTree() {
+        treeInteractionType = TreeInteractionType.Grow;
+        Selectable = true;
+        SelectableText = "Replant this tree.";
     }
 }

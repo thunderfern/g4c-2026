@@ -13,6 +13,6 @@ public class DeforestationSub : ThreatAreaSubMain {
     }
 
     public override void SetupHealing() {
-        treeInteraction.treeInteractionType = TreeInteractionType.Grow;
+        treeInteraction.RegrowTree();
     }
 }

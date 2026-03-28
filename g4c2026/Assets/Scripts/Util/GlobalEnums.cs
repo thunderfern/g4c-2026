@@ -138,4 +138,5 @@ public enum ObjectType {
     GROUNDBARE,
     GROUNDSIDE,
     DEFORESTATION1,
+    
 }

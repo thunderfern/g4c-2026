@@ -41,6 +41,7 @@ public class CharacterInteraction : Interaction {
                             character.ToString(), giveItem.ToString()
                         }
                     });
+                    Selectable = false;
                 }
                 else ShowDialogue();
                 break;
@@ -48,6 +49,7 @@ public class CharacterInteraction : Interaction {
                 if (PlayerData.PlayerInventory == Item.None) {
                     PlayerData.PlayerInventory = getItem;
                     // update goal
+                    Selectable = false;
                 }
                 break;
             case CharacterInteractionType.Inform:
@@ -62,6 +64,7 @@ public class CharacterInteraction : Interaction {
                             character.ToString()
                         }
                     });
+                    Selectable = false;
                 }
                 else ShowDialogue();
                 break;

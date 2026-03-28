@@ -296,6 +296,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
+--- !u!114 &1254744643 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8253778430958016203, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
+  m_PrefabInstance: {fileID: 1798011554}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36481e0736ea0064fb0054a7a20682c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionRigidbody
 --- !u!1001 &1425253606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -445,6 +456,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5331810904411666254, guid: cb772c851b44ea74e8490bd8e91e41f6, type: 3}
+      propertyPath: interactionRigidbody
+      value: 
+      objectReference: {fileID: 1254744643}
     - target: {fileID: 6020219835850232546, guid: cb772c851b44ea74e8490bd8e91e41f6, type: 3}
       propertyPath: m_Name
       value: Photobook Background
@@ -983,5 +998,5 @@ SceneRoots:
   - {fileID: 1640951692}
   - {fileID: 1425253606}
   - {fileID: 1042667521}
-  - {fileID: 1455579885}
   - {fileID: 1798011554}
+  - {fileID: 1455579885}
