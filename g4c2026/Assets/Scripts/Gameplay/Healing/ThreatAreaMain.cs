@@ -6,7 +6,6 @@ public class ThreatAreaMain : MonoBehaviour {
     public List<ThreatAreaOccupantsMain> threatAreaOccupants;
     public ThreatSection ThreatSection;
     public ThreatSubSection ThreatSectionAfter;
-    public string ThreatSectionAfterText;
 
     public bool healed = false;
 
@@ -27,7 +26,6 @@ public class ThreatAreaMain : MonoBehaviour {
                 }
                 healed = true;
                 GetComponent<PhotoCandidate>().ThreatSubSection = ThreatSectionAfter;
-                GetComponent<PhotoCandidate>().PhotoTitle = ThreatSectionAfterText;
                 GameManager.I().PerformedAction(new Goal {
                     GoalType = GoalType.Heal, 
                     Arguments = new List<string>() {

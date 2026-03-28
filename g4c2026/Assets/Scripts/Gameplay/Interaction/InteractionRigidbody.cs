@@ -11,7 +11,7 @@ public class InteractionRigidbody : MonoBehaviour {
     }
     
     void Update() {
-        if (currentInteraction && Input.GetKeyDown(KeyCode.F)) {
+        if (currentInteraction && Input.GetKeyDown(KeyCode.F) && GameManager.I().CurrentGameState == GameState.Movement) {
             currentInteraction.Selected();
         }
     }

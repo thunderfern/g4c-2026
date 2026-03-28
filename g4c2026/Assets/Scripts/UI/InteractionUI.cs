@@ -9,8 +9,7 @@ public class InteractionUI : MonoBehaviour {
     public GameObject InteractionObject;
 
     void Update() {
-
-        if (interactionRigidbody.currentInteraction) {
+        if (interactionRigidbody.currentInteraction && GameManager.I().CurrentGameState == GameState.Movement) {
             InteractionText.GetComponent<TMP_Text>().text = interactionRigidbody.currentInteraction.SelectableText;
             InteractionObject.SetActive(true);
         }

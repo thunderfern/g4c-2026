@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3970600302814943156}
   - component: {fileID: 7877498409861507933}
   - component: {fileID: 4773302707775125505}
+  - component: {fileID: 484223541806664158}
   - component: {fileID: 3498448278237793379}
   - component: {fileID: 6526163145755632942}
-  - component: {fileID: 484223541806664158}
   - component: {fileID: 4554632108736947416}
   - component: {fileID: 4599257840980638974}
   m_Layer: 0
@@ -53,8 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   CurrentGameState: 0
   modeText: {fileID: 0}
-  PlayerCam: {fileID: 0}
-  PhotoCam: {fileID: 0}
 --- !u!114 &7877498409861507933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,12 +79,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2cad4a318287c64fb4d69e0327ff0c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhotoManager
-  camera: {fileID: 0}
+  PhotoCamera: {fileID: 0}
   PlayerCamera: {fileID: 0}
   moveSensitivity: 2
   rotateSensitivity: 1
   zoomSensitivity: 0.5
   aimingText: {fileID: 0}
+--- !u!114 &484223541806664158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5124337766426879689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705d6a3605f7f664dbe0b8bdeb599e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Photobook
+  width: 2550
+  height: 3300
+  PhotoCaptions:
+  - ThreatSubSection: 0
+    PhotoTitle: Forest1A
+  - ThreatSubSection: 2
+    PhotoTitle: Sad bird habitat destroyed
+  - ThreatSubSection: 3
+    PhotoTitle: Sad bird habitat destroyed
+  - ThreatSubSection: 4
+    PhotoTitle: Sad bird habitat destroyed
+  BackButton: {fileID: 0}
+  ForwardButton: {fileID: 0}
+  ExitButton: {fileID: 0}
+  PhotobookObject: {fileID: 0}
+  LeftPage: {fileID: 0}
+  RightPage: {fileID: 0}
+  UndiscoveredImageSprite: {fileID: 52169203, guid: bbac67a2b9ba19b489a55916c4b7b8d1, type: 3}
 --- !u!114 &3498448278237793379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,28 +159,6 @@ MonoBehaviour:
   CurrentGoalList: []
   GoalListObject: {fileID: 0}
   GoalListEntry: {fileID: 0}
---- !u!114 &484223541806664158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5124337766426879689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 705d6a3605f7f664dbe0b8bdeb599e48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Photobook
-  width: 2550
-  height: 3300
-  BackButton: {fileID: 0}
-  ForwardButton: {fileID: 0}
-  ExitButton: {fileID: 0}
-  PhotobookObject: {fileID: 0}
-  LeftPage: {fileID: 0}
-  RightPage: {fileID: 0}
-  UndiscoveredImageSprite: {fileID: 52169203, guid: bbac67a2b9ba19b489a55916c4b7b8d1, type: 3}
-  UndiscoveredImageTexture: {fileID: 2800000, guid: bbac67a2b9ba19b489a55916c4b7b8d1, type: 3}
 --- !u!114 &4554632108736947416
 MonoBehaviour:
   m_ObjectHideFlags: 0

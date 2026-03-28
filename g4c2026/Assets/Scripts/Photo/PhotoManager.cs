@@ -24,7 +24,7 @@ public class PhotoManager : MonoBehaviour {
 
     private int resWidth = 4000; 
     private int resHeight = 4000;
-    public Camera camera;
+    public Camera PhotoCamera;
     public Camera PlayerCamera;
 
     public float moveSensitivity = 1.0f;
@@ -51,7 +51,7 @@ public class PhotoManager : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space)) {
             TakePhoto();
-            // TODO: RESET TO GAME MODE
+            LeavePhotoMode();
             GameManager.I().PerformedAction(new Goal {
             GoalType = GoalType.Picture, 
             Arguments = new List<string>() {
@@ -61,10 +61,20 @@ public class PhotoManager : MonoBehaviour {
         }
     }
 
-    public void ResetDelta() {
+    public void EnterPhotoMode() {
+        GameManager.I().CurrentGameState = GameState.Picture;
+        PhotoCamera.transform.position = PlayerCamera.transform.position;
+        PhotoCamera.transform.rotation = PlayerCamera.transform.rotation;
         CameraDelta = new();
+        PhotoCamera.enabled = true;
+        PlayerCamera.enabled = false;
     }
 
+    public void LeavePhotoMode() {
+        PhotoCamera.enabled = false;
+        PlayerCamera.enabled = true;
+        GameManager.I().CurrentGameState = GameState.Movement;
+    }
 
     // Taking Photos
     void MoveCamera() {
@@ -76,7 +86,7 @@ public class PhotoManager : MonoBehaviour {
         // zooming
         CameraDelta += new Vector3(0, 0, Input.mouseScrollDelta.y) * zoomSensitivity;
         CameraDelta = new Vector3(Math.Min(Math.Max(CameraDelta.x, -3), 3), Math.Min(Math.Max(CameraDelta.y, -3), 3), Math.Min(Math.Max(CameraDelta.z, -3), 3));
-        camera.transform.position = CameraOrigin.transform.position + CameraDelta.z * CameraOrigin.forward.normalized + CameraDelta.y * CameraOrigin.up.normalized + CameraDelta.x * CameraOrigin.right.normalized;
+        PhotoCamera.transform.position = CameraOrigin.transform.position + CameraDelta.z * CameraOrigin.forward.normalized + CameraDelta.y * CameraOrigin.up.normalized + CameraDelta.x * CameraOrigin.right.normalized;
     }
 
     void SenseObjects() {
@@ -85,32 +95,32 @@ public class PhotoManager : MonoBehaviour {
         float distance = -1.0f;
         // prioritize the ones that are closer to the player
         for (int i = 0; i < photoCandidates.Length; i++) {
-            float viewpointX = camera.WorldToViewportPoint(photoCandidates[i].transform.position).x;
-            float viewpointY = camera.WorldToViewportPoint(photoCandidates[i].transform.position).y;
-            float viewpointZ = camera.WorldToViewportPoint(photoCandidates[i].transform.position).z;
+            float viewpointX = PhotoCamera.WorldToViewportPoint(photoCandidates[i].transform.position).x;
+            float viewpointY = PhotoCamera.WorldToViewportPoint(photoCandidates[i].transform.position).y;
+            float viewpointZ = PhotoCamera.WorldToViewportPoint(photoCandidates[i].transform.position).z;
             if (viewpointX > 0 && viewpointX < 1 && viewpointY > 0 && viewpointY < 1 && viewpointZ > 0.5) {
-                if (distance == -1 || (photoCandidates[i].transform.position - camera.transform.position).magnitude < distance) {
+                if (distance == -1 || (photoCandidates[i].transform.position - PhotoCamera.transform.position).magnitude < distance) {
                     photoCandidate = photoCandidates[i];
-                    distance = (photoCandidates[i].transform.position - camera.transform.position).magnitude;
+                    distance = (photoCandidates[i].transform.position - PhotoCamera.transform.position).magnitude;
                 }
             }
         }
         if (!photoCandidate) aimingText.GetComponent<TMP_Text>().text = "None";
         else {
-            aimingText.GetComponent<TMP_Text>().text = photoCandidate.PhotoTitle;
+            aimingText.GetComponent<TMP_Text>().text = Photobook.I().GetPhotoCaption(photoCandidate.ThreatSubSection);
         }
     }
 
     void TakePhoto() {
         RenderTexture rt = new RenderTexture(resWidth, resHeight, 24);
-        camera.targetTexture = rt;
+        PhotoCamera.targetTexture = rt;
         Texture2D screenShot = new Texture2D(resWidth, resHeight, TextureFormat.RGB24, false, false);
-        camera.Render();
+        PhotoCamera.Render();
         RenderTexture.active = rt;
         screenShot.ReadPixels(new Rect(0, 0, resWidth, resHeight), 0, 0);
         screenShot.Apply();
         Photobook.I().ImageCache[photoCandidate.ThreatSubSection] = screenShot;
-        camera.targetTexture = null;
+        PhotoCamera.targetTexture = null;
         RenderTexture.active = null; // JC: added to avoid errors
         Destroy(rt);
         byte[] bytes = screenShot.EncodeToPNG();

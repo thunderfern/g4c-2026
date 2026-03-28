@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections.Generic;
 
 public class PlayerAction : MonoBehaviour {
@@ -23,6 +24,7 @@ public class PlayerAction : MonoBehaviour {
     public float RabbitGravity;
     
     private Rigidbody rb;
+    private Animator animator;
     public bool isGrounded;
     private PlayerData playerData;
 
@@ -36,9 +38,12 @@ public class PlayerAction : MonoBehaviour {
         isGrounded = false;
         for (int i = 0; i < AnimalGameObjects.Count; i++) AnimalGameObjects[i].SetActive(false);
         AnimalGameObjects[0].SetActive(true);
+        AnimalGameObject = AnimalGameObjects[0];
+        animator = AnimalGameObject.GetComponent<Animator>();
     }
 
     void Update() {
+        UpdatePlayerAnimation();
         if (GameManager.I().CurrentGameState != GameState.Movement || Input.GetKey(KeyCode.LeftControl)) {
             rb.linearVelocity = Vector3.zero;
             return;
@@ -66,21 +71,30 @@ public class PlayerAction : MonoBehaviour {
         }
     }
 
+    void UpdatePlayerAnimation() {
+        if (!animator) return;
+        if (Math.Abs(rb.linearVelocity.x) > 0.1f || Math.Abs(rb.linearVelocity.z) > 0.1f) animator.SetBool("isRunning", true);
+        else animator.SetBool("isRunning", false);
+    }
+
     void TransformAnimal() {
         if (Input.GetKeyDown(KeyCode.Alpha1) && isGrounded) {
             playerData.playerAnimal = PlayerAnimal.Human;
             for (int i = 0; i < AnimalGameObjects.Count; i++) AnimalGameObjects[i].SetActive(false);
             AnimalGameObjects[0].SetActive(true);
+            AnimalGameObject = AnimalGameObjects[0];
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && isGrounded) {
             playerData.playerAnimal = PlayerAnimal.Fox;
             for (int i = 0; i < AnimalGameObjects.Count; i++) AnimalGameObjects[i].SetActive(false);
             AnimalGameObjects[1].SetActive(true);
+            AnimalGameObject = AnimalGameObjects[1];
         }
         if (Input.GetKeyDown(KeyCode.Alpha3) && isGrounded) {
             playerData.playerAnimal = PlayerAnimal.Rabbit;
             for (int i = 0; i < AnimalGameObjects.Count; i++) AnimalGameObjects[i].SetActive(false);
             AnimalGameObjects[2].SetActive(true);
+            AnimalGameObject = AnimalGameObjects[2];
             GameManager.I().PerformedAction(new Goal {
                 GoalType = GoalType.Turn, 
                 Arguments = new List<string>() {
@@ -88,6 +102,7 @@ public class PlayerAction : MonoBehaviour {
                 }
             });
         }
+        animator = AnimalGameObject.GetComponent<Animator>();
     }
 
     void ApplyAction(float speed, float jump, float gravity) {

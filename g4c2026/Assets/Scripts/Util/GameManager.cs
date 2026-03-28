@@ -24,9 +24,6 @@ public class GameManager : MonoBehaviour {
 
     public TMP_Text modeText;
 
-    public Camera PlayerCam;
-    public Camera PhotoCam;
-
     private bool startedStory = false;
 
     void Start() {
@@ -43,19 +40,10 @@ public class GameManager : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Z)) {
             if (CurrentGameState == GameState.Picture) {
-                CurrentGameState = GameState.Movement;
-                modeText.GetComponent<TMP_Text>().text = "Movement";
-                PhotoCam.enabled = false;
-                PlayerCam.enabled = true;
+                PhotoManager.I().LeavePhotoMode();
             }
             else if (CurrentGameState == GameState.Movement) {
-                CurrentGameState = GameState.Picture;
-                modeText.GetComponent<TMP_Text>().text = "Picture";
-                PhotoCam.transform.position = PlayerCam.transform.position;
-                PhotoCam.transform.rotation = PlayerCam.transform.rotation;
-                PhotoManager.I().ResetDelta();
-                PhotoCam.enabled = true;
-                PlayerCam.enabled = false;
+                PhotoManager.I().EnterPhotoMode();
             }
         }
 

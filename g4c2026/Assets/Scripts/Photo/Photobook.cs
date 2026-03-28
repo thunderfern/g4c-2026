@@ -38,8 +38,17 @@ public class Photobook : MonoBehaviour {
     // Images Store
     public Dictionary<ThreatSubSection, Texture2D> ImageCache = new Dictionary<ThreatSubSection, Texture2D>();
 
-    // UI
+    // for the inspector
+    [Serializable]
+    public struct PhotoTitleStruct {
+        public ThreatSubSection ThreatSubSection;
+        public string PhotoTitle;
+    }
 
+    public List<PhotoTitleStruct> PhotoCaptions;
+
+    // UI
+    [Header("UI")]
     public Button BackButton;
     public Button ForwardButton;
     public Button ExitButton;
@@ -79,6 +88,17 @@ public class Photobook : MonoBehaviour {
         }
     }
 
+    public void GetCurrentPage() {
+        List<Sprite> leftSprites = new List<Sprite>();
+        for (int i = 0; i < PhotobookPages[currentPage].Count; i++) {
+            leftSprites.Add(GetSpriteFromThreatSubSection(PhotobookPages[currentPage * 2][i]));
+        }
+        LeftPage.GetComponent<Page>().UpdatePage(leftSprites, true, currentPage == 0);
+        // two transition
+        // six transition
+        // six blank
+    }
+
     private Sprite GetSpriteFromThreatSubSection(ThreatSubSection threatSubSection) {
         /*byte[] bytes = File.ReadAllBytes("Screenshots/Forest1/Forest1HabitatA/Screenshot29.png");
         Texture2D texture = new Texture2D(4000, 4000, TextureFormat.RGB24, false) {
@@ -92,21 +112,16 @@ public class Photobook : MonoBehaviour {
         return GetSpriteFromTexture(tmp);
     }
 
-    public void GetCurrentPage() {
-        List<Sprite> leftSprites = new List<Sprite>();
-        for (int i = 0; i < PhotobookPages[currentPage].Count; i++) {
-            leftSprites.Add(GetSpriteFromThreatSubSection(PhotobookPages[currentPage * 2][i]));
-        }
-        LeftPage.GetComponent<Page>().UpdatePage(leftSprites, true, currentPage == 0);
-        // two transition
-        // six transition
-        // six blank
-    }
-
-    Sprite GetSpriteFromTexture(Texture2D texture) {
+    public Sprite GetSpriteFromTexture(Texture2D texture) {
         Sprite sprite = Sprite.Create(texture, new Rect(0,0,texture.width, texture.height), new Vector2(0.5f,0.5f), 1.0f);
         return sprite;
         //myObject.GetComponent<UnityEngine.UI.Image>().sprite = sprite;
     }
 
+    public string GetPhotoCaption(ThreatSubSection threatSubSection) {
+        for (int i = 0; i < PhotoCaptions.Count; i++) {
+            if (PhotoCaptions[i].ThreatSubSection == threatSubSection) return PhotoCaptions[i].PhotoTitle;
+        }
+        return "???";
+    }
 }

@@ -5,7 +5,6 @@ public class PhotoCandidate : MonoBehaviour {
     
     public ThreatSection ThreatSection;
     public ThreatSubSection ThreatSubSection;
-    public string PhotoTitle;
 
     void Start() {
         

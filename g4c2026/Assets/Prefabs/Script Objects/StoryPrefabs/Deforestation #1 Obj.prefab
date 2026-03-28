@@ -440,8 +440,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ThreatAreaOccupantsMain
   BeforeThreatSubSection: 2
   AfterThreatSubSection: 0
-  BeforePictureDescription: 
-  AfterPictureDescription: 
+  BeforePictureDescription: Forest1HabitatA
+  AfterPictureDescription: Forest1HabitatAH
 --- !u!114 &787476129299903821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,8 +691,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ThreatAreaOccupantsMain
   BeforeThreatSubSection: 3
   AfterThreatSubSection: 0
-  BeforePictureDescription: 
-  AfterPictureDescription: 
+  BeforePictureDescription: Forest1HabitatB
+  AfterPictureDescription: Forest1HabitatBH
 --- !u!114 &6009213847813605002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,8 +790,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ThreatAreaOccupantsMain
   BeforeThreatSubSection: 4
   AfterThreatSubSection: 0
-  BeforePictureDescription: 
-  AfterPictureDescription: 
+  BeforePictureDescription: Forest1HabitatC
+  AfterPictureDescription: Forest1HabitatCH
 --- !u!114 &4706353018963043255
 MonoBehaviour:
   m_ObjectHideFlags: 0
