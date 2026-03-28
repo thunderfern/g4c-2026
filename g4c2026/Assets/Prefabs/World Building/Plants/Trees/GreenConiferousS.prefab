@@ -460,6 +460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8790915400303313274}
   - component: {fileID: 1064209452115933368}
+  - component: {fileID: 5404106844979238351}
   m_Layer: 0
   m_Name: GreenConiferousS
   m_TagString: Untagged
@@ -505,6 +506,27 @@ MonoBehaviour:
   SaveScale: 1
   ObjectType: 0
   SpawnInRange: 1
+--- !u!65 &5404106844979238351
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8265312951224196032}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0801189, y: 3.4368756, z: 0.67952174}
+  m_Center: {x: -0.13019422, y: 1.6343658, z: -0.030044788}
 --- !u!1 &9211354659441540988
 GameObject:
   m_ObjectHideFlags: 0

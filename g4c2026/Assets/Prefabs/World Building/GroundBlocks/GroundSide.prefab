@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 07e03b41588144f9a916ad7cf9319de2, type: 2}
     - target: {fileID: 919132149155446097, guid: fcc72870a002a4918a9eae4bbab8f178, type: 3}
       propertyPath: m_Name
-      value: SideCube
+      value: GroundSide
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fcc72870a002a4918a9eae4bbab8f178, type: 3}
       propertyPath: m_Layer
@@ -83,7 +83,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774456783326247327}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 81c3a24e3ccfce94b8402ebda23bbe33, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

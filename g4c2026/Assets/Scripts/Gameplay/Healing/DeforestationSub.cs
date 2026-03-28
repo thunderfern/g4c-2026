@@ -4,7 +4,7 @@ public class DeforestationSub : ThreatAreaSubMain {
 
     TreeInteraction treeInteraction;
 
-    void Start() {
+    void Awake() {
         treeInteraction = GetComponent<TreeInteraction>();
     }
 

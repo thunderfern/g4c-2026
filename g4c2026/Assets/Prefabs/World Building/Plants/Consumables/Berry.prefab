@@ -160,5 +160,30 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 7036213049465896255, guid: fb1fda1a6430e8a4cb689e7901184935, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fb1fda1a6430e8a4cb689e7901184935, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9097634218316657256}
   m_SourcePrefab: {fileID: 100100000, guid: fb1fda1a6430e8a4cb689e7901184935, type: 3}
+--- !u!1 &52705216172513010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fb1fda1a6430e8a4cb689e7901184935, type: 3}
+  m_PrefabInstance: {fileID: 899126511998135203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9097634218316657256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52705216172513010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1019486745d325c4d83e124e0be54442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveObject
+  SavePosition: 1
+  SaveRotation: 1
+  SaveScale: 1
+  ObjectType: 14
+  SpawnInRange: 1

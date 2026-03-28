@@ -15,10 +15,12 @@ public class PlayerAction : MonoBehaviour {
     public float FishSpeed;
     
     private Rigidbody rb;
-    private bool isGrounded;
+    public bool isGrounded;
     private PlayerData playerData;
 
     private float oldGravity;
+
+    private float lastY;
     
     void Start() {
         rb = GetComponent<Rigidbody>();
@@ -85,7 +87,7 @@ public class PlayerAction : MonoBehaviour {
         BaseAction.ApplyMovement(AnimalGameObject.transform, rb, transform.position - Camera.transform.position, movementDirection, FoxSpeed);
 
         // checking if isGrounded
-        if (Physics.Raycast(Feet.transform.position, -Vector3.up, out RaycastHit hit)) {
+        if (Physics.Raycast(Feet.transform.position, -Vector3.up, out RaycastHit hit, 1f, LayerMask.GetMask("Ground"))) {
             // might need to make actual feet
             if (hit.distance <= 0.1f) isGrounded = true;
             else isGrounded = false;
@@ -99,7 +101,10 @@ public class PlayerAction : MonoBehaviour {
                 oldGravity = FoxJump;
             }
         }
-        if (!isGrounded) oldGravity = BaseAction.ApplyGravity(rb, oldGravity, FoxGravity);
+        // accounts for if the legs are hanging off
+        if (!isGrounded) oldGravity = lastY == transform.position.y && oldGravity < -0.1f ? -0.1f : BaseAction.ApplyGravity(rb, oldGravity, FoxGravity);
+
+        lastY = transform.position.y;
     }
 
     void ApplyFishAction() {

@@ -362,7 +362,11 @@ PrefabInstance:
     - target: {fileID: 5955045112698634390, guid: b999a4327a13b804a89347a864cb86fa, type: 3}
       propertyPath: WorldFile
       value: 
-      objectReference: {fileID: 4900000, guid: f859af655ef5e7d4993d0cba7e4656d4, type: 3}
+      objectReference: {fileID: 4900000, guid: fdc53e352a43e8d43bc2ebe5db602045, type: 3}
+    - target: {fileID: 5955045112698634390, guid: b999a4327a13b804a89347a864cb86fa, type: 3}
+      propertyPath: renderDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -758,6 +762,22 @@ PrefabInstance:
     - target: {fileID: 3505302608553039529, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482122395905278295, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.371
+      objectReference: {fileID: 0}
+    - target: {fileID: 6482122395905278295, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.573
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
+      propertyPath: FoxJump
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
+      propertyPath: FoxGravity
+      value: -15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
