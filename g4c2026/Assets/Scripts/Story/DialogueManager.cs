@@ -63,7 +63,10 @@ public class DialogueManager : MonoBehaviour {
     }
 
     void Update() {
-        if (GameManager.I().CurrentGameState != GameState.Dialogue) return;
+        if (GameManager.I().CurrentGameState != GameState.Dialogue) {
+            dialogueObject.SetActive(false);
+            return;
+        }
         if (dialogueStream.Count > 0) {
             if (dialogueText.GetComponent<TMP_Text>().maxVisibleCharacters < dialogueStream[0].dialogue.Length) {
                 curTextTimer += Time.deltaTime;

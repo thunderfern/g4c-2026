@@ -51,8 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b845e69ca007aef4f88b0e15daefb4ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  CurrentGameState: 0
+  CurrentGameState: 5
   modeText: {fileID: 0}
+  PlayerCamera: {fileID: 0}
+  MainMenuCamera: {fileID: 0}
 --- !u!114 &7877498409861507933
 MonoBehaviour:
   m_ObjectHideFlags: 0

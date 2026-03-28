@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
         }
         return _instance;
     }
-    public GameState CurrentGameState = GameState.Movement;
+    public GameState CurrentGameState = GameState.MainMenu;
     
     public List<StoryGoals> GoalList;
 
@@ -26,18 +26,29 @@ public class GameManager : MonoBehaviour {
 
     private bool startedStory = false;
 
+    public Camera PlayerCamera;
+    public Camera MainMenuCamera;
+
     void Start() {
         GoalList = new List<StoryGoals>();
-        
-        
+        PlayerCamera.enabled = false;
+        MainMenuCamera.enabled = true;
     }
 
     void Update() {
-        if (!startedStory) {
-            //StartStorySection("The First Healing 1");
-            StartStorySection("New Beginnings 7");
-            startedStory = true;
+        if (CurrentGameState == GameState.MainMenu) {
+            if (Input.anyKeyDown) {
+                PlayerCamera.enabled = true;
+                MainMenuCamera.enabled = false;
+                CurrentGameState = GameState.Movement;
+                StartStorySection("New Beginnings 1");
+            }
         }
+        // if (!startedStory) {
+        //     //StartStorySection("The First Healing 1");
+        //     StartStorySection("New Beginnings 7");
+        //     startedStory = true;
+        // }
         if (Input.GetKeyDown(KeyCode.Z)) {
             if (CurrentGameState == GameState.Picture) {
                 PhotoManager.I().LeavePhotoMode();
