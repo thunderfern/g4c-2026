@@ -5,14 +5,22 @@ public class PlayerAction : MonoBehaviour {
 
     public GameObject Camera;
     public GameObject AnimalGameObject;
+    public List<GameObject> AnimalGameObjects;
     public GameObject Feet;
 
+    [Header("Movement Parameters")]
+
+    public float HumanSpeed;
+    public float HumanJump;
+    public float HumanGravity;
+
     public float FoxSpeed;
-    public float FoxSprint;
     public float FoxJump;
     public float FoxGravity;
 
-    public float FishSpeed;
+    public float RabbitSpeed;
+    public float RabbitJump;
+    public float RabbitGravity;
     
     private Rigidbody rb;
     public bool isGrounded;
@@ -26,6 +34,8 @@ public class PlayerAction : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         playerData = GetComponent<PlayerData>();
         isGrounded = false;
+        for (int i = 0; i < AnimalGameObjects.Count; i++) AnimalGameObjects[i].SetActive(false);
+        AnimalGameObjects[0].SetActive(true);
     }
 
     void Update() {
@@ -41,33 +51,46 @@ public class PlayerAction : MonoBehaviour {
 
     void FixedUpdate() {
         if (GameManager.I().CurrentGameState != GameState.Movement) return;
-        ApplyAction();
+        switch (playerData.playerAnimal) {
+            case PlayerAnimal.Human:
+                ApplyAction(HumanSpeed, HumanJump, HumanGravity);
+                break;
+            case PlayerAnimal.Fox:
+                ApplyAction(FoxSpeed, FoxJump, FoxGravity);
+                break;
+            case PlayerAnimal.Rabbit:
+                ApplyAction(RabbitSpeed, RabbitJump, RabbitGravity);
+                break;
+            default:
+                break;
+        }
     }
 
     void TransformAnimal() {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) {
-            playerData.playerAnimal = PlayerAnimal.Fox;
+        if (Input.GetKeyDown(KeyCode.Alpha1) && isGrounded) {
+            playerData.playerAnimal = PlayerAnimal.Human;
+            for (int i = 0; i < AnimalGameObjects.Count; i++) AnimalGameObjects[i].SetActive(false);
+            AnimalGameObjects[0].SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2)) {
+        if (Input.GetKeyDown(KeyCode.Alpha2) && isGrounded) {
+            playerData.playerAnimal = PlayerAnimal.Fox;
+            for (int i = 0; i < AnimalGameObjects.Count; i++) AnimalGameObjects[i].SetActive(false);
+            AnimalGameObjects[1].SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3) && isGrounded) {
             playerData.playerAnimal = PlayerAnimal.Rabbit;
+            for (int i = 0; i < AnimalGameObjects.Count; i++) AnimalGameObjects[i].SetActive(false);
+            AnimalGameObjects[2].SetActive(true);
             GameManager.I().PerformedAction(new Goal {
                 GoalType = GoalType.Turn, 
                 Arguments = new List<string>() {
                     "Rabbit"
                 }
             });
-
         }
     }
 
-    void ApplyAction() {
-        if (playerData.playerAnimal == PlayerAnimal.Fox) ApplyFoxAction();
-        else if (playerData.playerAnimal == PlayerAnimal.Eagle) ApplyEagleAction();
-        else ApplyFishAction();
-    }
-
-    void ApplyFoxAction() {
-
+    void ApplyAction(float speed, float jump, float gravity) {
         // Applying movement
 
         Vector3 movementDirection = new Vector3();
@@ -84,72 +107,26 @@ public class PlayerAction : MonoBehaviour {
         if (Input.GetKey(KeyCode.A)) {
             movementDirection += new Vector3(-1, 0, 0);
         }
-        BaseAction.ApplyMovement(AnimalGameObject.transform, rb, transform.position - Camera.transform.position, movementDirection, FoxSpeed);
+        BaseAction.ApplyMovement(AnimalGameObject.transform, rb, transform.position - Camera.transform.position, movementDirection, speed);
 
         // checking if isGrounded
         if (Physics.Raycast(Feet.transform.position, -Vector3.up, out RaycastHit hit, 1f, LayerMask.GetMask("Ground"))) {
-            // might need to make actual feet
-            if (hit.distance <= 0.1f) isGrounded = true;
+            // checking if near ground and is not already going up
+            if (hit.distance <= 0.1f && oldGravity <= 0.1f) isGrounded = true;
             else isGrounded = false;
         }
         else isGrounded = false;
 
         // Applying jump
         if (Input.GetKey(KeyCode.Space)) {
-            if (isGrounded && oldGravity < 0) {
+            if (isGrounded) {
                 isGrounded = false;
-                oldGravity = FoxJump;
+                oldGravity = jump;
             }
         }
         // accounts for if the legs are hanging off
-        if (!isGrounded) oldGravity = lastY == transform.position.y && oldGravity < -0.1f ? -0.1f : BaseAction.ApplyGravity(rb, oldGravity, FoxGravity);
+        if (!isGrounded) oldGravity = lastY == transform.position.y && oldGravity < -0.1f ? -0.1f : BaseAction.ApplyGravity(rb, oldGravity, gravity);
 
         lastY = transform.position.y;
-    }
-
-    void ApplyFishAction() {
-        float deltaTime = Time.deltaTime;
-
-        float yAngleRadians = transform.rotation.eulerAngles.y * Mathf.PI / 180;
-        float zAngleRadians = transform.rotation.eulerAngles.z * Mathf.PI / 180;
-        // this is 2d found out
-        Vector3 forward = new Vector3(Mathf.Cos(yAngleRadians), 0f, -Mathf.Sin(Mathf.PI - yAngleRadians));
-        forward += new Vector3(0f, Mathf.Tan(zAngleRadians) * Vector3.Magnitude(forward), 0f);
-        forward = Vector3.Normalize(forward);
-        Vector3 left = new Vector3(-Mathf.Sin(Mathf.PI + yAngleRadians), 0f, Mathf.Cos(yAngleRadians));
-        if (Input.GetKey(KeyCode.W)) {
-            rb.linearVelocity += forward * deltaTime * FishSpeed;
-        }
-        if (Input.GetKey(KeyCode.S)) {
-            rb.linearVelocity += -forward * deltaTime * FishSpeed;
-        }
-        if (Input.GetKey(KeyCode.D)) {
-            rb.linearVelocity += -left * deltaTime * FishSpeed;
-        }
-        if (Input.GetKey(KeyCode.A)) {
-            rb.linearVelocity += left * deltaTime * FishSpeed;
-        }
-
-        // checking if isGrounded
-        if (Physics.Raycast(transform.position, -Vector3.up, out RaycastHit hit))
-        {
-            if (hit.distance <= 0.50001) isGrounded = true;
-            else isGrounded = false;
-        }
-        else isGrounded = false;
-    }
-
-
-    void ApplyEagleAction()
-    {
-        
-    }
-
-
-
-    void ApplyResistance() {
-        // Gravity
-
-        // Air Resistence
     }
 }

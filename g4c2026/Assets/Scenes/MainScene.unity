@@ -359,6 +359,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
+      propertyPath: FoxSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
+      propertyPath: HumanJump
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
+      propertyPath: HumanSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
+      propertyPath: RabbitJump
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
+      propertyPath: RabbitSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
+      propertyPath: HumanGravity
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
+      propertyPath: RabbitGravity
+      value: -12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -424,7 +452,7 @@ PrefabInstance:
     - target: {fileID: 5955045112698634390, guid: b999a4327a13b804a89347a864cb86fa, type: 3}
       propertyPath: WorldFile
       value: 
-      objectReference: {fileID: 4900000, guid: 8b12a4470635c91459186929c00844ce, type: 3}
+      objectReference: {fileID: 4900000, guid: 8f94905090169e64ca523bf658aa1c51, type: 3}
     - target: {fileID: 5955045112698634390, guid: b999a4327a13b804a89347a864cb86fa, type: 3}
       propertyPath: renderDistance
       value: 5
