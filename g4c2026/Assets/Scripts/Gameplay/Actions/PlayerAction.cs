@@ -27,7 +27,10 @@ public class PlayerAction : MonoBehaviour {
     }
 
     void Update() {
-        if (GameManager.I().CurrentGameState != GameState.Movement || Input.GetKey(KeyCode.LeftControl)) return;
+        if (GameManager.I().CurrentGameState != GameState.Movement || Input.GetKey(KeyCode.LeftControl)) {
+            rb.linearVelocity = Vector3.zero;
+            return;
+        }
         BaseAction.ApplyRotationHorizontal(Camera.transform, Input.mousePositionDelta, transform.position);
         BaseAction.ApplyRotationVertical(Camera.transform, Input.mousePositionDelta, transform.position);
         BaseAction.ApplyCameraZoom(Camera.transform, Input.mouseScrollDelta, transform.position);
