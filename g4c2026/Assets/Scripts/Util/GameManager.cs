@@ -29,8 +29,8 @@ public class GameManager : MonoBehaviour {
 
     void Start() {
         GoalList = new List<StoryGoals>();
-        //StartStorySection("New Beginnings 1");
-        StartStorySection("The First Healing 1");
+        StartStorySection("New Beginnings 1");
+        //StartStorySection("The First Healing 1");
     }
 
     void Update() {
