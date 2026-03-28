@@ -51,6 +51,13 @@ public class PhotoManager : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space)) {
             TakePhoto();
+            // TODO: RESET TO GAME MODE
+            GameManager.I().PerformedAction(new Goal {
+            GoalType = GoalType.Picture, 
+            Arguments = new List<string>() {
+                photoCandidate.ThreatSubSection.ToString()
+            }
+        });
         }
     }
 
@@ -113,12 +120,7 @@ public class PhotoManager : MonoBehaviour {
 
         //Photobook.I().ImageCache[photoCandidate.ThreatSubSection] = screenShot;
 
-        GameManager.I().PerformedAction(new Goal {
-            GoalType = GoalType.Picture, 
-            Arguments = new List<string>() {
-                photoCandidate.ThreatSubSection.ToString()
-            }
-        });
+        
     }
 
     string GetScreenshotName() {
