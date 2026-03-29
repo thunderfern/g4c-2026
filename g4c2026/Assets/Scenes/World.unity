@@ -20235,6 +20235,7 @@ Transform:
   - {fileID: 873705093}
   - {fileID: 2107784850673118655}
   - {fileID: 1590998161}
+  - {fileID: 1513129480}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1201062968
@@ -33661,19 +33662,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 619b0683c27244b9b813340ba190c141, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.95167536
+      value: 0.97357893
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 619b0683c27244b9b813340ba190c141, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 619b0683c27244b9b813340ba190c141, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.30710602
+      value: -0.22835083
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 619b0683c27244b9b813340ba190c141, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 619b0683c27244b9b813340ba190c141, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -33681,7 +33682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 619b0683c27244b9b813340ba190c141, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -35.77
+      value: -26.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 619b0683c27244b9b813340ba190c141, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -37105,6 +37106,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1198215205}
     m_Modifications:
+    - target: {fileID: 4381105404966768076, guid: 5f4c380de5fb1864b97c8e177bf40b3d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.01
+      objectReference: {fileID: 0}
     - target: {fileID: 7428885066725267390, guid: 5f4c380de5fb1864b97c8e177bf40b3d, type: 3}
       propertyPath: m_Name
       value: NPCTest
@@ -37588,8 +37593,6 @@ SceneRoots:
   - {fileID: 1359149404}
   - {fileID: 1998801563}
   - {fileID: 1847090992}
-  - {fileID: 2013043673378440182}
-  - {fileID: 6428958450027850693}
   - {fileID: 1978294076}
   - {fileID: 46350596}
   - {fileID: 1467927588}
