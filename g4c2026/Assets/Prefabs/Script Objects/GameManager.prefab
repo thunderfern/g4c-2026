@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6526163145755632942}
   - component: {fileID: 4554632108736947416}
   - component: {fileID: 4599257840980638974}
+  - component: {fileID: 2762669795194415401}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -51,8 +52,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b845e69ca007aef4f88b0e15daefb4ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  CurrentGameState: 0
+  CurrentGameState: 5
   modeText: {fileID: 0}
+  PlayerCamera: {fileID: 0}
+  MainMenuCamera: {fileID: 0}
 --- !u!114 &7877498409861507933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,3 +191,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23201f2861237024ba35eee154762595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CursorManager
+--- !u!114 &2762669795194415401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5124337766426879689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f4da8508cee0a94998909b28901d054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnvironmentManager
+  SkyDome: {fileID: 0}
+  ElapsedTime: 0

@@ -63,11 +63,14 @@ public class DialogueManager : MonoBehaviour {
     }
 
     void Update() {
-        if (GameManager.I().CurrentGameState != GameState.Dialogue) return;
+        if (GameManager.I().CurrentGameState != GameState.Dialogue) {
+            dialogueObject.SetActive(false);
+            return;
+        }
         if (dialogueStream.Count > 0) {
-            if (dialogueText.GetComponent<TMP_Text>().maxVisibleCharacters < dialogueStream[0].dialogue.Length) {
+            if (dialogueText.maxVisibleCharacters < dialogueStream[0].dialogue.Length) {
                 curTextTimer += Time.deltaTime;
-                dialogueText.GetComponent<TMP_Text>().maxVisibleCharacters = (int)(curTextTimer * 20);
+                dialogueText.maxVisibleCharacters = (int)(curTextTimer * 20);
                 if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)) dialogueText.GetComponent<TMP_Text>().maxVisibleCharacters = dialogueStream[0].dialogue.Length;
             }
             else if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)) displayNext();
@@ -91,9 +94,9 @@ public class DialogueManager : MonoBehaviour {
         characterBackgroundObject.GetComponent<UnityEngine.UI.Image>().color = charDisplay.characterBackground;
 
         // text display
-        characterText.GetComponent<TMP_Text>().text = charDisplay.characterName;
-        dialogueText.GetComponent<TMP_Text>().text = dialogueStream[0].dialogue;
-        dialogueText.GetComponent<TMP_Text>().maxVisibleCharacters = 0;
+        characterText.text = charDisplay.characterName;
+        dialogueText.text = dialogueStream[0].dialogue;
+        dialogueText.maxVisibleCharacters = 0;
         curTextTimer = 0;
     }
 

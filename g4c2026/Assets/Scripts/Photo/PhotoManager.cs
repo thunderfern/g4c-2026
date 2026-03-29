@@ -22,8 +22,8 @@ public class PhotoManager : MonoBehaviour {
 
     // camera settings
 
-    private int resWidth = 4000; 
-    private int resHeight = 4000;
+    private int resWidth = 3300; 
+    private int resHeight = 1900;
     public Camera PhotoCamera;
     public Camera PlayerCamera;
 
