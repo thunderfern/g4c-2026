@@ -2,8 +2,18 @@ using System.Collections.Generic;
 
 // Audio
 
+public enum AudioSetting {
+    Music,
+    Environment,
+    SFX
+}
+
 public enum AudioType {
-    Null
+    BGM,
+    CameraClick,
+    Rain,
+    Walking,
+    Null,
 }
 
 public enum AudioPlayType {

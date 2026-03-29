@@ -433,6 +433,10 @@ PrefabInstance:
       propertyPath: PhotobookObject
       value: 
       objectReference: {fileID: 2002682538}
+    - target: {fileID: 1795788233418930370, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: b8d605320ee49774dafe3712f08d367b, type: 3}
     - target: {fileID: 2762669795194415401, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
       propertyPath: RainObj
       value: 
@@ -508,7 +512,7 @@ PrefabInstance:
     - target: {fileID: 3970600302814943156, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
       propertyPath: modeText
       value: 
-      objectReference: {fileID: 1421790512}
+      objectReference: {fileID: 0}
     - target: {fileID: 3970600302814943156, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
       propertyPath: PlayerCam
       value: 
@@ -560,8 +564,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5124337766426879689, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1042667523}
   m_SourcePrefab: {fileID: 100100000, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
+--- !u!1 &1042667522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5124337766426879689, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
+  m_PrefabInstance: {fileID: 1042667521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1042667523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042667522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b4cc8c340a0504f90b374d0d56f115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  AudioListInspector:
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: b8d605320ee49774dafe3712f08d367b, type: 3}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: e082c9ace7fc5314390c5af5785a844f, type: 3}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: dbf44459097d7ae44b5aa5b4307d6f8e, type: 3}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 019e513609f7a464aa8628204ccf706e, type: 3}
+  AudioSources: []
+  AudioSettingList: []
 --- !u!1 &1243523681 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5437563372643432907, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
@@ -722,18 +757,6 @@ PrefabInstance:
       value: Mc
       objectReference: {fileID: 0}
     - target: {fileID: 3505302608553039529, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3505302608553039529, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3505302608553039529, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3505302608553039529, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1
       objectReference: {fileID: 0}
@@ -773,42 +796,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3505302608553039529, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5517392352933520564, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
-      propertyPath: far clip plane
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
-      propertyPath: FoxSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
-      propertyPath: HumanJump
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
-      propertyPath: HumanSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
-      propertyPath: RabbitJump
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
-      propertyPath: RabbitSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
-      propertyPath: HumanGravity
-      value: -15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
-      propertyPath: RabbitGravity
-      value: -12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -827,17 +814,6 @@ GameObject:
 --- !u!114 &1421790511 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8326994921773803207, guid: cb772c851b44ea74e8490bd8e91e41f6, type: 3}
-  m_PrefabInstance: {fileID: 2002682528}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
---- !u!114 &1421790512 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7941133944163818667, guid: cb772c851b44ea74e8490bd8e91e41f6, type: 3}
   m_PrefabInstance: {fileID: 2002682528}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

@@ -48,8 +48,14 @@ public class EnvironmentManager : MonoBehaviour {
         LightObj.intensity = Mathf.Lerp(LightMin, LightMax, lightLerp);
 
         // setting rain
-        if (ElapsedTime % RainLength >= RainLength / 2) RainObj.SetActive(true);
-        else RainObj.SetActive(false);
+        if (ElapsedTime % RainLength >= RainLength / 2) {
+            AudioManager.I().PlaySound(AudioType.Rain, AudioSetting.Environment);
+            RainObj.SetActive(true);
+        }
+        else {
+            AudioManager.I().StopSound(AudioType.Rain);
+            RainObj.SetActive(false);
+        }
 
         RainObj.transform.position = PlayerData.PlayerPosition + new Vector3(0, 15.0f, 0);
 

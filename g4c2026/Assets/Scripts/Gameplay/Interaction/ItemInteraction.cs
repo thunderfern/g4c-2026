@@ -5,7 +5,8 @@ public class ItemInteraction : Interaction {
     public Item ItemType;
 
     void Update() {
-        
+        if (PlayerData.PlayerInventory != Item.None) Selectable = false;
+        else Selectable = true;
     }
     
     public override void EnterRange() {

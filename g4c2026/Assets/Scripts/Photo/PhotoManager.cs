@@ -50,6 +50,7 @@ public class PhotoManager : MonoBehaviour {
         SenseObjects();
 
         if (Input.GetKeyDown(KeyCode.Space)) {
+            AudioManager.I().PlaySound(AudioType.CameraClick, AudioSetting.SFX, AudioPlayType.Overlap);
             TakePhoto();
             LeavePhotoMode();
             GameManager.I().PerformedAction(new Goal {

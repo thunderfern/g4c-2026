@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemInteraction
   Selectable: 1
-  SelectableText: Pick up musroom
+  SelectableText: Pick up mushroom
   InteractionRange: {fileID: 7273808257626915746}
   ItemType: 3
 --- !u!65 &4548424129017910581

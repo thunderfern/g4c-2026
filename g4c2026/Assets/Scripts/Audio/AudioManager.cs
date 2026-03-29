@@ -13,7 +13,7 @@ public class AudioManager : MonoBehaviour {
         _instance = this;
     }
 
-    public static AudioManager instance() {
+    public static AudioManager I() {
         if (_instance == null) {
             AudioManager instance = new AudioManager();
             _instance = instance;
@@ -36,25 +36,43 @@ public class AudioManager : MonoBehaviour {
     public List<AudioSource> AudioSources;
 
     // player settings
-    public float BGVolume;
-    public float SFXVolume;
+    public List<float> AudioSettingList;
     
     void Start() {
-        audioList = new List<AudioClip>(AudioListInspector.Count);
+        audioList = new List<AudioClip>();
+        for (int i = 0; i < AudioListInspector.Count; i++) audioList.Add(null);
         for (int i = 0; i < AudioListInspector.Count; i++) {
             audioList[(int)AudioListInspector[i].audioType] = AudioListInspector[i].audioClip;
         }
     }
 
     void Update() {
-        /*if (musicSource.volume != musicTarget)
-        {
-            if (musicSource.volume < musicTarget)
-            {
-                musicSource.volume += Mathf.Min(Time.deltaTime / 10f, musicTarget - musicSource.volume);
+        PlaySound(AudioType.BGM, AudioSetting.Music);
+    }
+
+    public void StopSound(AudioType audio) {
+        if (audio == AudioType.Null) return;
+        for (int i = 0; i < AudioSources.Count; i++) {
+            if (AudioSources[i].clip == audioList[(int)audio]) {
+                AudioSources[i].Stop();
+                AudioSources[i].clip = null;
             }
-            else musicSource.volume -= Mathf.Min(Time.deltaTime / 10f, musicSource.volume - musicTarget);
-        }*/
+        }
+    }
+
+    public void PlaySound(AudioType audio, AudioSetting audioSetting = AudioSetting.SFX, AudioPlayType audioPlayType = AudioPlayType.Yield) {
+        if (audio == AudioType.Null) return;
+        switch (audioPlayType) {
+            case AudioPlayType.Override:
+                StopSound(audio);
+                break;
+            case AudioPlayType.Yield:
+                if (checkPlaying(audio)) return;
+                break;
+            case AudioPlayType.Overlap:
+                break;
+        }
+        playFirst(audio, audioSetting);
     }
 
 
@@ -66,40 +84,20 @@ public class AudioManager : MonoBehaviour {
         return false;
     }
 
-    void playFirst(AudioType audio) {
+    void playFirst(AudioType audio, AudioSetting audioSetting) {
+        Debug.Log("try playfirst");
         for (int i = 0; i < AudioSources.Count; i++) {
-            if (!AudioSources[i].isPlaying)
-            {
-                AudioSources[i].volume = SFXVolume;
+            if (!AudioSources[i].isPlaying) {
+                AudioSources[i].volume = AudioSettingList[(int)audioSetting];
                 AudioSources[i].clip = audioList[(int)audio];
                 AudioSources[i].Play();
+                Debug.Log("play??");
                 return;
             }
         }
     }
 
-    public void StopSound(AudioType audio) {
-        if (audio == AudioType.Null) return;
-        for (int i = 0; i < AudioSources.Count; i++) {
-            if (AudioSources[i].clip == audioList[(int)audio]) {
-                AudioSources[i].Stop();
-            }
-        }
-    }
-
-    public void PlaySound(AudioType audio, AudioPlayType audioPlayType = AudioPlayType.Override) {
-        if (audio == AudioType.Null) return;
-        switch (audioPlayType) {
-            case AudioPlayType.Override:
-                break;
-            case AudioPlayType.Yield:
-            case AudioPlayType.Overlap:
-                break;
-        }
-        if (!checkPlaying(audio)) {
-            playFirst(audio);
-        }
-    }
+    
 
     /*public void PlayBackground(BackgroundMusic audio, float volume = 0.5f)
     {

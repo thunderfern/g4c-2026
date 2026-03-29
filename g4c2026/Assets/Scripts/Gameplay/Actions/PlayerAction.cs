@@ -109,7 +109,11 @@ public class PlayerAction : MonoBehaviour {
 
     void UpdatePlayerAnimation() {
         if (!animator) return;
-        if (Math.Abs(rb.linearVelocity.x) > 0.1f || Math.Abs(rb.linearVelocity.z) > 0.1f) animator.SetBool("isRunning", true);
+        if (Math.Abs(rb.linearVelocity.x) > 0.1f || Math.Abs(rb.linearVelocity.z) > 0.1f) {
+            animator.SetBool("isRunning", true);
+            if (isGrounded) AudioManager.I().PlaySound(AudioType.Walking, AudioSetting.Environment);
+            else AudioManager.I().StopSound(AudioType.Walking);
+        }
         else animator.SetBool("isRunning", false);
     }
 
