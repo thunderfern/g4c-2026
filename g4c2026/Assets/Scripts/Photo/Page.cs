@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
 using TMPro;
@@ -11,7 +12,7 @@ public class Page : MonoBehaviour {
     [Serializable]
     public struct PageStructs {
         public TMP_Text PageName;
-        public List<UnityEngine.UI.Image> Images;
+        public List<Image> Images;
         public List<TMP_Text> Captions;
     }
 

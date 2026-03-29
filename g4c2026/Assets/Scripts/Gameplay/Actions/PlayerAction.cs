@@ -23,7 +23,21 @@ public class PlayerAction : MonoBehaviour {
     public float RabbitSpeed;
     public float RabbitJump;
     public float RabbitGravity;
+
+    [Header("Camera Parameters")]
+    public float ZoomMin;
+    public float ZoomMax;
     
+    
+    [Serializable]
+    public struct ItemInspector {
+        public Item Item;
+        public GameObject Prefab;
+    }
+
+    [Header("Inventory")]
+    public List<ItemInspector> ItemListInspector;
+
     private Rigidbody rb;
     private Animator animator;
     public bool isGrounded;
@@ -50,6 +64,8 @@ public class PlayerAction : MonoBehaviour {
         BaseAction.ApplyRotationVertical(Camera.transform, Input.mousePositionDelta, transform.position);
         BaseAction.ApplyCameraZoom(Camera.transform, Input.mouseScrollDelta, transform.position);
 
+        // animal transform
+
         if (Input.GetKeyDown(KeyCode.Alpha1) && isGrounded) TransformAnimal(0);
         if (Input.GetKeyDown(KeyCode.Alpha2) && isGrounded) TransformAnimal(1);
         if (Input.GetKeyDown(KeyCode.Alpha3) && isGrounded) {
@@ -61,7 +77,17 @@ public class PlayerAction : MonoBehaviour {
                 }
             });
         }
-        
+
+        // inventory
+        if (Input.GetKeyDown(KeyCode.G) && PlayerData.PlayerInventory != Item.None) {
+            for (int i = 0; i < ItemListInspector.Count; i++) {
+                if (ItemListInspector[i].Item == PlayerData.PlayerInventory) {
+                    GameObject obj = Instantiate(ItemListInspector[i].Prefab);
+                    obj.transform.position = PlayerData.PlayerPosition;
+                    PlayerData.PlayerInventory = Item.None;
+                }
+            }
+        }
     }
 
     void FixedUpdate() {

@@ -94,7 +94,14 @@ public enum Character {
 
 public enum Item {
     None,
-    Berry
+    RedBerry,
+    OrangeBerry,
+    Mushroom,
+    RedCan,
+    RedCanCrushed,
+    BlueCan,
+    BlueCanCrushed,
+    Stick
 }
 
 public enum Location {

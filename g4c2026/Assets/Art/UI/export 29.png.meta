@@ -113,10 +113,10 @@ TextureImporter:
       name: export 29_0
       rect:
         serializedVersion: 2
-        x: 392
-        y: 1604
-        width: 248
-        height: 224
+        x: 390
+        y: 1609
+        width: 250
+        height: 250
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,10 +179,10 @@ TextureImporter:
       name: export 29_3
       rect:
         serializedVersion: 2
-        x: 424
+        x: 402
         y: 1343
-        width: 222
-        height: 266
+        width: 265
+        height: 265
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,10 +201,10 @@ TextureImporter:
       name: export 29_4
       rect:
         serializedVersion: 2
-        x: 426
-        y: 1080
-        width: 222
-        height: 266
+        x: 398
+        y: 1077
+        width: 265
+        height: 265
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,8 +247,8 @@ TextureImporter:
         serializedVersion: 2
         x: 186
         y: 800
-        width: 198
-        height: 191
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,8 +269,8 @@ TextureImporter:
         serializedVersion: 2
         x: 450
         y: 811
-        width: 198
-        height: 191
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,10 +311,10 @@ TextureImporter:
       name: export 29_9
       rect:
         serializedVersion: 2
-        x: 215
-        y: 516
-        width: 183
-        height: 247
+        x: 206
+        y: 574
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -333,10 +333,10 @@ TextureImporter:
       name: export 29_10
       rect:
         serializedVersion: 2
-        x: 481
-        y: 608
-        width: 195
-        height: 174
+        x: 480
+        y: 595
+        width: 200
+        height: 200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -380,7 +380,7 @@ TextureImporter:
         x: 551
         y: 366
         width: 165
-        height: 164
+        height: 165
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

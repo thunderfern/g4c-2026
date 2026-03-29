@@ -3,6 +3,20 @@ using System;
 using System.Collections.Generic;
 
 public class GenerateWorld : MonoBehaviour {
+
+    private static GenerateWorld _instance;
+
+    private GenerateWorld() {
+        _instance = this;
+    }
+
+    public static GenerateWorld I() {
+        if (_instance == null) {
+            GenerateWorld instance = new GenerateWorld();
+            _instance = instance;
+        }
+        return _instance;
+    }
     
     // for inspector
     [Serializable]
