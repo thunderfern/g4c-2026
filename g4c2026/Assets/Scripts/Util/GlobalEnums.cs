@@ -94,7 +94,14 @@ public enum Character {
 
 public enum Item {
     None,
-    Berry
+    RedBerry,
+    OrangeBerry,
+    Mushroom,
+    RedCan,
+    RedCanCrushed,
+    BlueCan,
+    BlueCanCrushed,
+    Stick
 }
 
 public enum Location {
@@ -113,17 +120,19 @@ public enum ThreatSubSection {
     // Forest1
     Forest1A,
     Forest1B,
-    Forest1HabitatA,
-    Forest1HabitatB,
-    Forest1HabitatC,
-   Forest2HabitatB,
+    Forest1SA,
+    Forest1SB,
+    Forest1SC,
+    Forest1SHA,
+    Forest1SHB,
+    Forest1SHC,
 
     // Forest2
     Forest2A,
     Forest2B,
 
     // Miscellaneous
-    Misc1
+    Misc1,
 }
 
 // World Generation

@@ -22,8 +22,12 @@ public class ObjectPool {
     }
     
     public GameObject GetObject() {
-        if (pool.Count != 0) {
+        while (pool.Count != 0) {
             GameObject obj = pool[pool.Count - 1];
+            if (obj == null) {
+                pool.RemoveAt(pool.Count - 1);
+                continue;
+            }
             pool.RemoveAt(pool.Count - 1);
             return obj;
         }

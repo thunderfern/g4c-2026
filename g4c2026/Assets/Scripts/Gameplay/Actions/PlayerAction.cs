@@ -7,6 +7,7 @@ public class PlayerAction : MonoBehaviour {
     public GameObject Camera;
     public GameObject AnimalGameObject;
     public List<GameObject> AnimalGameObjects;
+    public List<Animator> AnimalAnimators;
     public GameObject Feet;
 
     [Header("Movement Parameters")]
@@ -22,7 +23,21 @@ public class PlayerAction : MonoBehaviour {
     public float RabbitSpeed;
     public float RabbitJump;
     public float RabbitGravity;
+
+    [Header("Camera Parameters")]
+    public float ZoomMin;
+    public float ZoomMax;
     
+    
+    [Serializable]
+    public struct ItemInspector {
+        public Item Item;
+        public GameObject Prefab;
+    }
+
+    [Header("Inventory")]
+    public List<ItemInspector> ItemListInspector;
+
     private Rigidbody rb;
     private Animator animator;
     public bool isGrounded;
@@ -36,10 +51,7 @@ public class PlayerAction : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         playerData = GetComponent<PlayerData>();
         isGrounded = false;
-        for (int i = 0; i < AnimalGameObjects.Count; i++) AnimalGameObjects[i].SetActive(false);
-        AnimalGameObjects[0].SetActive(true);
-        AnimalGameObject = AnimalGameObjects[0];
-        animator = AnimalGameObject.GetComponent<Animator>();
+        TransformAnimal(0);
     }
 
     void Update() {
@@ -51,7 +63,31 @@ public class PlayerAction : MonoBehaviour {
         BaseAction.ApplyRotationHorizontal(Camera.transform, Input.mousePositionDelta, transform.position);
         BaseAction.ApplyRotationVertical(Camera.transform, Input.mousePositionDelta, transform.position);
         BaseAction.ApplyCameraZoom(Camera.transform, Input.mouseScrollDelta, transform.position);
-        TransformAnimal();
+
+        // animal transform
+
+        if (Input.GetKeyDown(KeyCode.Alpha1) && isGrounded) TransformAnimal(0);
+        if (Input.GetKeyDown(KeyCode.Alpha2) && isGrounded) TransformAnimal(1);
+        if (Input.GetKeyDown(KeyCode.Alpha3) && isGrounded) {
+            TransformAnimal(2);
+            GameManager.I().PerformedAction(new Goal {
+                GoalType = GoalType.Turn, 
+                Arguments = new List<string>() {
+                    "Rabbit"
+                }
+            });
+        }
+
+        // inventory
+        if (Input.GetKeyDown(KeyCode.G) && PlayerData.PlayerInventory != Item.None) {
+            for (int i = 0; i < ItemListInspector.Count; i++) {
+                if (ItemListInspector[i].Item == PlayerData.PlayerInventory) {
+                    GameObject obj = Instantiate(ItemListInspector[i].Prefab);
+                    obj.transform.position = PlayerData.PlayerPosition;
+                    PlayerData.PlayerInventory = Item.None;
+                }
+            }
+        }
     }
 
     void FixedUpdate() {
@@ -77,32 +113,12 @@ public class PlayerAction : MonoBehaviour {
         else animator.SetBool("isRunning", false);
     }
 
-    void TransformAnimal() {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && isGrounded) {
-            playerData.playerAnimal = PlayerAnimal.Human;
-            for (int i = 0; i < AnimalGameObjects.Count; i++) AnimalGameObjects[i].SetActive(false);
-            AnimalGameObjects[0].SetActive(true);
-            AnimalGameObject = AnimalGameObjects[0];
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && isGrounded) {
-            playerData.playerAnimal = PlayerAnimal.Fox;
-            for (int i = 0; i < AnimalGameObjects.Count; i++) AnimalGameObjects[i].SetActive(false);
-            AnimalGameObjects[1].SetActive(true);
-            AnimalGameObject = AnimalGameObjects[1];
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && isGrounded) {
-            playerData.playerAnimal = PlayerAnimal.Rabbit;
-            for (int i = 0; i < AnimalGameObjects.Count; i++) AnimalGameObjects[i].SetActive(false);
-            AnimalGameObjects[2].SetActive(true);
-            AnimalGameObject = AnimalGameObjects[2];
-            GameManager.I().PerformedAction(new Goal {
-                GoalType = GoalType.Turn, 
-                Arguments = new List<string>() {
-                    "Rabbit"
-                }
-            });
-        }
-        animator = AnimalGameObject.GetComponent<Animator>();
+    void TransformAnimal(int num) {
+        playerData.playerAnimal = (PlayerAnimal)num;
+        for (int i = 0; i < AnimalGameObjects.Count; i++) AnimalGameObjects[i].SetActive(false);
+        AnimalGameObjects[num].SetActive(true);
+        AnimalGameObject = AnimalGameObjects[num];
+        animator = AnimalAnimators[num];
     }
 
     void ApplyAction(float speed, float jump, float gravity) {

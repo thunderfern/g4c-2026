@@ -66,7 +66,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fcc72870a002a4918a9eae4bbab8f178, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -5263797223645028660}
+      addedObject: {fileID: 1234121376931268813}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fcc72870a002a4918a9eae4bbab8f178, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8602766163488161393}
@@ -76,7 +76,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: fcc72870a002a4918a9eae4bbab8f178, type: 3}
   m_PrefabInstance: {fileID: 467817487531001038}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &-5263797223645028660
+--- !u!65 &1234121376931268813
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
