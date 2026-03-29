@@ -22,10 +22,6 @@ public class GameManager : MonoBehaviour {
     
     public List<StoryGoals> GoalList;
 
-    public TMP_Text modeText;
-
-    private bool startedStory = false;
-
     public Camera PlayerCamera;
     public Camera MainMenuCamera;
 
@@ -44,11 +40,7 @@ public class GameManager : MonoBehaviour {
                 StartStorySection("New Beginnings 1");
             }
         }
-        // if (!startedStory) {
-        //     //StartStorySection("The First Healing 1");
-        //     StartStorySection("New Beginnings 7");
-        //     startedStory = true;
-        // }
+        // shortcuts
         if (Input.GetKeyDown(KeyCode.Z)) {
             if (CurrentGameState == GameState.Picture) {
                 PhotoManager.I().LeavePhotoMode();
@@ -61,11 +53,9 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.B)) {
             if (CurrentGameState == GameState.Photobook) {
                 CurrentGameState = GameState.Movement;
-                modeText.GetComponent<TMP_Text>().text = "Movement";
             }
             else if (CurrentGameState == GameState.Movement) {
                 CurrentGameState = GameState.Photobook;
-                modeText.GetComponent<TMP_Text>().text = "Photobook";
             }
         }
     }

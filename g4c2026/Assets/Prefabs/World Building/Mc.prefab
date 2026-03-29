@@ -97,6 +97,10 @@ MonoBehaviour:
   - {fileID: 2076268794084652125}
   - {fileID: 2302006407694663577}
   - {fileID: 1859552156910207652}
+  AnimalAnimators:
+  - {fileID: 2629663396515104295}
+  - {fileID: 2160802127495383047}
+  - {fileID: 6886705448332191268}
   Feet: {fileID: 989918425405677384}
   HumanSpeed: 10
   HumanJump: 5
@@ -1191,5 +1195,10 @@ Transform:
 --- !u!1 &2076268794084652125 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4001167394166200182, guid: 5f4c380de5fb1864b97c8e177bf40b3d, type: 3}
+  m_PrefabInstance: {fileID: 3123074802626208555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2629663396515104295 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1092425349651981580, guid: 5f4c380de5fb1864b97c8e177bf40b3d, type: 3}
   m_PrefabInstance: {fileID: 3123074802626208555}
   m_PrefabAsset: {fileID: 0}

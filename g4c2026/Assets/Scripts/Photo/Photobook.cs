@@ -30,9 +30,19 @@ public class Photobook : MonoBehaviour {
 
     // Photobook pages
     private List<List<ThreatSubSection>> PhotobookPages = new List<List<ThreatSubSection>> {
-        new List<ThreatSubSection>{ThreatSubSection.Forest1A, ThreatSubSection.Forest1B},
-        new List<ThreatSubSection>{ThreatSubSection.Forest1A, ThreatSubSection.Forest1B},
-        new List<ThreatSubSection>{ThreatSubSection.Forest1HabitatA, ThreatSubSection.Forest1B},
+        new List<ThreatSubSection>{ThreatSubSection.Forest1A},
+        new List<ThreatSubSection>{ThreatSubSection.Forest1B},
+        new List<ThreatSubSection>{ThreatSubSection.Forest1SA, ThreatSubSection.Forest1SHA},
+        new List<ThreatSubSection>{ThreatSubSection.Forest1SB, ThreatSubSection.Forest1SHB},
+        new List<ThreatSubSection>{ThreatSubSection.Forest1SC, ThreatSubSection.Forest1SHC},
+    };
+
+    private List<string> PhotobookPageNames = new List<string> {
+        "Forest 1",
+        "Forest 1",
+        "Forest 1",
+        "Forest 1",
+        "Forest 1",
     };
 
     // Images Store
@@ -72,12 +82,6 @@ public class Photobook : MonoBehaviour {
         ExitButton.onClick.AddListener(() => {
             GameManager.I().CurrentGameState = GameState.Movement;
         });
-
-        // loading all images
-        /*var values = Enum.GetValues(typeof(ThreatSubSection)).Cast<ThreatSubSection>().ToArray();
-        foreach (var v in values) {
-            ImageCache[v] = GetImage(v);
-        }*/
     }
     void Update() {
         if (GameManager.I().CurrentGameState == GameState.Photobook && !PhotobookObject.activeInHierarchy) {
@@ -91,12 +95,29 @@ public class Photobook : MonoBehaviour {
     public void GetCurrentPage() {
         List<Sprite> leftSprites = new List<Sprite>();
         List<string> leftCaptions = new List<string>();
-        for (int i = 0; i < PhotobookPages[currentPage * 2].Count; i++) {
-            ThreatSubSection curThreatSub = PhotobookPages[currentPage * 2][i];
+        int leftPageNum = currentPage * 2;
+        for (int i = 0; i < PhotobookPages[leftPageNum].Count; i++) {
+            ThreatSubSection curThreatSub = PhotobookPages[leftPageNum][i];
             leftSprites.Add(GetSpriteFromThreatSubSection(curThreatSub));
             leftCaptions.Add(GetPhotoCaption(curThreatSub, true));
         }
-        LeftPage.GetComponent<Page>().UpdatePage(0, leftSprites, leftCaptions, PhotoManager.GetThreatSection(PhotobookPages[currentPage][0]).ToString());
+        LeftPage.GetComponent<Page>().UpdatePage(PhotobookPages[leftPageNum].Count / 2, leftSprites, leftCaptions, PhotobookPageNames[leftPageNum]);
+
+        int rightPageNum = currentPage * 2 + 1;
+        if (PhotobookPages.Count <= rightPageNum) {
+            RightPage.SetActive(false);
+            return;
+        }
+        RightPage.SetActive(true);
+
+        List<Sprite> rightSprites = new List<Sprite>();
+        List<string> rightCaptions = new List<string>();
+        for (int i = 0; i < PhotobookPages[rightPageNum].Count; i++) {
+            ThreatSubSection curThreatSub = PhotobookPages[rightPageNum][i];
+            rightSprites.Add(GetSpriteFromThreatSubSection(curThreatSub));
+            rightCaptions.Add(GetPhotoCaption(curThreatSub, true));
+        }
+        RightPage.GetComponent<Page>().UpdatePage(PhotobookPages[rightPageNum].Count / 2, rightSprites, rightCaptions, PhotobookPageNames[rightPageNum]);
     }
 
     private Sprite GetSpriteFromThreatSubSection(ThreatSubSection threatSubSection) {
@@ -115,7 +136,6 @@ public class Photobook : MonoBehaviour {
     public Sprite GetSpriteFromTexture(Texture2D texture) {
         Sprite sprite = Sprite.Create(texture, new Rect(0,0,texture.width, texture.height), new Vector2(0.5f,0.5f), 1.0f);
         return sprite;
-        //myObject.GetComponent<UnityEngine.UI.Image>().sprite = sprite;
     }
 
     public string GetPhotoCaption(ThreatSubSection threatSubSection, bool checkFound = false) {

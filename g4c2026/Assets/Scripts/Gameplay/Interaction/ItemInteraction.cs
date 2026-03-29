@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FoodInteraction : Interaction {
+public class ItemInteraction : Interaction {
 
     public Item ItemType;
 
@@ -17,6 +17,7 @@ public class FoodInteraction : Interaction {
     }
 
     public override void Selected() {
+        if (PlayerData.PlayerInventory != Item.None) return;
         PlayerData.PlayerInventory = ItemType;
         Destroy(gameObject);
     }
