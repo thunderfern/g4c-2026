@@ -90,13 +90,13 @@ public class Photobook : MonoBehaviour {
 
     public void GetCurrentPage() {
         List<Sprite> leftSprites = new List<Sprite>();
-        for (int i = 0; i < PhotobookPages[currentPage].Count; i++) {
-            leftSprites.Add(GetSpriteFromThreatSubSection(PhotobookPages[currentPage * 2][i]));
+        List<string> leftCaptions = new List<string>();
+        for (int i = 0; i < PhotobookPages[currentPage * 2].Count; i++) {
+            ThreatSubSection curThreatSub = PhotobookPages[currentPage * 2][i];
+            leftSprites.Add(GetSpriteFromThreatSubSection(curThreatSub));
+            leftCaptions.Add(GetPhotoCaption(curThreatSub, true));
         }
-        LeftPage.GetComponent<Page>().UpdatePage(leftSprites, true, currentPage == 0);
-        // two transition
-        // six transition
-        // six blank
+        LeftPage.GetComponent<Page>().UpdatePage(0, leftSprites, leftCaptions, PhotoManager.GetThreatSection(PhotobookPages[currentPage][0]).ToString());
     }
 
     private Sprite GetSpriteFromThreatSubSection(ThreatSubSection threatSubSection) {
@@ -118,9 +118,12 @@ public class Photobook : MonoBehaviour {
         //myObject.GetComponent<UnityEngine.UI.Image>().sprite = sprite;
     }
 
-    public string GetPhotoCaption(ThreatSubSection threatSubSection) {
+    public string GetPhotoCaption(ThreatSubSection threatSubSection, bool checkFound = false) {
         for (int i = 0; i < PhotoCaptions.Count; i++) {
-            if (PhotoCaptions[i].ThreatSubSection == threatSubSection) return PhotoCaptions[i].PhotoTitle;
+            if (PhotoCaptions[i].ThreatSubSection == threatSubSection) {
+                if (checkFound && !ImageCache.TryGetValue(threatSubSection, out var tmp)) return "???";
+                return PhotoCaptions[i].PhotoTitle;
+            }
         }
         return "???";
     }
