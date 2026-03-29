@@ -99,4 +99,14 @@ MonoBehaviour:
   - ObjectType: 24
     ObjectPrefab: {fileID: 912383331297400843, guid: 946d2039e33f94473b93d0a08f464bc8, type: 3}
   - ObjectType: 25
+    ObjectPrefab: {fileID: 7333170530989998574, guid: e37609f7767bd4344a385d898c6a7061, type: 3}
+  - ObjectType: 26
+    ObjectPrefab: {fileID: 5785064510235792679, guid: 096939d787cca46e2a5d9e951357eb6c, type: 3}
+  - ObjectType: 27
+    ObjectPrefab: {fileID: 5741722017622411090, guid: 76bae53cac9684a3d8093f859d6dd02e, type: 3}
+  - ObjectType: 28
+    ObjectPrefab: {fileID: 5778796721140595536, guid: 5c0d7053b08f248068beb5237b8e8bbd, type: 3}
+  - ObjectType: 29
+    ObjectPrefab: {fileID: 6136274527575660930, guid: 4b88f5ad16f7942f492bf21afa6ab832, type: 3}
+  - ObjectType: 30
     ObjectPrefab: {fileID: 6216278370363078236, guid: d2ae6aef3ecd89b4caa5a9cb0957bb61, type: 3}

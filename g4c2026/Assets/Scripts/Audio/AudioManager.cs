@@ -85,13 +85,11 @@ public class AudioManager : MonoBehaviour {
     }
 
     void playFirst(AudioType audio, AudioSetting audioSetting) {
-        Debug.Log("try playfirst");
         for (int i = 0; i < AudioSources.Count; i++) {
             if (!AudioSources[i].isPlaying) {
                 AudioSources[i].volume = AudioSettingList[(int)audioSetting];
                 AudioSources[i].clip = audioList[(int)audio];
                 AudioSources[i].Play();
-                Debug.Log("play??");
                 return;
             }
         }

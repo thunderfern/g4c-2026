@@ -120,6 +120,14 @@ MonoBehaviour:
     Prefab: {fileID: 52705216172513010, guid: d7601f8915da64eaeb0ab324c852637c, type: 3}
   - Item: 3
     Prefab: {fileID: 7068467839069849817, guid: 184e75ac7971948ff938b9ae9ac546fa, type: 3}
+  - Item: 4
+    Prefab: {fileID: 5785064510235792679, guid: 096939d787cca46e2a5d9e951357eb6c, type: 3}
+  - Item: 5
+    Prefab: {fileID: 5741722017622411090, guid: 76bae53cac9684a3d8093f859d6dd02e, type: 3}
+  - Item: 6
+    Prefab: {fileID: 5778796721140595536, guid: 5c0d7053b08f248068beb5237b8e8bbd, type: 3}
+  - Item: 7
+    Prefab: {fileID: 6136274527575660930, guid: 4b88f5ad16f7942f492bf21afa6ab832, type: 3}
   isGrounded: 0
 --- !u!114 &8392871729864370580
 MonoBehaviour:
