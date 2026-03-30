@@ -34,20 +34,24 @@ public class AudioManager : MonoBehaviour {
 
     // use first source for background music only
     public List<AudioSource> AudioSources;
+    public List<AudioSetting> AudioSettings;
 
     // player settings
     public List<float> AudioSettingList;
     
     void Start() {
         audioList = new List<AudioClip>();
+        AudioSettings = new List<AudioSetting>();
         for (int i = 0; i < AudioListInspector.Count; i++) audioList.Add(null);
         for (int i = 0; i < AudioListInspector.Count; i++) {
             audioList[(int)AudioListInspector[i].audioType] = AudioListInspector[i].audioClip;
         }
+        for (int i = 0; i < AudioSources.Count; i++) AudioSettings.Add(AudioSetting.SFX);
     }
 
     void Update() {
         PlaySound(AudioType.BGM, AudioSetting.Music);
+        UpdateVolumes();
     }
 
     public void StopSound(AudioType audio) {
@@ -90,7 +94,16 @@ public class AudioManager : MonoBehaviour {
                 AudioSources[i].volume = AudioSettingList[(int)audioSetting];
                 AudioSources[i].clip = audioList[(int)audio];
                 AudioSources[i].Play();
+                AudioSettings[i] = audioSetting;
                 return;
+            }
+        }
+    }
+
+    void UpdateVolumes() {
+        for (int i = 0; i < AudioSources.Count; i++) {
+            if (AudioSources[i].isPlaying) {
+                AudioSources[i].volume = AudioSettingList[(int)AudioSettings[i]];
             }
         }
     }

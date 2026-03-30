@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public enum AudioSetting {
     Music,
+    SFX,
     Environment,
-    SFX
 }
 
 public enum AudioType {
