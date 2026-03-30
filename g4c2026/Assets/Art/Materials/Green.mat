@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Green
-  m_Shader: {fileID: -6465566751694194690, guid: b8d60126e06ffd14482195a91734e7c0, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 6dc29e356a92249548b9d4851af847d7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
