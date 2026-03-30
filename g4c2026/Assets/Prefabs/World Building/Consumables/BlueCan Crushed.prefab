@@ -9,6 +9,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: dafb8dd0d6864794c99e241288e6e92b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dafb8dd0d6864794c99e241288e6e92b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dafb8dd0d6864794c99e241288e6e92b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dafb8dd0d6864794c99e241288e6e92b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 90.54513
       objectReference: {fileID: 0}
@@ -48,10 +60,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: dafb8dd0d6864794c99e241288e6e92b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: dafb8dd0d6864794c99e241288e6e92b, type: 3}
       propertyPath: m_Name
       value: BlueCan Crushed
       objectReference: {fileID: 0}
+    - target: {fileID: 2355982399387309400, guid: dafb8dd0d6864794c99e241288e6e92b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4764ea094e7f143b2b87966906fa1361, type: 2}
+    - target: {fileID: 2355982399387309400, guid: dafb8dd0d6864794c99e241288e6e92b, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: bd4cecd82346d454489e994f54f1e045, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

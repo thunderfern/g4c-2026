@@ -100,6 +100,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3a0779edec4734a40b89fc4f5b7ff433, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3a0779edec4734a40b89fc4f5b7ff433, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3a0779edec4734a40b89fc4f5b7ff433, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3a0779edec4734a40b89fc4f5b7ff433, type: 3}
       propertyPath: m_LocalPosition.x
       value: 91.380905
       objectReference: {fileID: 0}
@@ -139,10 +151,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3a0779edec4734a40b89fc4f5b7ff433, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3a0779edec4734a40b89fc4f5b7ff433, type: 3}
       propertyPath: m_Name
       value: RedCan Bent
       objectReference: {fileID: 0}
+    - target: {fileID: 6745302439343835087, guid: 3a0779edec4734a40b89fc4f5b7ff433, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4764ea094e7f143b2b87966906fa1361, type: 2}
+    - target: {fileID: 6745302439343835087, guid: 3a0779edec4734a40b89fc4f5b7ff433, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e9c00d852b5543369daacf48b1f3115, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -2572967989333021709, guid: 3a0779edec4734a40b89fc4f5b7ff433, type: 3}
