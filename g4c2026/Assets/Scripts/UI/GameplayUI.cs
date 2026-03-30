@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using System;
 using System.Collections.Generic;
 
@@ -8,6 +9,7 @@ public class GameplayUI : MonoBehaviour {
     public GameObject GameplayObj;
     public Button PhotobookIcon;
     public Image InventoryImage;
+    public TMP_Text ProgressIndicator;
 
     [Serializable]
     public struct ItemInspector {
@@ -37,6 +39,7 @@ public class GameplayUI : MonoBehaviour {
         }
         GameplayObj.SetActive(true);
         InventoryImage.sprite = GetSprite(PlayerData.PlayerInventory);
+        ProgressIndicator.text = "Progress: " + Math.Round((float)ProgressManager.I().CurrentProgress / (float)ProgressManager.I().MaxProgress, 2) + "%";
     }
 
     Sprite GetSprite(Item item) {
