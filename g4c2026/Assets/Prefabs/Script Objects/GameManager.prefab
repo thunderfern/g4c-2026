@@ -172,7 +172,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: b8d605320ee49774dafe3712f08d367b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -534,6 +534,7 @@ GameObject:
   - component: {fileID: 4554632108736947416}
   - component: {fileID: 4599257840980638974}
   - component: {fileID: 2762669795194415401}
+  - component: {fileID: 7729356591046581130}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -727,6 +728,29 @@ MonoBehaviour:
   LightMax: 0.5
   RainLength: 15
   ElapsedTime: 0
+--- !u!114 &7729356591046581130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5124337766426879689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b4cc8c340a0504f90b374d0d56f115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  AudioListInspector:
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: b8d605320ee49774dafe3712f08d367b, type: 3}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: e082c9ace7fc5314390c5af5785a844f, type: 3}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: dbf44459097d7ae44b5aa5b4307d6f8e, type: 3}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 019e513609f7a464aa8628204ccf706e, type: 3}
+  AudioSources: []
+  AudioSettingList: []
 --- !u!1 &7373343628316556765
 GameObject:
   m_ObjectHideFlags: 0

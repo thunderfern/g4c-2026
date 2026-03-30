@@ -433,10 +433,6 @@ PrefabInstance:
       propertyPath: PhotobookObject
       value: 
       objectReference: {fileID: 2002682538}
-    - target: {fileID: 1795788233418930370, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: m_Resource
-      value: 
-      objectReference: {fileID: 8300000, guid: b8d605320ee49774dafe3712f08d367b, type: 3}
     - target: {fileID: 2762669795194415401, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
       propertyPath: RainObj
       value: 
@@ -506,18 +502,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2002682531}
     - target: {fileID: 3970600302814943156, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: PhotoCam
-      value: 
-      objectReference: {fileID: 2041999440}
-    - target: {fileID: 3970600302814943156, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: modeText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3970600302814943156, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: PlayerCam
-      value: 
-      objectReference: {fileID: 1295291194}
-    - target: {fileID: 3970600302814943156, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
       propertyPath: PlayerCamera
       value: 
       objectReference: {fileID: 1295291194}
@@ -533,10 +517,6 @@ PrefabInstance:
       propertyPath: TrailLine
       value: 
       objectReference: {fileID: 1252564823}
-    - target: {fileID: 4773302707775125505, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 2041999440}
     - target: {fileID: 4773302707775125505, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
       propertyPath: aimingText
       value: 
@@ -564,39 +544,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5124337766426879689, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1042667523}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
---- !u!1 &1042667522 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5124337766426879689, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-  m_PrefabInstance: {fileID: 1042667521}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1042667523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1042667522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11b4cc8c340a0504f90b374d0d56f115, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  AudioListInspector:
-  - audioType: 0
-    audioClip: {fileID: 8300000, guid: b8d605320ee49774dafe3712f08d367b, type: 3}
-  - audioType: 0
-    audioClip: {fileID: 8300000, guid: e082c9ace7fc5314390c5af5785a844f, type: 3}
-  - audioType: 0
-    audioClip: {fileID: 8300000, guid: dbf44459097d7ae44b5aa5b4307d6f8e, type: 3}
-  - audioType: 0
-    audioClip: {fileID: 8300000, guid: 019e513609f7a464aa8628204ccf706e, type: 3}
-  AudioSources: []
-  AudioSettingList: []
 --- !u!1 &1243523681 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5437563372643432907, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
@@ -877,7 +826,7 @@ PrefabInstance:
     - target: {fileID: 5955045112698634390, guid: b999a4327a13b804a89347a864cb86fa, type: 3}
       propertyPath: WorldFile
       value: 
-      objectReference: {fileID: 4900000, guid: 96bf4d61221fcda44abdd6e7ece9f158, type: 3}
+      objectReference: {fileID: 4900000, guid: f1b3503990737b7449645cc7dc7f2868, type: 3}
     - target: {fileID: 5955045112698634390, guid: b999a4327a13b804a89347a864cb86fa, type: 3}
       propertyPath: squareSize
       value: 10

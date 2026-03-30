@@ -56,13 +56,13 @@ public class PlayerAction : MonoBehaviour {
 
     void Update() {
         UpdatePlayerAnimation();
-        /*if (GameManager.I().CurrentGameState != GameState.Movement || Input.GetKey(KeyCode.LeftControl)) {
+        if (GameManager.I().CurrentGameState != GameState.Movement || Input.GetKey(KeyCode.LeftControl)) {
             rb.linearVelocity = Vector3.zero;
             return;
-        }*/
+        }
         BaseAction.ApplyRotationHorizontal(Camera.transform, Input.mousePositionDelta, transform.position);
         BaseAction.ApplyRotationVertical(Camera.transform, Input.mousePositionDelta, transform.position);
-        BaseAction.ApplyCameraZoom(Camera.transform, Input.mouseScrollDelta, transform.position);
+        BaseAction.ApplyCameraZoom(Camera.transform, Input.mouseScrollDelta, transform.position, ZoomMin, ZoomMax);
 
         // animal transform
 
@@ -91,7 +91,7 @@ public class PlayerAction : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        //if (GameManager.I().CurrentGameState != GameState.Movement) return;
+        if (GameManager.I().CurrentGameState != GameState.Movement) return;
         switch (playerData.playerAnimal) {
             case PlayerAnimal.Human:
                 ApplyAction(HumanSpeed, HumanJump, HumanGravity);
@@ -111,8 +111,8 @@ public class PlayerAction : MonoBehaviour {
         if (!animator) return;
         if (Math.Abs(rb.linearVelocity.x) > 0.1f || Math.Abs(rb.linearVelocity.z) > 0.1f) {
             animator.SetBool("isRunning", true);
-            //if (isGrounded) AudioManager.I().PlaySound(AudioType.Walking, AudioSetting.Environment);
-            //else AudioManager.I().StopSound(AudioType.Walking);
+            if (isGrounded) AudioManager.I().PlaySound(AudioType.Walking, AudioSetting.Environment);
+            else AudioManager.I().StopSound(AudioType.Walking);
         }
         else animator.SetBool("isRunning", false);
     }

@@ -37501,6 +37501,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4088323321232419003, guid: d2ae6aef3ecd89b4caa5a9cb0957bb61, type: 3}
+      propertyPath: ObjectType
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6216278370363078236, guid: d2ae6aef3ecd89b4caa5a9cb0957bb61, type: 3}
       propertyPath: m_Name
       value: Deforestation #1 Obj

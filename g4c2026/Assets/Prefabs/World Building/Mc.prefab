@@ -63,7 +63,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.42, z: 0.56}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 676173944297226206}
@@ -98,7 +98,7 @@ MonoBehaviour:
   - {fileID: 2302006407694663577}
   - {fileID: 1859552156910207652}
   AnimalAnimators:
-  - {fileID: 2629663396515104295}
+  - {fileID: 0}
   - {fileID: 2160802127495383047}
   - {fileID: 6886705448332191268}
   Feet: {fileID: 989918425405677384}
@@ -111,8 +111,8 @@ MonoBehaviour:
   RabbitSpeed: 5
   RabbitJump: 15
   RabbitGravity: -12
-  ZoomMin: 0
-  ZoomMax: 0
+  ZoomMin: 4
+  ZoomMax: 10
   ItemListInspector:
   - Item: 1
     Prefab: {fileID: 52705216172513010, guid: f648f3ce5b9ae41be967545fdc4786f1, type: 3}
@@ -1212,10 +1212,5 @@ Transform:
 --- !u!1 &2076268794084652125 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4001167394166200182, guid: 5f4c380de5fb1864b97c8e177bf40b3d, type: 3}
-  m_PrefabInstance: {fileID: 3123074802626208555}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &2629663396515104295 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1092425349651981580, guid: 5f4c380de5fb1864b97c8e177bf40b3d, type: 3}
   m_PrefabInstance: {fileID: 3123074802626208555}
   m_PrefabAsset: {fileID: 0}

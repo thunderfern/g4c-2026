@@ -106,7 +106,7 @@ public class PhotoManager : MonoBehaviour {
                 }
             }
         }
-        if (!photoCandidate) aimingText.GetComponent<TMP_Text>().text = "None";
+        if (!photoCandidate || distance > 15f) aimingText.GetComponent<TMP_Text>().text = "None";
         else {
             aimingText.GetComponent<TMP_Text>().text = Photobook.I().GetPhotoCaption(photoCandidate.ThreatSubSection);
         }
