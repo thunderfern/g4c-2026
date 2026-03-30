@@ -11,7 +11,7 @@ public class ThreatAreaOccupantsMain : MonoBehaviour {
         photoCandidate.ThreatSubSection = BeforeThreatSubSection;
     }
 
-    public void Heal() {
+    public virtual void Heal() {
         photoCandidate.ThreatSubSection = AfterThreatSubSection;
     }
 

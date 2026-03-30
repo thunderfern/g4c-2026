@@ -93,9 +93,7 @@ public class PlayerAction : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        //Debug.Log(GameManager.I() + "1");
         if (!alwaysMove && GameManager.I().CurrentGameState != GameState.Movement) return;
-        //Debug.Log(GameManager.I() + "2");
         switch (playerData.playerAnimal) {
             case PlayerAnimal.Human:
                 ApplyAction(HumanSpeed, HumanJump, HumanGravity);
