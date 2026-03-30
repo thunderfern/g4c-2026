@@ -5,17 +5,17 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour {
 
     // Singleton
-    private static GameManager _instance;
+    private static GameManager _instance = null;
 
     private GameManager() {
         _instance = this;
     }
 
     public static GameManager I() {
-        if (_instance == null) {
+        /*if (_instance == null) {
             GameManager instance = new GameManager();
             _instance = instance;
-        }
+        }*/
         return _instance;
     }
     public GameState CurrentGameState = GameState.MainMenu;

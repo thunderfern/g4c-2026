@@ -46,6 +46,8 @@ public class PlayerAction : MonoBehaviour {
     private float oldGravity;
 
     private float lastY;
+
+    public bool alwaysMove = false;
     
     void Start() {
         rb = GetComponent<Rigidbody>();
@@ -56,7 +58,7 @@ public class PlayerAction : MonoBehaviour {
 
     void Update() {
         UpdatePlayerAnimation();
-        if (GameManager.I().CurrentGameState != GameState.Movement || Input.GetKey(KeyCode.LeftControl)) {
+        if (!alwaysMove && (GameManager.I().CurrentGameState != GameState.Movement || Input.GetKey(KeyCode.LeftControl))) {
             rb.linearVelocity = Vector3.zero;
             return;
         }
@@ -91,7 +93,9 @@ public class PlayerAction : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        if (GameManager.I().CurrentGameState != GameState.Movement) return;
+        //Debug.Log(GameManager.I() + "1");
+        if (!alwaysMove && GameManager.I().CurrentGameState != GameState.Movement) return;
+        //Debug.Log(GameManager.I() + "2");
         switch (playerData.playerAnimal) {
             case PlayerAnimal.Human:
                 ApplyAction(HumanSpeed, HumanJump, HumanGravity);
@@ -111,8 +115,8 @@ public class PlayerAction : MonoBehaviour {
         if (!animator) return;
         if (Math.Abs(rb.linearVelocity.x) > 0.1f || Math.Abs(rb.linearVelocity.z) > 0.1f) {
             animator.SetBool("isRunning", true);
-            if (isGrounded) AudioManager.I().PlaySound(AudioType.Walking, AudioSetting.Environment);
-            else AudioManager.I().StopSound(AudioType.Walking);
+            //if (isGrounded) AudioManager.I().PlaySound(AudioType.Walking, AudioSetting.Environment);
+            //else AudioManager.I().StopSound(AudioType.Walking);
         }
         else animator.SetBool("isRunning", false);
     }
@@ -127,6 +131,8 @@ public class PlayerAction : MonoBehaviour {
 
     void ApplyAction(float speed, float jump, float gravity) {
         // Applying movement
+
+        Debug.Log("helo?");
 
         Vector3 movementDirection = new Vector3();
 

@@ -8,5 +8,6 @@ public class TrashInteraction : Interaction {
     }
     public override void Selected() {
         PlayerData.PlayerInventory = Item.None;
+        ProgressManager.I().CurrentProgress += 10;
     }
 }
