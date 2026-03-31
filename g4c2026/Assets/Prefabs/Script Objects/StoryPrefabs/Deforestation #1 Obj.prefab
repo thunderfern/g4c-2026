@@ -56,7 +56,7 @@ MonoBehaviour:
   SavePosition: 1
   SaveRotation: 1
   SaveScale: 1
-  ObjectType: 30
+  ObjectType: 45
   SpawnInRange: 0
 --- !u!1001 &103515672349162509
 PrefabInstance:
@@ -139,6 +139,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 511485328679956601}
     m_Modifications:
+    - target: {fileID: 2123367610120063347, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
+      propertyPath: 'threatAreaSubs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2248231805687071096}
+    - target: {fileID: 2123367610120063347, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
+      propertyPath: 'threatAreaSubs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 301488875048920273}
+    - target: {fileID: 2123367610120063347, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
+      propertyPath: 'threatAreaSubs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 748201048512437033}
+    - target: {fileID: 2123367610120063347, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
+      propertyPath: 'threatAreaSubs.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1673384208249274305}
+    - target: {fileID: 2123367610120063347, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
+      propertyPath: 'threatAreaSubs.Array.data[4]'
+      value: 
+      objectReference: {fileID: 5122305446627679592}
+    - target: {fileID: 2123367610120063347, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
+      propertyPath: 'threatAreaOccupants.Array.data[0]'
+      value: 
+      objectReference: {fileID: 191927769809702824}
+    - target: {fileID: 2123367610120063347, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
+      propertyPath: 'threatAreaOccupants.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5933041584715857675}
+    - target: {fileID: 2123367610120063347, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
+      propertyPath: 'threatAreaOccupants.Array.data[2]'
+      value: 
+      objectReference: {fileID: 7664663365165368181}
     - target: {fileID: 4808712427434241084, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
       propertyPath: m_LocalPosition.x
       value: 37.550003
@@ -183,97 +215,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimTam
       objectReference: {fileID: 0}
-    - target: {fileID: 5493992322720285915, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
-      propertyPath: dialogue
-      value: You do not have enough pictures to inform Tim Tam
-      objectReference: {fileID: 0}
-    - target: {fileID: 5493992322720285915, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
-      propertyPath: character
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5493992322720285915, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
-      propertyPath: Selectable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5493992322720285915, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
-      propertyPath: SelectableText
-      value: Inform Tim Tam
-      objectReference: {fileID: 0}
-    - target: {fileID: 5493992322720285915, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
-      propertyPath: InformList.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5493992322720285915, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
-      propertyPath: 'InformList.Array.data[0]'
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5493992322720285915, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
-      propertyPath: 'InformList.Array.data[1]'
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5493992322720285915, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
-      propertyPath: 'InformList.Array.data[2]'
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5493992322720285915, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
-      propertyPath: characterInteractionType
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5327805454477768326, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7365623053225743746}
-    - targetCorrespondingSourceObject: {fileID: 5327805454477768326, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4165016093824074830}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
---- !u!1 &5907417464246777750 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5327805454477768326, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
-  m_PrefabInstance: {fileID: 1732608463249801488}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7365623053225743746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5907417464246777750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1e201fa2abe1349910026a49756d09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PhotoCandidate
-  ThreatSection: 0
-  ThreatSubSection: 0
---- !u!114 &4165016093824074830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5907417464246777750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7d49b33ff7b13847ace2c40183be3e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThreatAreaMain
-  threatAreaSubs:
-  - {fileID: 2248231805687071096}
-  - {fileID: 301488875048920273}
-  - {fileID: 748201048512437033}
-  - {fileID: 1673384208249274305}
-  - {fileID: 5122305446627679592}
-  threatAreaOccupants:
-  - {fileID: 191927769809702824}
-  - {fileID: 5933041584715857675}
-  - {fileID: 7664663365165368181}
-  ThreatSection: 0
-  ThreatSectionAfter: 1
-  healed: 0
 --- !u!4 &6534877326267542828 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4808712427434241084, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
@@ -575,6 +521,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 511485328679956601}
     m_Modifications:
+    - target: {fileID: 271939731376632741, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: AfterThreatSubSection
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 271939731376632741, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: BeforeThreatSubSection
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 829348059791722816, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: ThreatSubSection
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3751844189815458747, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 44.823593
@@ -623,20 +581,14 @@ PrefabInstance:
     - {fileID: 4712235251421623969, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4565219304124977409, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5699554596761546748}
-    - targetCorrespondingSourceObject: {fileID: 4565219304124977409, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6009213847813605002}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
 --- !u!114 &5933041584715857675 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 271939731376632741, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
   m_PrefabInstance: {fileID: 5877332050609900718}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7983352277609946543}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9c83a5da2b05454fb3b10d38c015518, type: 3}
@@ -647,39 +599,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3751844189815458747, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
   m_PrefabInstance: {fileID: 5877332050609900718}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7983352277609946543 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4565219304124977409, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
-  m_PrefabInstance: {fileID: 5877332050609900718}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5699554596761546748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7983352277609946543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c83a5da2b05454fb3b10d38c015518, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThreatAreaOccupantsMain
-  BeforeThreatSubSection: 3
-  AfterThreatSubSection: 0
---- !u!114 &6009213847813605002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7983352277609946543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1e201fa2abe1349910026a49756d09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PhotoCandidate
-  ThreatSection: 0
-  ThreatSubSection: 3
 --- !u!1001 &7608907462558953680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -688,6 +607,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 511485328679956601}
     m_Modifications:
+    - target: {fileID: 271939731376632741, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: AfterThreatSubSection
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 271939731376632741, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: BeforeThreatSubSection
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 829348059791722816, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: ThreatSubSection
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3751844189815458747, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 60.59
@@ -736,47 +667,8 @@ PrefabInstance:
     - {fileID: 4712235251421623969, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4565219304124977409, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7425484116781152978}
-    - targetCorrespondingSourceObject: {fileID: 4565219304124977409, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4706353018963043255}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
---- !u!1 &6251752484839432657 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4565219304124977409, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
-  m_PrefabInstance: {fileID: 7608907462558953680}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7425484116781152978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6251752484839432657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c83a5da2b05454fb3b10d38c015518, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThreatAreaOccupantsMain
-  BeforeThreatSubSection: 4
-  AfterThreatSubSection: 0
---- !u!114 &4706353018963043255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6251752484839432657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1e201fa2abe1349910026a49756d09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PhotoCandidate
-  ThreatSection: 0
-  ThreatSubSection: 4
 --- !u!4 &6740058434608397163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3751844189815458747, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
@@ -787,7 +679,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 271939731376632741, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
   m_PrefabInstance: {fileID: 7608907462558953680}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6251752484839432657}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9c83a5da2b05454fb3b10d38c015518, type: 3}

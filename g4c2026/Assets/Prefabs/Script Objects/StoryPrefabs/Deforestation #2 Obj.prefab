@@ -55,7 +55,7 @@ MonoBehaviour:
   SavePosition: 1
   SaveRotation: 1
   SaveScale: 1
-  ObjectType: 31
+  ObjectType: 46
   SpawnInRange: 0
 --- !u!1001 &2029900643417589969
 PrefabInstance:
@@ -877,3 +877,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PhotoCandidate
   ThreatSection: 1
   ThreatSubSection: 8
+  PicturePoint: {fileID: 0}

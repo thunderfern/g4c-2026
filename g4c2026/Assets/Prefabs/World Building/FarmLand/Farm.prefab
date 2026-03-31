@@ -107,5 +107,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 17af58cf22cd243e8a206d77ca5a13d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3497582048343129269}
   m_SourcePrefab: {fileID: 100100000, guid: 17af58cf22cd243e8a206d77ca5a13d9, type: 3}
+--- !u!1 &2024362898011226621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 17af58cf22cd243e8a206d77ca5a13d9, type: 3}
+  m_PrefabInstance: {fileID: 1213318251371412652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3497582048343129269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024362898011226621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1019486745d325c4d83e124e0be54442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveObject
+  SavePosition: 1
+  SaveRotation: 1
+  SaveScale: 1
+  ObjectType: 31
+  SpawnInRange: 1

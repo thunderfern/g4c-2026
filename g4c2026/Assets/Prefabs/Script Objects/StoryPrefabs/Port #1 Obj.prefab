@@ -51,7 +51,7 @@ MonoBehaviour:
   SavePosition: 1
   SaveRotation: 1
   SaveScale: 1
-  ObjectType: 34
+  ObjectType: 49
   SpawnInRange: 0
 --- !u!1 &7613564734661177080
 GameObject:

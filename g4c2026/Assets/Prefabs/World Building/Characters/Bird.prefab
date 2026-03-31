@@ -164,6 +164,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4bda1fbc4fcd5470f9ced9e63e2d416d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7171626270795002168}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4bda1fbc4fcd5470f9ced9e63e2d416d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5037710095669642616}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4bda1fbc4fcd5470f9ced9e63e2d416d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3346808647632665470}
   m_SourcePrefab: {fileID: 100100000, guid: 4bda1fbc4fcd5470f9ced9e63e2d416d, type: 3}
 --- !u!4 &8237867841202328045 stripped
 Transform:
@@ -208,14 +214,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6aab66def7ff6439246b433ba86ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterInteraction
-  Interactable: 0
   Selectable: 0
   SelectableText: 
   InteractionRange: {fileID: 23936737353559856}
   characterInteractionType: 0
   character: 0
-  selectionText: 
   dialogue: 
   giveItem: 0
   getItem: 0
   InformList: 
+--- !u!114 &5037710095669642616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8726033839271103319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1019486745d325c4d83e124e0be54442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveObject
+  SavePosition: 1
+  SaveRotation: 1
+  SaveScale: 1
+  ObjectType: 30
+  SpawnInRange: 1
+--- !u!114 &-3346808647632665470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8726033839271103319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1019486745d325c4d83e124e0be54442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveObject
+  SavePosition: 1
+  SaveRotation: 1
+  SaveScale: 1
+  ObjectType: 30
+  SpawnInRange: 1
