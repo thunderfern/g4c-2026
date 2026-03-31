@@ -175,6 +175,10 @@ public enum ThreatSubSection {
     BunnyApple,
     SallyHoard,
     SammyGreed,
+    DuncansBoat,
+    PetersBoat,
+    TommysLunch,
+    TimTamFox,
 }
 
 // World Generation
@@ -229,4 +233,7 @@ public enum ObjectType {
     DEFORESTATION3,
     FARM1,
     PORT1,
+    COLLIDERS,
+    BUNNY,
+    FOX,
 }

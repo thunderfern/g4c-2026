@@ -46,6 +46,17 @@ public class Photobook : MonoBehaviour {
         new List<ThreatSubSection>{ThreatSubSection.Port1B},
         new List<ThreatSubSection>{ThreatSubSection.Port1SA, ThreatSubSection.Port1SHA},
         new List<ThreatSubSection>{ThreatSubSection.FishStash},
+        new List<ThreatSubSection>{ThreatSubSection.BunnyTrash},
+        new List<ThreatSubSection>{ThreatSubSection.BunnyDirt},
+        new List<ThreatSubSection>{ThreatSubSection.DuckGroup},
+        new List<ThreatSubSection>{ThreatSubSection.FoxApple},
+        new List<ThreatSubSection>{ThreatSubSection.BunnyApple},
+        new List<ThreatSubSection>{ThreatSubSection.SallyHoard},
+        new List<ThreatSubSection>{ThreatSubSection.SammyGreed},
+        new List<ThreatSubSection>{ThreatSubSection.DuncansBoat},
+        new List<ThreatSubSection>{ThreatSubSection.PetersBoat},
+        new List<ThreatSubSection>{ThreatSubSection.TommysLunch},
+        new List<ThreatSubSection>{ThreatSubSection.TimTamFox},
     };
 
     private List<string> PhotobookPageNames = new List<string> {
@@ -64,7 +75,18 @@ public class Photobook : MonoBehaviour {
         "Port",
         "Port",
         "Port",
-        "Fish Stash"
+        "Fish Stash",
+        "Easter Egg",
+        "Easter Egg",
+        "Easter Egg",
+        "Easter Egg",
+        "Easter Egg",
+        "Easter Egg",
+        "Easter Egg",
+        "Easter Egg",
+        "Easter Egg",
+        "Easter Egg",
+        "Easter Egg",
     };
 
     // Images Store
