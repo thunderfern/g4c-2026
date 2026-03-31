@@ -4,6 +4,8 @@ public class BirdOccupant : ThreatAreaOccupantsMain {
 
     CharacterInteraction characterInteraction;
 
+    public GameObject nest;
+
     void Awake() {
         characterInteraction = GetComponent<CharacterInteraction>();
     }
@@ -14,8 +16,6 @@ public class BirdOccupant : ThreatAreaOccupantsMain {
 
     public override void Heal() {
         base.Heal();
-        characterInteraction.giveItem = Item.Stick;
-        characterInteraction.characterInteractionType = CharacterInteractionType.Give;
-        characterInteraction.Selectable = true;
+        nest.SetActive(true);
     }
 }

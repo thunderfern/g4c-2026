@@ -521,23 +521,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Forest2SA
       objectReference: {fileID: 0}
+    - target: {fileID: 5702162977703526182, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: AfterThreatSubSection
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702162977703526182, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: BeforeThreatSubSection
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4712235251421623969, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
---- !u!114 &5374373247074260619 stripped
+--- !u!114 &464331752175524360 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 271939731376632741, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5702162977703526182, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
   m_PrefabInstance: {fileID: 5283712202195182894}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c83a5da2b05454fb3b10d38c015518, type: 3}
+  m_Script: {fileID: 11500000, guid: 7def74b647e8e6547863b5375e2fa821, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThreatAreaOccupantsMain
+  m_EditorClassIdentifier: Assembly-CSharp::BirdOccupant
 --- !u!4 &9025985688414056085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3751844189815458747, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
@@ -615,23 +623,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Forest2SB
       objectReference: {fileID: 0}
+    - target: {fileID: 5702162977703526182, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: AfterThreatSubSection
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702162977703526182, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: BeforeThreatSubSection
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4712235251421623969, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
---- !u!114 &5254406698333674778 stripped
+--- !u!114 &292557742399197593 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 271939731376632741, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5702162977703526182, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
   m_PrefabInstance: {fileID: 5417118637638577855}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c83a5da2b05454fb3b10d38c015518, type: 3}
+  m_Script: {fileID: 11500000, guid: 7def74b647e8e6547863b5375e2fa821, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThreatAreaOccupantsMain
+  m_EditorClassIdentifier: Assembly-CSharp::BirdOccupant
 --- !u!4 &9168276448644441348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3751844189815458747, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
@@ -776,11 +792,11 @@ PrefabInstance:
     - target: {fileID: 985176518457061216, guid: 5b78db034df57491891280521a393e97, type: 3}
       propertyPath: 'threatAreaOccupants.Array.data[0]'
       value: 
-      objectReference: {fileID: 5374373247074260619}
+      objectReference: {fileID: 464331752175524360}
     - target: {fileID: 985176518457061216, guid: 5b78db034df57491891280521a393e97, type: 3}
       propertyPath: 'threatAreaOccupants.Array.data[1]'
       value: 
-      objectReference: {fileID: 5254406698333674778}
+      objectReference: {fileID: 292557742399197593}
     - target: {fileID: 4808712427434241084, guid: 5b78db034df57491891280521a393e97, type: 3}
       propertyPath: m_LocalPosition.x
       value: 78.92633

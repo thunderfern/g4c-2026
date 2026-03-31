@@ -35,6 +35,17 @@ public class Photobook : MonoBehaviour {
         new List<ThreatSubSection>{ThreatSubSection.Forest1SA, ThreatSubSection.Forest1SHA},
         new List<ThreatSubSection>{ThreatSubSection.Forest1SB, ThreatSubSection.Forest1SHB},
         new List<ThreatSubSection>{ThreatSubSection.Forest1SC, ThreatSubSection.Forest1SHC},
+        new List<ThreatSubSection>{ThreatSubSection.Forest2A},
+        new List<ThreatSubSection>{ThreatSubSection.Forest2B},
+        new List<ThreatSubSection>{ThreatSubSection.Forest2SA, ThreatSubSection.Forest2SHA},
+        new List<ThreatSubSection>{ThreatSubSection.Forest2SB, ThreatSubSection.Forest2SHB},
+        new List<ThreatSubSection>{ThreatSubSection.Farm1A},
+        new List<ThreatSubSection>{ThreatSubSection.Farm1B},
+        new List<ThreatSubSection>{ThreatSubSection.Farm1SA, ThreatSubSection.Farm1SHA},
+        new List<ThreatSubSection>{ThreatSubSection.Port1A},
+        new List<ThreatSubSection>{ThreatSubSection.Port1B},
+        new List<ThreatSubSection>{ThreatSubSection.Port1SA, ThreatSubSection.Port1SHA},
+        new List<ThreatSubSection>{ThreatSubSection.FishStash},
     };
 
     private List<string> PhotobookPageNames = new List<string> {
@@ -43,6 +54,17 @@ public class Photobook : MonoBehaviour {
         "Forest 1",
         "Forest 1",
         "Forest 1",
+        "Forest 2",
+        "Forest 2",
+        "Forest 2",
+        "Forest 2",
+        "Farm",
+        "Farm",
+        "Farm",
+        "Port",
+        "Port",
+        "Port",
+        "Fish Stash"
     };
 
     // Images Store
