@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hair
+  m_Name: Hair 1
   m_Shader: {fileID: -6465566751694194690, guid: b8d60126e06ffd14482195a91734e7c0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -136,7 +136,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Tint: {r: 0.4811321, g: 0.3734653, b: 0.33815417, a: 0.07843138}
+    - _Tint: {r: 0.31132078, g: 0.2457545, b: 0.22467962, a: 0.07843138}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &548914787544834615
