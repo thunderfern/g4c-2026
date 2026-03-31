@@ -103,6 +103,12 @@ public class Photobook : MonoBehaviour {
         });
         ExitButton.onClick.AddListener(() => {
             GameManager.I().CurrentGameState = GameState.Movement;
+            GameManager.I().PerformedAction(new Goal {
+                GoalType = GoalType.Open, 
+                Arguments = new List<string>() {
+                    "Photobook"
+                }
+            });
         });
     }
     void Update() {

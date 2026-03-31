@@ -22,13 +22,6 @@ public class GameplayUI : MonoBehaviour {
     void Start() {
         PhotobookIcon.onClick.AddListener(() => {
             GameManager.I().CurrentGameState = GameState.Photobook;
-            GameManager.I().PerformedAction(new Goal {
-                GoalType = GoalType.Open, 
-                Arguments = new List<string>() {
-                    "Photobook"
-                }
-            });
-            
         });
     }
 

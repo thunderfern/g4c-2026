@@ -25,10 +25,15 @@ public class GameManager : MonoBehaviour {
     public Camera PlayerCamera;
     public Camera MainMenuCamera;
 
+    bool startedFishing = false;
+
+    public Texture2D cursorTex;
+
     void Start() {
         GoalList = new List<StoryGoals>();
         PlayerCamera.enabled = false;
         MainMenuCamera.enabled = true;
+        Cursor.SetCursor(cursorTex, Vector2.zero, CursorMode.Auto);
     }
 
     void Update() {
@@ -37,7 +42,7 @@ public class GameManager : MonoBehaviour {
                 PlayerCamera.enabled = true;
                 MainMenuCamera.enabled = false;
                 CurrentGameState = GameState.Movement;
-                StartStorySection("The Fishing Scheme 1");
+                StartStorySection("New Beginnings 1");
             }
         }
         // shortcuts
@@ -92,13 +97,23 @@ public class GameManager : MonoBehaviour {
         if (goal.GoalType == GoalType.Enter) SetupManager.I().TrailEnter(goal.Arguments[0]);
 
         if (goal.GoalType == GoalType.Inform) {
-            if (goal.Arguments[0] == "Fishing1") StartStorySection("The Fishing Scheme 1");
+            if (goal.Arguments[0] == "Fishing1" && !startedFishing) {
+                StartStorySection("The Fishing Scheme 1");
+                startedFishing = true;
+            }
         }
+
+        Debug.Log("checking");
 
         for (int i = 0; i < GoalList.Count; i++) {
             StoryGoals curList = GoalList[i];
             int idx = -1;
-            for (int j = 0; j < curList.Goals.Count; j++) if (curList.Goals[j].Equals(goal)) idx = j;
+            for (int j = 0; j < curList.Goals.Count; j++) {
+                if (curList.Goals[j].Equals(goal)) {
+                    idx = j;
+                    Debug.Log("yes sir");
+                }
+            }
             if (idx != -1) {
                 GoalList[i].Goals.RemoveAt(idx);
             }

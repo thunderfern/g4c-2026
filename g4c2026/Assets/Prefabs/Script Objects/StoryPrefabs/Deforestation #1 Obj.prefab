@@ -539,7 +539,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 829348059791722816, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
       propertyPath: ThreatSubSection
-      value: 5
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2721668784819710830, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: character
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3751844189815458747, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -634,6 +638,10 @@ PrefabInstance:
     - target: {fileID: 829348059791722816, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
       propertyPath: ThreatSubSection
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2721668784819710830, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: character
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3751844189815458747, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
       propertyPath: m_LocalPosition.x

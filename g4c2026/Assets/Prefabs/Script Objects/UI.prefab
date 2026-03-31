@@ -1856,7 +1856,7 @@ MonoBehaviour:
   PageLayouts:
   - PageName: {fileID: 7376028651604902411}
     Images:
-    - {fileID: 4713460958376432372}
+    - {fileID: 8562627828392288350}
     Captions:
     - {fileID: 3593569762356858270}
   - PageName: {fileID: 5671375048014598627}
@@ -6478,9 +6478,9 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8214526164120730749, guid: 64cf7e228ada47548a142e7ae38898c6, type: 3}
   m_PrefabInstance: {fileID: 5134452278930807800}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4713460958376432372 stripped
+--- !u!114 &8562627828392288350 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 443796841187674380, guid: 64cf7e228ada47548a142e7ae38898c6, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3572952645980126118, guid: 64cf7e228ada47548a142e7ae38898c6, type: 3}
   m_PrefabInstance: {fileID: 5134452278930807800}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

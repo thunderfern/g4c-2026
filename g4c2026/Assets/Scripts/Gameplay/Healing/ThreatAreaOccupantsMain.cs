@@ -6,7 +6,7 @@ public class ThreatAreaOccupantsMain : MonoBehaviour {
     public ThreatSubSection BeforeThreatSubSection;
     public ThreatSubSection AfterThreatSubSection;
 
-    void Start() {
+    public virtual void Start() {
         photoCandidate = GetComponent<PhotoCandidate>();
         photoCandidate.ThreatSubSection = BeforeThreatSubSection;
     }

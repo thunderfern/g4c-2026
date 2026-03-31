@@ -34,10 +34,9 @@ public class GoalListUI : MonoBehaviour {
             for (int j = 0; j < curEntry.Count; j++) {
                 GameObject tmp = Instantiate(GoalListEntry, GoalListObject.transform);
                 tmp.GetComponent<TMP_Text>().text = curEntry[j].GoalDescription;
-                tmp.transform.position = new Vector3(tmp.transform.position.x, tmp.transform.position.y + CurrentGoalList.Count * 5, tmp.transform.position.z);
+                tmp.transform.position = new Vector3(tmp.transform.position.x, tmp.transform.position.y - CurrentGoalList.Count * 100, tmp.transform.position.z);
                 CurrentGoalList.Add(tmp);
             }
         }
-        Debug.Log(CurrentGoalList.Count);
     }
 }
