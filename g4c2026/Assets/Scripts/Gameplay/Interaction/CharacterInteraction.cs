@@ -41,6 +41,7 @@ public class CharacterInteraction : Interaction {
                         }
                     });
                     Selectable = false;
+                    ProgressManager.I().CurrentProgress += 10;
                 }
                 else ShowDialogue();
                 break;
@@ -66,6 +67,7 @@ public class CharacterInteraction : Interaction {
                     Selectable = false;
                     // set up healing
                     GetComponent<ThreatAreaMain>().SetupHealing();
+                    ProgressManager.I().CurrentProgress += 10;
                 }
                 else ShowDialogue();
                 break;

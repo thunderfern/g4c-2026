@@ -126,6 +126,7 @@ public class PhotoManager : MonoBehaviour {
         RenderTexture.active = rt;
         screenShot.ReadPixels(new Rect(0, 0, resWidth, resHeight), 0, 0);
         screenShot.Apply();
+        if (!Photobook.I().ImageCache.TryGetValue(photoCandidate.ThreatSubSection, out var tmp)) ProgressManager.I().CurrentProgress += 30;
         Photobook.I().ImageCache[photoCandidate.ThreatSubSection] = screenShot;
         PhotoCamera.targetTexture = null;
         RenderTexture.active = null;

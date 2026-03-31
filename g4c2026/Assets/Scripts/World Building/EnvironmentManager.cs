@@ -42,7 +42,7 @@ public class EnvironmentManager : MonoBehaviour {
         // sky box is noon at whole numbers and midnight at .5s
         float skyboxUV = ElapsedTime / DayLength;
         skyboxUV -= (int)skyboxUV;
-        if (skyboxUV > 0.25 && skyboxUV < 0.5) {
+        if (skyboxUV > 0.65 && skyboxUV < 0.7) {
             GameManager.I().PerformedAction(new Goal {
                 GoalType = GoalType.Wait, 
                 Arguments = new List<string>() {

@@ -401,25 +401,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 5.707, y: 106.043, z: -1.613}
---- !u!1 &983207977 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5124337766426879689, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-  m_PrefabInstance: {fileID: 1042667521}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &983207989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983207977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d445ac79983894f8e1caef614d11ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ProgressManager
-  MaxProgress: 42
-  CurrentProgress: 0
 --- !u!1001 &991624643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -509,50 +490,6 @@ PrefabInstance:
       propertyPath: PhotobookObject
       value: 
       objectReference: {fileID: 2002682538}
-    - target: {fileID: 484223541806664158, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: UndiscoveredImageSprite
-      value: 
-      objectReference: {fileID: 1330413513, guid: a6a38535bb73f45b88a683ef87843eb1, type: 3}
-    - target: {fileID: 484223541806664158, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: PhotoCaptions.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 484223541806664158, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: PhotoCaptions.Array.data[1].PhotoTitle
-      value: Sad bird habitat destroyed #1 in forest1
-      objectReference: {fileID: 0}
-    - target: {fileID: 484223541806664158, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: PhotoCaptions.Array.data[2].PhotoTitle
-      value: Sad bird habitat destroyed #2 in forest 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 484223541806664158, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: PhotoCaptions.Array.data[3].PhotoTitle
-      value: Sad bird habitat destroyed #3 in forest1
-      objectReference: {fileID: 0}
-    - target: {fileID: 484223541806664158, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: PhotoCaptions.Array.data[4].PhotoTitle
-      value: Sad bird habitat destroyed #1 in forest 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 484223541806664158, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: PhotoCaptions.Array.data[5].PhotoTitle
-      value: Sad bird habitat destroyed #2 in forest 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 484223541806664158, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: PhotoCaptions.Array.data[6].PhotoTitle
-      value: tommy
-      objectReference: {fileID: 0}
-    - target: {fileID: 484223541806664158, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: PhotoCaptions.Array.data[4].ThreatSubSection
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 484223541806664158, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: PhotoCaptions.Array.data[5].ThreatSubSection
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 484223541806664158, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: PhotoCaptions.Array.data[6].ThreatSubSection
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 2762669795194415401, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
       propertyPath: RainObj
       value: 
@@ -567,7 +504,11 @@ PrefabInstance:
       objectReference: {fileID: 1640951691}
     - target: {fileID: 2762669795194415401, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
       propertyPath: DayLength
-      value: 10
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2762669795194415401, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
+      propertyPath: RainLength
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3080088977338410889, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
       propertyPath: m_LocalPosition.x
@@ -625,185 +566,9 @@ PrefabInstance:
       propertyPath: characterBackgroundObject
       value: 
       objectReference: {fileID: 2002682531}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[4].character
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[5].character
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[6].character
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[7].character
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[8].character
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[9].character
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[10].character
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[2].characterName
-      value: Bird
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[3].characterName
-      value: Tim Tam
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[4].characterName
-      value: Duncan
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[5].characterName
-      value: Tommy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[6].characterName
-      value: Peter
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[7].characterName
-      value: Sammy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[8].characterName
-      value: Sally
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[9].characterName
-      value: Tommy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[10].characterName
-      value: Tommy
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[4].characterBackground.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[4].characterBackground.b
-      value: 0.13333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[4].characterBackground.g
-      value: 0.7180263
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[4].characterBackground.r
-      value: 0.8117647
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[5].characterBackground.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[5].characterBackground.b
-      value: 0.13394445
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[5].characterBackground.g
-      value: 0.43890685
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[5].characterBackground.r
-      value: 0.8113208
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[6].characterBackground.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[6].characterBackground.b
-      value: 0.04685831
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[6].characterBackground.g
-      value: 0.19161649
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[6].characterBackground.r
-      value: 0.3679245
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[7].characterBackground.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[7].characterBackground.b
-      value: 0.26167426
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[7].characterBackground.g
-      value: 0.504717
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[7].characterBackground.r
-      value: 0.021426655
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[8].characterBackground.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[8].characterBackground.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[8].characterBackground.g
-      value: 0.8066038
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[8].characterBackground.r
-      value: 0.9559088
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[9].characterBackground.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[9].characterBackground.b
-      value: 0.13394445
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[9].characterBackground.g
-      value: 0.43890685
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[9].characterBackground.r
-      value: 0.8113208
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[10].characterBackground.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[10].characterBackground.b
-      value: 0.13394445
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[10].characterBackground.g
-      value: 0.43890685
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: CharacterNameBackground.Array.data[10].characterBackground.r
-      value: 0.8113208
+    - target: {fileID: 3867679359504916609, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
+      propertyPath: MaxProgress
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3970600302814943156, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
       propertyPath: PlayerCamera
@@ -838,21 +603,13 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 6526163145755632942, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      propertyPath: GoalListEntry
-      value: 
-      objectReference: {fileID: 8308086284665517332, guid: dfef8923d82b7d64cbcdfb046f2e63f0, type: 3}
-    - target: {fileID: 6526163145755632942, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
       propertyPath: GoalListObject
       value: 
       objectReference: {fileID: 1421790510}
-    m_RemovedComponents:
-    - {fileID: 7729356591046581130, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5124337766426879689, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 983207989}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
 --- !u!1 &1243523681 stripped
 GameObject:

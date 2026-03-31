@@ -15,6 +15,7 @@ public class TreeInteraction : Interaction {
             case TreeInteractionType.Grow:
                 treeMain.TreeState = TreeState.Growing;
                 Selectable = false;
+                ProgressManager.I().CurrentProgress += 10;
                 break;
             default:
                 break;
