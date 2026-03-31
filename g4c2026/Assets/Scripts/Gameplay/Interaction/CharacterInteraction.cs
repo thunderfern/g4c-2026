@@ -5,7 +5,6 @@ public class CharacterInteraction : Interaction {
 
     public CharacterInteractionType characterInteractionType;
     public Character character;
-    public string selectionText;
 
     // for specific goals
     public string dialogue;
@@ -72,14 +71,14 @@ public class CharacterInteraction : Interaction {
                 break;
             default:
                 ShowDialogue();
-                GameManager.I().PerformedAction(new Goal {
-                    GoalType = GoalType.Interact, 
-                    Arguments = new List<string>() {
-                        character.ToString()
-                    }
-                });
             break;
         }
+        GameManager.I().PerformedAction(new Goal {
+            GoalType = GoalType.Interact, 
+            Arguments = new List<string>() {
+                character.ToString()
+            }
+        });
     }
 
     void ShowDialogue() {

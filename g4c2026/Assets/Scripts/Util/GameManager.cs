@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
                 PlayerCamera.enabled = true;
                 MainMenuCamera.enabled = false;
                 CurrentGameState = GameState.Movement;
-                StartStorySection("New Beginnings 1");
+                StartStorySection("The Fishing Scheme 1");
             }
         }
         // shortcuts
@@ -90,6 +90,11 @@ public class GameManager : MonoBehaviour {
 
     public void PerformedAction(Goal goal) {
         if (goal.GoalType == GoalType.Enter) SetupManager.I().TrailEnter(goal.Arguments[0]);
+
+        if (goal.GoalType == GoalType.Inform) {
+            if (goal.Arguments[0] == "Fishing1") StartStorySection("The Fishing Scheme 1");
+        }
+
         for (int i = 0; i < GoalList.Count; i++) {
             StoryGoals curList = GoalList[i];
             int idx = -1;

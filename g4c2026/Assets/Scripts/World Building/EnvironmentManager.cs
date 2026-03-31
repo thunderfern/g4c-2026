@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 public class EnvironmentManager : MonoBehaviour {
 
@@ -40,6 +41,14 @@ public class EnvironmentManager : MonoBehaviour {
         // setting skybox
         // sky box is noon at whole numbers and midnight at .5s
         float skyboxUV = ElapsedTime / DayLength;
+        if (skyboxUV > 0.25 && skyboxUV < 0.3) {
+            GameManager.I().PerformedAction(new Goal {
+                    GoalType = GoalType.Wait, 
+                    Arguments = new List<string>() {
+                        "Morning"
+                    }
+                });
+        }
         skyboxUV -= (int)skyboxUV;
         skydomeMat.SetTextureOffset("_MainTex", new Vector3(skyboxUV, 0));
 

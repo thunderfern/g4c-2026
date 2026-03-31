@@ -81,7 +81,7 @@ public static class BaseAction {
     }
 
     public static bool CheckCameraPos(Vector3 center, Vector3 offset) {
-        if (Physics.OverlapSphere(center + offset, 0.1f).Length > 0) return false;
+        //if (Physics.OverlapSphere(center + offset, 0.1f).Length > 0) return false;
         if (Physics.Raycast(center + new Vector3(0f, 5f, 0f), offset, out RaycastHit hit, (center - offset + new Vector3(0f, 5f, 0f)).magnitude, LayerMask.GetMask("Ground"))) return false;
         return true;
     }

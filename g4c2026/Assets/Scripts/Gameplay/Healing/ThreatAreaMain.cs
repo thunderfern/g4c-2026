@@ -8,6 +8,7 @@ public class ThreatAreaMain : MonoBehaviour {
     public ThreatSubSection ThreatSectionAfter;
 
     public bool healed = false;
+    public bool canHeal = false;
 
     void Start() {
         // to do: make the healing happen after informing.
@@ -15,7 +16,7 @@ public class ThreatAreaMain : MonoBehaviour {
     }
 
     void Update() {
-        if (!healed) {
+        if (!healed && canHeal) {
             bool allHealed = true;
             for (int i = 0; i < threatAreaSubs.Count; i++) {
                 if (!threatAreaSubs[i].Healed) allHealed = false;
@@ -40,5 +41,6 @@ public class ThreatAreaMain : MonoBehaviour {
         for (int i = 0; i < threatAreaSubs.Count; i++) {
             threatAreaSubs[i].SetupHealing();
         }
+        canHeal = true;
     }
 }

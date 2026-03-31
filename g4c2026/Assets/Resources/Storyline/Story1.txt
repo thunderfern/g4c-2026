@@ -13,7 +13,7 @@ Next: "New Beginnings 2"
 Name: "New Beginnings 2"
 Narrator: "Take a picture of the animal to document your journey."
 Narrator: "Use the key ‘z’ to enter camera mode and then use WASD and your scroll wheel to position the camera. Use ‘space’ to take a picture when you are ready!"
-Goal: Picture Forest1HabitatA "Take a picture of an animal whose habitat is in danger."
+Goal: Picture Forest1SA "Take a picture of an animal whose habitat is in danger."
 Next: "New Beginnings 3"
 
 Name: "New Beginnings 3"
@@ -26,7 +26,7 @@ Narrator: "You will accumulate points when you help out. Your completion progres
 Player: "How do I help animals?"
 Narrator: "You can start by interacting with them."
 Goal: Interact Forest1HabitatA "Interact with the bird."
-Setup: Interact Forest1HabitatA Dialogue Berry
+Setup: Interact Forest1HabitatA Dialogue "Red Berry"
 Next: "New Beginnings 4"
 
 Name: "New Beginnings 4"
@@ -38,16 +38,16 @@ Next: "New Beginnings 5"
 
 Name: "New Beginnings 5"
 Narrator: "Nice! Each animal comes with different stats for running, jumping and more. Use your rabbit form to jump higher. You should be able to get the berry and give it to the bird."
-Goal: Give Forest1HabitatA Berry "Give the bird a berry."
-Setup: Interact Forest1HabitatA Give Berry 
+Goal: Give Forest1HabitatA RedBerry "Give the bird a berry."
+Setup: Interact Forest1HabitatA Give RedBerry 
 Next: "New Beginnings 6"
 
 Name: "New Beginnings 6"
 Narrator: "You are also able to turn into other animals as well. Each number 1-4 corresponds to a different form. Use this to help you out on your journey."
 Narrator: "Since you have accumulated enough points, a trail has appeared to lead you to the next animal."
 Narrator: "Good luck!"
-Goal: Picture Forest1HabitatB "Take a picture of an animal who has lost their habitat."
-Goal: Picture Forest1HabitatC "Take a picture of an animal who has lost their habitat."
+Goal: Picture Forest1SB "Take a picture of an animal who has lost their habitat."
+Goal: Picture Forest1SC "Take a picture of an animal who has lost their habitat."
 Next: "New Beginnings 7"
 
 Name: "New Beginnings 7"
@@ -55,8 +55,6 @@ Player: "There are so many animals whose habitats have been destroyed. There mus
 Player: "Deforestation is taking place, let me find where the person causing this is."
 Goal: Picture Forest1A "Take a picture of the deforestation area."
 Goal: Inform Forest1 "Inform the person who is harming the environment."
-Setup: Interact Forest1 Dialogue "You don’t have enough pictures yet."
-Setup: Interact Forest1 Inform Forest1HabitatA Forest1HabitatB Forest1HabitatC Forest1A
 Next: "The First Healing 1"
 
 Name: "The First Healing 1"
@@ -103,7 +101,8 @@ Goal: Wait Morning "Wait until the next day."
 Next: "The Fishing Scheme 2"
 
 Name: "The Fishing Scheme 2"
-Goal: Interact Fishing1
+Goal: Interact Fishing1 "Check back on Duncan and his brothers"
+Setup: Interact Fishing1 Dialogue "..."
 Next: "The Fishing Scheme 3"
 
 
@@ -114,14 +113,13 @@ Fishing1: "I know you are!"
 Player: "Woah, what’s going on here?"
 Fishing1: "He’s took more fish than he was supposed to, I know it! I saw him."
 Fishing3: "No I didn’t. You don’t have any proof."
-Player: "I’ll investigate the area and see what I find. If I don’t find anything, he is innocent."
-Goal: Interact FishingStash "Find the stash of the fish."
+Player: "I’ll investigate the area and see what I find. If I don’t find anything, he is innocent.
 Goal: Picture FishingStash "Take a picture of the stash of fish."
 Next: "The Fishing Scheme 4"
 
 Name: "The Fishing Scheme 4"
 Player: "Great, I’ve found evidence. Let me get back to the fishermen."
-Goal: Interact Fishing1
+Goal: Interact Fishing1 "Report back to Duncan."
 Next: "The Fishing Scheme 5"
 
 Name: "The Fishing Scheme 5"

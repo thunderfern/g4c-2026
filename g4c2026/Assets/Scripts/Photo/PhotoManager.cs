@@ -96,23 +96,29 @@ public class PhotoManager : MonoBehaviour {
         float distance = -1.0f;
         // prioritize the ones that are closer to the player
         for (int i = 0; i < photoCandidates.Length; i++) {
-            float viewpointX = PhotoCamera.WorldToViewportPoint(photoCandidates[i].transform.position).x;
-            float viewpointY = PhotoCamera.WorldToViewportPoint(photoCandidates[i].transform.position).y;
-            float viewpointZ = PhotoCamera.WorldToViewportPoint(photoCandidates[i].transform.position).z;
+            Vector3 refPosition = photoCandidates[i].transform.position;
+            if (photoCandidates[i].PicturePoint != null) refPosition = photoCandidates[i].PicturePoint.transform.position;
+            float viewpointX = PhotoCamera.WorldToViewportPoint(refPosition).x;
+            float viewpointY = PhotoCamera.WorldToViewportPoint(refPosition).y;
+            float viewpointZ = PhotoCamera.WorldToViewportPoint(refPosition).z;
             if (viewpointX > 0 && viewpointX < 1 && viewpointY > 0 && viewpointY < 1 && viewpointZ > 0.5) {
-                if (distance == -1 || (photoCandidates[i].transform.position - PhotoCamera.transform.position).magnitude < distance) {
+                if (distance == -1 || (refPosition - PhotoCamera.transform.position).magnitude < distance) {
                     photoCandidate = photoCandidates[i];
-                    distance = (photoCandidates[i].transform.position - PhotoCamera.transform.position).magnitude;
+                    distance = (refPosition - PhotoCamera.transform.position).magnitude;
                 }
             }
         }
-        if (!photoCandidate || distance > 15f) aimingText.GetComponent<TMP_Text>().text = "None";
+        if (!photoCandidate || distance > 25f) {
+            aimingText.GetComponent<TMP_Text>().text = "None";
+            photoCandidate = null;
+        }
         else {
             aimingText.GetComponent<TMP_Text>().text = Photobook.I().GetPhotoCaption(photoCandidate.ThreatSubSection);
         }
     }
 
     void TakePhoto() {
+        if (!photoCandidate) return;
         RenderTexture rt = new RenderTexture(resWidth, resHeight, 24);
         PhotoCamera.targetTexture = rt;
         Texture2D screenShot = new Texture2D(resWidth, resHeight, TextureFormat.RGB24, false, false);
@@ -122,12 +128,12 @@ public class PhotoManager : MonoBehaviour {
         screenShot.Apply();
         Photobook.I().ImageCache[photoCandidate.ThreatSubSection] = screenShot;
         PhotoCamera.targetTexture = null;
-        RenderTexture.active = null; // JC: added to avoid errors
+        RenderTexture.active = null;
         Destroy(rt);
-        byte[] bytes = screenShot.EncodeToPNG();
-        string filename = GetScreenshotName();
-        System.IO.File.WriteAllBytes(filename, bytes);
-        Debug.Log(string.Format("Took screenshot to: {0}", filename));
+        // byte[] bytes = screenShot.EncodeToPNG();
+        // string filename = GetScreenshotName();
+        // System.IO.File.WriteAllBytes(filename, bytes);
+        // Debug.Log(string.Format("Took screenshot to: {0}", filename));
 
         //Photobook.I().ImageCache[photoCandidate.ThreatSubSection] = screenShot;
 

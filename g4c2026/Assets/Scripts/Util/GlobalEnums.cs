@@ -97,9 +97,11 @@ public enum Character {
     Narrator,
     Forest1HabitatA,
     Forest1,
+    Forest2,
     Fishing1,
     Fishing2,
-    Fishing3
+    Fishing3,
+    Farm1,
 }
 
 public enum Item {
@@ -140,9 +142,26 @@ public enum ThreatSubSection {
     // Forest2
     Forest2A,
     Forest2B,
+    Forest2SA,
+    Forest2SB,
+    Forest2SHA,
+    Forest2SHB,
+
+    // Farm
+    Farm1A,
+    Farm1B,
+    Farm1SA,
+    Farm1SAH,
+
+    // Port
+    Port1A,
+    Port1B,
+    Port1SA,
+    Port1SAH,
 
     // Miscellaneous
     Misc1,
+    FishStash
 }
 
 // World Generation
@@ -178,4 +197,8 @@ public enum ObjectType {
     BLUECAN,
     BLUECANCRUSHED,
     DEFORESTATION1,
+    DEFORESTATION2,
+    DEFORESTATION3,
+    FARM1,
+    PORT1,
 }

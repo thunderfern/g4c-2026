@@ -130,8 +130,6 @@ public class PlayerAction : MonoBehaviour {
     void ApplyAction(float speed, float jump, float gravity) {
         // Applying movement
 
-        Debug.Log("helo?");
-
         Vector3 movementDirection = new Vector3();
 
         if (Input.GetKey(KeyCode.W)) {

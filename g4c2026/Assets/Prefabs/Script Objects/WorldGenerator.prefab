@@ -110,3 +110,7 @@ MonoBehaviour:
     ObjectPrefab: {fileID: 6136274527575660930, guid: 4b88f5ad16f7942f492bf21afa6ab832, type: 3}
   - ObjectType: 30
     ObjectPrefab: {fileID: 6216278370363078236, guid: d2ae6aef3ecd89b4caa5a9cb0957bb61, type: 3}
+  - ObjectType: 31
+    ObjectPrefab: {fileID: 5747354141113787578, guid: 07e8b2ba84d2af64388233cc4f656c3c, type: 3}
+  - ObjectType: 32
+    ObjectPrefab: {fileID: 2862089502771442718, guid: d4db45e62ec9f2f4f9b4ae30dc006667, type: 3}

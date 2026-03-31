@@ -1,11 +1,12 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class AlgaeOccupant : ThreatAreaOccupantsMain {
 
-    CharacterInteraction characterInteraction;
+    public List<GameObject> AlgaeChildren;
 
     void Awake() {
-        characterInteraction = GetComponent<CharacterInteraction>();
+
     }
 
     void Update() {
@@ -14,8 +15,8 @@ public class AlgaeOccupant : ThreatAreaOccupantsMain {
 
     public override void Heal() {
         base.Heal();
-        characterInteraction.giveItem = Item.Stick;
-        characterInteraction.characterInteractionType = CharacterInteractionType.Give;
-        characterInteraction.Selectable = true;
+        for (int i = 0; i < AlgaeChildren.Count; i++) {
+            if (i % 3 != 0) Destroy(AlgaeChildren[i]);
+        }
     }
 }

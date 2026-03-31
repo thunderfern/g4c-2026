@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 76561055f8e12463d9c35dba256c50e2, type: 2}
     - target: {fileID: 919132149155446097, guid: 28276770644ba4b6d874d7a6612f7351, type: 3}
       propertyPath: m_Name
-      value: NPCHair2
+      value: NPCWoodCutterBase
       objectReference: {fileID: 0}
     - target: {fileID: 976723959910379622, guid: 28276770644ba4b6d874d7a6612f7351, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -136,16 +136,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6aab66def7ff6439246b433ba86ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterInteraction
-  Selectable: 0
-  SelectableText: 
+  Selectable: 1
+  SelectableText: 'Talk '
   InteractionRange: {fileID: 2127941487334142943}
   characterInteractionType: 0
   character: 0
   selectionText: 
-  dialogue: 
+  dialogue: "You don\u2019t have enough pictures yet"
   giveItem: 0
   getItem: 0
-  InformList: 
+  InformList: 02000000030000000400000000000000
 --- !u!1001 &5540479818986629110
 PrefabInstance:
   m_ObjectHideFlags: 0
