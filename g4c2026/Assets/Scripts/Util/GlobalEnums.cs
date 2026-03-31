@@ -151,17 +151,23 @@ public enum ThreatSubSection {
     Farm1A,
     Farm1B,
     Farm1SA,
-    Farm1SAH,
+    Farm1SHA,
 
     // Port
     Port1A,
     Port1B,
     Port1SA,
-    Port1SAH,
+    Port1SHA,
 
     // Miscellaneous
-    Misc1,
-    FishStash
+    FishStash,
+    BunnyTrash,
+    BunnyDirt,
+    DuckGroup,
+    FoxApple,
+    BunnyApple,
+    SallyHoard,
+    SammyGreed,
 }
 
 // World Generation

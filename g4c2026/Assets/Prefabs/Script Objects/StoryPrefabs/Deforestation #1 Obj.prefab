@@ -110,27 +110,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Forest1SA
       objectReference: {fileID: 0}
+    - target: {fileID: 5702162977703526182, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: AfterThreatSubSection
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702162977703526182, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: BeforeThreatSubSection
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
---- !u!114 &191927769809702824 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 271939731376632741, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
-  m_PrefabInstance: {fileID: 103515672349162509}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c83a5da2b05454fb3b10d38c015518, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThreatAreaOccupantsMain
 --- !u!4 &3854791684363581366 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3751844189815458747, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
   m_PrefabInstance: {fileID: 103515672349162509}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5642418730582950699 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5702162977703526182, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+  m_PrefabInstance: {fileID: 103515672349162509}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7def74b647e8e6547863b5375e2fa821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BirdOccupant
 --- !u!1001 &1732608463249801488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -162,15 +170,15 @@ PrefabInstance:
     - target: {fileID: 2123367610120063347, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
       propertyPath: 'threatAreaOccupants.Array.data[0]'
       value: 
-      objectReference: {fileID: 191927769809702824}
+      objectReference: {fileID: 5642418730582950699}
     - target: {fileID: 2123367610120063347, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
       propertyPath: 'threatAreaOccupants.Array.data[1]'
       value: 
-      objectReference: {fileID: 5933041584715857675}
+      objectReference: {fileID: 2211933000050537352}
     - target: {fileID: 2123367610120063347, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
       propertyPath: 'threatAreaOccupants.Array.data[2]'
       value: 
-      objectReference: {fileID: 7664663365165368181}
+      objectReference: {fileID: 2790650681244241910}
     - target: {fileID: 4808712427434241084, guid: d6d86dd24ccc846989ed3c656c2a0712, type: 3}
       propertyPath: m_LocalPosition.x
       value: 37.550003
@@ -577,23 +585,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Forest1SB
       objectReference: {fileID: 0}
+    - target: {fileID: 5702162977703526182, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: AfterThreatSubSection
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702162977703526182, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: BeforeThreatSubSection
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4712235251421623969, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
---- !u!114 &5933041584715857675 stripped
+--- !u!114 &2211933000050537352 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 271939731376632741, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5702162977703526182, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
   m_PrefabInstance: {fileID: 5877332050609900718}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c83a5da2b05454fb3b10d38c015518, type: 3}
+  m_Script: {fileID: 11500000, guid: 7def74b647e8e6547863b5375e2fa821, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThreatAreaOccupantsMain
+  m_EditorClassIdentifier: Assembly-CSharp::BirdOccupant
 --- !u!4 &7314197869778388757 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3751844189815458747, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
@@ -663,28 +679,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Forest1SC
       objectReference: {fileID: 0}
+    - target: {fileID: 5702162977703526182, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: AfterThreatSubSection
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5702162977703526182, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+      propertyPath: BeforeThreatSubSection
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4712235251421623969, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
---- !u!4 &6740058434608397163 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3751844189815458747, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
-  m_PrefabInstance: {fileID: 7608907462558953680}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7664663365165368181 stripped
+--- !u!114 &2790650681244241910 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 271939731376632741, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5702162977703526182, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
   m_PrefabInstance: {fileID: 7608907462558953680}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c83a5da2b05454fb3b10d38c015518, type: 3}
+  m_Script: {fileID: 11500000, guid: 7def74b647e8e6547863b5375e2fa821, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThreatAreaOccupantsMain
+  m_EditorClassIdentifier: Assembly-CSharp::BirdOccupant
+--- !u!4 &6740058434608397163 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3751844189815458747, guid: bb60b20e9450ca04c9fc241ca80da05f, type: 3}
+  m_PrefabInstance: {fileID: 7608907462558953680}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7661075201537514338
 PrefabInstance:
   m_ObjectHideFlags: 0
