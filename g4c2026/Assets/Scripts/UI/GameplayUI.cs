@@ -40,7 +40,7 @@ public class GameplayUI : MonoBehaviour {
         }
         GameplayObj.SetActive(true);
         InventoryImage.sprite = GetSprite(PlayerData.PlayerInventory);
-        ProgressIndicator.text = "Progress: " + Math.Round((float)ProgressManager.I().CurrentProgress / (float)ProgressManager.I().MaxProgress, 2) + "%";
+        ProgressIndicator.text = "Progress: " + Math.Round((float)ProgressManager.I().CurrentProgress * 100 / (float)ProgressManager.I().MaxProgress, 2) + "%";
     }
 
     Sprite GetSprite(Item item) {

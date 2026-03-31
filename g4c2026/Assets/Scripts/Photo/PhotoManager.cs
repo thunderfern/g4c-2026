@@ -53,12 +53,14 @@ public class PhotoManager : MonoBehaviour {
             AudioManager.I().PlaySound(AudioType.CameraClick, AudioSetting.SFX, AudioPlayType.Overlap);
             TakePhoto();
             LeavePhotoMode();
-            GameManager.I().PerformedAction(new Goal {
-            GoalType = GoalType.Picture, 
-            Arguments = new List<string>() {
-                photoCandidate.ThreatSubSection.ToString()
+            if (photoCandidate) {
+                GameManager.I().PerformedAction(new Goal {
+                    GoalType = GoalType.Picture, 
+                    Arguments = new List<string>() {
+                        photoCandidate.ThreatSubSection.ToString()
+                    }
+                });
             }
-        });
         }
     }
 
