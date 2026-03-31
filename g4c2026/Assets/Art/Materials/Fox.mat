@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Fox
-  m_Shader: {fileID: -6465566751694194690, guid: b8d60126e06ffd14482195a91734e7c0, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: c19c622642e384fd4a63a0ff02817e38, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -123,7 +123,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Tint: {r: 0.7075472, g: 0.3744975, b: 0.2236116, a: 0.13333334}
+    - _Tint: {r: 0.5, g: 0.24737306, b: 0.13443395, a: 0.13333334}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7454370558144038906
