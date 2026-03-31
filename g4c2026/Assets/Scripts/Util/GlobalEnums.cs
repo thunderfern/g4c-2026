@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 // Audio
 
@@ -57,11 +58,13 @@ public struct Setup {
     public List<string> Arguments;
 }
 
+[Serializable]
 public struct StoryGoals {
     public string StoryName;
     public List<Goal> Goals;
 }
 
+[Serializable]
 public struct Goal {
     public GoalType GoalType;
     public List<string> Arguments;
@@ -102,6 +105,10 @@ public enum Character {
     Fishing2,
     Fishing3,
     Farm1,
+    Forest1HabitatB,
+    Forest1HabitatC,
+    Forest2HabitatA,
+    Forest2HabitatB,
 }
 
 public enum Item {

@@ -41,15 +41,15 @@ public class EnvironmentManager : MonoBehaviour {
         // setting skybox
         // sky box is noon at whole numbers and midnight at .5s
         float skyboxUV = ElapsedTime / DayLength;
-        if (skyboxUV > 0.25 && skyboxUV < 0.3) {
-            GameManager.I().PerformedAction(new Goal {
-                    GoalType = GoalType.Wait, 
-                    Arguments = new List<string>() {
-                        "Morning"
-                    }
-                });
-        }
         skyboxUV -= (int)skyboxUV;
+        if (skyboxUV > 0.25 && skyboxUV < 0.5) {
+            GameManager.I().PerformedAction(new Goal {
+                GoalType = GoalType.Wait, 
+                Arguments = new List<string>() {
+                    "Morning"
+                }
+            });
+        }
         skydomeMat.SetTextureOffset("_MainTex", new Vector3(skyboxUV, 0));
 
         // setting light, range is from 0.2 to 0.5

@@ -49,7 +49,7 @@ public class PhotoManager : MonoBehaviour {
         MoveCamera();
         SenseObjects();
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Return)) {
             AudioManager.I().PlaySound(AudioType.CameraClick, AudioSetting.SFX, AudioPlayType.Overlap);
             TakePhoto();
             LeavePhotoMode();

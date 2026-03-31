@@ -10,6 +10,11 @@ public class BirdOccupant : ThreatAreaOccupantsMain {
         characterInteraction = GetComponent<CharacterInteraction>();
     }
 
+    public override void Start() {
+        base.Start();
+        nest.SetActive(false);
+    }
+
     void Update() {
 
     }

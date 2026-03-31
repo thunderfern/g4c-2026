@@ -32,7 +32,7 @@ Next: "New Beginnings 4"
 Name: "New Beginnings 4"
 Narrator: "It seems the bird wants a berry. Pick up a berry and give it to him. "
 Player: "There is a berry on top of this small hill here, but I am unable to reach it."
-Narrator: "Remember when I said there is a lot of magic to be found in this place? In this place you are able to turn into some other animals. Press ‘2’ to turn into a rabbit."
+Narrator: "Remember when I said there is a lot of magic to be found in this place? In this place you are able to turn into some other animals. Press ‘3’ to turn into a rabbit."
 Goal: Turn Rabbit "Turn into a rabbit."
 Next: "New Beginnings 5"
 
@@ -43,7 +43,7 @@ Setup: Interact Forest1HabitatA Give RedBerry
 Next: "New Beginnings 6"
 
 Name: "New Beginnings 6"
-Narrator: "You are also able to turn into other animals as well. Each number 1-4 corresponds to a different form. Use this to help you out on your journey."
+Narrator: "You are also able to turn into other animals as well. Each number 1-3 corresponds to a different form. Use this to help you out on your journey."
 Narrator: "Since you have accumulated enough points, a trail has appeared to lead you to the next animal."
 Narrator: "Good luck!"
 Goal: Picture Forest1SB "Take a picture of an animal who has lost their habitat."
@@ -75,7 +75,7 @@ Player: "I think this section of the forest needs a protector to prevent others 
 Forest1: "I can do that!"
 Player: "Thank you so much!"
 Player: "Hmm… I’ve taken a lot of photos already. I want to view the pictures I’ve taken."
-Player: "Let me head back to my truck. I can use ‘T’ to toggle on and off the path back."
+Player: "After that, I will continue to explore this area."
 Goal: Open Photobook "Open your photobook."
 Name: "The First Healing 3"
 
@@ -114,12 +114,13 @@ Player: "Woah, what’s going on here?"
 Fishing1: "He’s took more fish than he was supposed to, I know it! I saw him."
 Fishing3: "No I didn’t. You don’t have any proof."
 Player: "I’ll investigate the area and see what I find. If I don’t find anything, he is innocent.
-Goal: Picture FishingStash "Take a picture of the stash of fish."
+Goal: Picture FishStash "Take a picture of the stash of fish."
 Next: "The Fishing Scheme 4"
 
 Name: "The Fishing Scheme 4"
 Player: "Great, I’ve found evidence. Let me get back to the fishermen."
 Goal: Interact Fishing1 "Report back to Duncan."
+Setup: Interact Fishing1 Dialogue "..."
 Next: "The Fishing Scheme 5"
 
 Name: "The Fishing Scheme 5"
