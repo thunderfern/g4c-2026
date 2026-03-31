@@ -15,7 +15,7 @@ public class SettingUI : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.K)) {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
             if (GameManager.I().CurrentGameState == GameState.Settings) {
                 GameManager.I().CurrentGameState = GameState.Movement;
             }
@@ -27,10 +27,9 @@ public class SettingUI : MonoBehaviour {
             SettingsObj.SetActive(false);
             return;
         }
+        SettingsObj.SetActive(true);
         for (int i = 0; i < Sliders.Count; i++) {
             AudioManager.I().AudioSettingList[i] = Sliders[i].value;
         }
-        SettingsObj.SetActive(true);
-        
     }
 }

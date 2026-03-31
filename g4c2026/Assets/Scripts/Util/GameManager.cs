@@ -103,15 +103,12 @@ public class GameManager : MonoBehaviour {
             }
         }
 
-        Debug.Log("checking");
-
         for (int i = 0; i < GoalList.Count; i++) {
             StoryGoals curList = GoalList[i];
             int idx = -1;
             for (int j = 0; j < curList.Goals.Count; j++) {
                 if (curList.Goals[j].Equals(goal)) {
                     idx = j;
-                    Debug.Log("yes sir");
                 }
             }
             if (idx != -1) {

@@ -534,7 +534,7 @@ GameObject:
   - component: {fileID: 4554632108736947416}
   - component: {fileID: 4599257840980638974}
   - component: {fileID: 2762669795194415401}
-  - component: {fileID: 7729356591046581130}
+  - component: {fileID: 3867679359504916609}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -571,8 +571,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   CurrentGameState: 5
+  GoalList: []
   PlayerCamera: {fileID: 0}
   MainMenuCamera: {fileID: 0}
+  cursorTex: {fileID: 0}
 --- !u!114 &7877498409861507933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,18 +625,24 @@ MonoBehaviour:
   - ThreatSubSection: 0
     PhotoTitle: Forest1A
   - ThreatSubSection: 2
-    PhotoTitle: Sad bird habitat destroyed
+    PhotoTitle: Sad bird habitat destroyed #1 in forest1
   - ThreatSubSection: 3
-    PhotoTitle: Sad bird habitat destroyed
+    PhotoTitle: Sad bird habitat destroyed #2 in forest 1
   - ThreatSubSection: 4
-    PhotoTitle: Sad bird habitat destroyed
+    PhotoTitle: Sad bird habitat destroyed #3 in forest1
+  - ThreatSubSection: 10
+    PhotoTitle: Sad bird habitat destroyed #1 in forest 2
+  - ThreatSubSection: 11
+    PhotoTitle: Sad bird habitat destroyed #2 in forest 2
+  - ThreatSubSection: 8
+    PhotoTitle: tommy
   BackButton: {fileID: 0}
   ForwardButton: {fileID: 0}
   ExitButton: {fileID: 0}
   PhotobookObject: {fileID: 0}
   LeftPage: {fileID: 0}
   RightPage: {fileID: 0}
-  UndiscoveredImageSprite: {fileID: 52169203, guid: bbac67a2b9ba19b489a55916c4b7b8d1, type: 3}
+  UndiscoveredImageSprite: {fileID: 1330413513, guid: a6a38535bb73f45b88a683ef87843eb1, type: 3}
 --- !u!114 &3498448278237793379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,10 +668,25 @@ MonoBehaviour:
     characterName: Narrator
   - character: 2
     characterBackground: {r: 0.1994482, g: 0.509434, b: 0.32639563, a: 1}
-    characterName: Forest 1 Habitat A
+    characterName: Bird
   - character: 3
     characterBackground: {r: 0.42780554, g: 0.14840688, b: 0.6839622, a: 1}
-    characterName: Forest 1
+    characterName: Tim Tam
+  - character: 5
+    characterBackground: {r: 0.8117647, g: 0.7180263, b: 0.13333334, a: 1}
+    characterName: Duncan
+  - character: 4
+    characterBackground: {r: 0.8113208, g: 0.43890685, b: 0.13394445, a: 1}
+    characterName: Tommy
+  - character: 7
+    characterBackground: {r: 0.3679245, g: 0.19161649, b: 0.04685831, a: 1}
+    characterName: Peter
+  - character: 6
+    characterBackground: {r: 0.021426655, g: 0.504717, b: 0.26167426, a: 1}
+    characterName: Sammy
+  - character: 8
+    characterBackground: {r: 0.9559088, g: 0.8066038, b: 1, a: 1}
+    characterName: Sally
 --- !u!114 &6526163145755632942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,7 +701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GoalListUI
   CurrentGoalList: []
   GoalListObject: {fileID: 0}
-  GoalListEntry: {fileID: 0}
+  GoalListEntry: {fileID: 8308086284665517332, guid: dfef8923d82b7d64cbcdfb046f2e63f0, type: 3}
 --- !u!114 &4554632108736947416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,12 +746,12 @@ MonoBehaviour:
   SkyDome: {fileID: 0}
   RainObj: {fileID: 0}
   LightObj: {fileID: 0}
-  DayLength: 30
+  DayLength: 10
   LightMin: 0.05
   LightMax: 0.5
   RainLength: 15
   ElapsedTime: 0
---- !u!114 &7729356591046581130
+--- !u!114 &3867679359504916609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -737,20 +760,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5124337766426879689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11b4cc8c340a0504f90b374d0d56f115, type: 3}
+  m_Script: {fileID: 11500000, guid: 14d445ac79983894f8e1caef614d11ad, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  AudioListInspector:
-  - audioType: 0
-    audioClip: {fileID: 8300000, guid: b8d605320ee49774dafe3712f08d367b, type: 3}
-  - audioType: 0
-    audioClip: {fileID: 8300000, guid: e082c9ace7fc5314390c5af5785a844f, type: 3}
-  - audioType: 0
-    audioClip: {fileID: 8300000, guid: dbf44459097d7ae44b5aa5b4307d6f8e, type: 3}
-  - audioType: 0
-    audioClip: {fileID: 8300000, guid: 019e513609f7a464aa8628204ccf706e, type: 3}
-  AudioSources: []
-  AudioSettingList: []
+  m_EditorClassIdentifier: Assembly-CSharp::ProgressManager
+  MaxProgress: 42
+  CurrentProgress: 0
 --- !u!1 &7373343628316556765
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +829,7 @@ MonoBehaviour:
   - {fileID: 2158416055027066173}
   - {fileID: 553755852082726335}
   - {fileID: 728457323640616976}
+  AudioSettings: 
   AudioSettingList:
   - 1
   - 1

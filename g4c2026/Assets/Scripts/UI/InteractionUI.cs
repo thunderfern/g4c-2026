@@ -10,7 +10,8 @@ public class InteractionUI : MonoBehaviour {
 
     void Update() {
         if (interactionRigidbody.currentInteraction && GameManager.I().CurrentGameState == GameState.Movement) {
-            InteractionText.GetComponent<TMP_Text>().text = interactionRigidbody.currentInteraction.SelectableText;
+            if (interactionRigidbody.currentInteraction.SelectableText == "") InteractionText.GetComponent<TMP_Text>().text = "Interact";
+            else InteractionText.GetComponent<TMP_Text>().text = interactionRigidbody.currentInteraction.SelectableText;
             InteractionObject.SetActive(true);
         }
         else InteractionObject.SetActive(false);

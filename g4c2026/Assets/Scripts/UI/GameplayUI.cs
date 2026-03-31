@@ -8,6 +8,8 @@ public class GameplayUI : MonoBehaviour {
 
     public GameObject GameplayObj;
     public Button PhotobookIcon;
+    public Button SettingsIcon;
+    public Button PhotoIcon;
     public Image InventoryImage;
     public TMP_Text ProgressIndicator;
 
@@ -22,6 +24,12 @@ public class GameplayUI : MonoBehaviour {
     void Start() {
         PhotobookIcon.onClick.AddListener(() => {
             GameManager.I().CurrentGameState = GameState.Photobook;
+        });
+        SettingsIcon.onClick.AddListener(() => {
+            GameManager.I().CurrentGameState = GameState.Settings;
+        });
+        PhotoIcon.onClick.AddListener(() => {
+            PhotoManager.I().EnterPhotoMode();
         });
     }
 
