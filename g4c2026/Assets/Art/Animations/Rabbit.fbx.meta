@@ -31,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Cube.083|Cube.083Action
-      takeName: Cube.083|Cube.083Action
+      name: Cube.083|Run
+      takeName: Cube.083|Run
       internalID: -365228312775826474
       firstFrame: 0
-      lastFrame: 11
+      lastFrame: 16
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
