@@ -48,10 +48,10 @@ public static class BaseAction {
         transform.position = center + newDirection;
     }
 
-    public static void ApplyRotationVertical(Transform transform, Vector3 mouseDelta, Vector3 center, float lowBound = 300, float highBound = 80) {
+    public static void ApplyRotationVertical(Transform transform, Vector3 mouseDelta, Vector3 center, float lowBound = 310, float highBound = 70) {
         float newAngle = -mouseDelta.y / 5 + transform.rotation.eulerAngles.x;
         // setting up bounds
-        if (newAngle >= lowBound && newAngle <= highBound) {
+        if (newAngle >= highBound && newAngle <= lowBound) {
             if (Math.Abs(newAngle - lowBound) < Math.Abs(newAngle - highBound)) newAngle = lowBound;
             else newAngle = highBound;
         }
@@ -82,7 +82,10 @@ public static class BaseAction {
 
     public static bool CheckCameraPos(Vector3 center, Vector3 offset) {
         //if (Physics.OverlapSphere(center + offset, 0.1f).Length > 0) return false;
-        if (Physics.Raycast(center + new Vector3(0f, 5f, 0f), offset, out RaycastHit hit, (center - offset + new Vector3(0f, 5f, 0f)).magnitude, LayerMask.GetMask("Ground"))) return false;
+        if (Physics.Raycast(center, offset, out RaycastHit hit, (center - offset).magnitude, LayerMask.GetMask("Ground"))) {
+            Debug.Log(hit.transform.gameObject.name);
+            return false;
+        }
         return true;
     }
 }

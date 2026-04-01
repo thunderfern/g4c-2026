@@ -128,7 +128,7 @@ MonoBehaviour:
   AnimalGameObjects:
   - {fileID: 2076268794084652125}
   - {fileID: 2302006407694663577}
-  - {fileID: 1352563187726291696}
+  - {fileID: 6331020329487916679}
   AnimalAnimators:
   - {fileID: 5212846493482527496}
   - {fileID: 2160802127495383047}
@@ -913,11 +913,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7737847860295817569, guid: 75541666a6a134c2cba7280ff9605fcd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7737847860295817569, guid: 75541666a6a134c2cba7280ff9605fcd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7737847860295817569, guid: 75541666a6a134c2cba7280ff9605fcd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -931,7 +931,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6364035696326542906, guid: 75541666a6a134c2cba7280ff9605fcd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -939,6 +940,11 @@ PrefabInstance:
 --- !u!95 &6190381159214952258 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7069913242631598622, guid: 75541666a6a134c2cba7280ff9605fcd, type: 3}
+  m_PrefabInstance: {fileID: 4032347290556816732}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6331020329487916679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6929222391050699739, guid: 75541666a6a134c2cba7280ff9605fcd, type: 3}
   m_PrefabInstance: {fileID: 4032347290556816732}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &6671974953377006653 stripped
