@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.001
@@ -367,7 +367,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 75
+  far clip plane: 1000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -1084,7 +1084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5517392352933520564, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
       propertyPath: far clip plane
-      value: 75
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8259317381225725508, guid: 3c35ddea838d0a34ea577dec4fd2675f, type: 3}
       propertyPath: ZoomMax
