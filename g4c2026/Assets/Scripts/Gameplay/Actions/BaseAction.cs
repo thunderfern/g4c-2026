@@ -82,10 +82,8 @@ public static class BaseAction {
 
     public static bool CheckCameraPos(Vector3 center, Vector3 offset) {
         //if (Physics.OverlapSphere(center + offset, 0.1f).Length > 0) return false;
-        if (Physics.Raycast(center, offset, out RaycastHit hit, (center - offset).magnitude, LayerMask.GetMask("Ground"))) {
-            Debug.Log(hit.transform.gameObject.name);
-            return false;
-        }
+        if (Physics.Raycast(center, offset, out RaycastHit hit, (center - offset).magnitude, LayerMask.GetMask("Ground"))) return false;
+        if (Physics.Raycast(center + offset, -Vector3.up, out RaycastHit hit1, 1f, LayerMask.GetMask("Ground"))) return false;
         return true;
     }
 }
