@@ -236,4 +236,5 @@ public enum ObjectType {
     COLLIDERS,
     BUNNY,
     FOX,
+    BUCKET,
 }
