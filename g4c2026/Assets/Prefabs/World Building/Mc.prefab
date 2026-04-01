@@ -132,7 +132,7 @@ MonoBehaviour:
   AnimalAnimators:
   - {fileID: 5212846493482527496}
   - {fileID: 2160802127495383047}
-  - {fileID: 6190381159214952258}
+  - {fileID: 0}
   Feet: {fileID: 989918425405677384}
   HumanSpeed: 5
   HumanJump: 5
@@ -933,20 +933,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -6364035696326542906, guid: 75541666a6a134c2cba7280ff9605fcd, type: 3}
+    - {fileID: 2131137881916999378, guid: 75541666a6a134c2cba7280ff9605fcd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6929222391050699739, guid: 75541666a6a134c2cba7280ff9605fcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4766687389107897134}
   m_SourcePrefab: {fileID: 100100000, guid: 75541666a6a134c2cba7280ff9605fcd, type: 3}
---- !u!95 &6190381159214952258 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7069913242631598622, guid: 75541666a6a134c2cba7280ff9605fcd, type: 3}
-  m_PrefabInstance: {fileID: 4032347290556816732}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6331020329487916679 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6929222391050699739, guid: 75541666a6a134c2cba7280ff9605fcd, type: 3}
   m_PrefabInstance: {fileID: 4032347290556816732}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &4766687389107897134
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6331020329487916679}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9fd152d9e04b2422cb356e62f0823136, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &6671974953377006653 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7737847860295817569, guid: 75541666a6a134c2cba7280ff9605fcd, type: 3}

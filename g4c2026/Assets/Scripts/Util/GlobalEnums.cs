@@ -237,4 +237,5 @@ public enum ObjectType {
     BUNNY,
     FOX,
     BUCKET,
+    SAND
 }

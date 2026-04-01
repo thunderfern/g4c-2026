@@ -112,5 +112,5 @@ MonoBehaviour:
   SavePosition: 1
   SaveRotation: 1
   SaveScale: 1
-  ObjectType: 6
+  ObjectType: 54
   SpawnInRange: 0
