@@ -12,7 +12,7 @@ Next: "New Beginnings 2"
 
 Name: "New Beginnings 2"
 Narrator: "Take a picture of the animal to document your journey."
-Narrator: "Use the key ‘z’ to enter camera mode and then use WASD and your scroll wheel to position the camera. Use ‘space’ to take a picture when you are ready!"
+Narrator: "Use the key ‘z’ to enter camera mode and then use WASD and your scroll wheel to position the camera. Use 'enter' to take a picture when you are ready!"
 Goal: Picture Forest1SA "Take a picture of an animal whose habitat is in danger."
 Next: "New Beginnings 3"
 

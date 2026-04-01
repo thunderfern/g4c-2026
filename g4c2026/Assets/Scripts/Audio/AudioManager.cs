@@ -85,6 +85,12 @@ public class AudioManager : MonoBehaviour {
             if (!AudioSources[i].isPlaying) continue;
             if (AudioSources[i].clip == audioList[(int)audio]) return true;
         }
+        for (int i = 0; i < AudioSources.Count; i++) {
+            if (AudioSources[i].clip == audioList[(int)audio]) {
+                AudioSources[i].Play();
+                return true;
+            }
+        }
         return false;
     }
 
