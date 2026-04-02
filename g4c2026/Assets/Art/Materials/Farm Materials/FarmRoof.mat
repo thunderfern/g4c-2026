@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FarmRoof
-  m_Shader: {fileID: -6465566751694194690, guid: b8d60126e06ffd14482195a91734e7c0, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: c19c622642e384fd4a63a0ff02817e38, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -123,7 +123,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Tint: {r: 0.28355286, g: 0.29213372, b: 0.33962262, a: 0.07843138}
+    - _Tint: {r: 0.43974727, g: 0.44924998, b: 0.509434, a: 0.07843138}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &8683818577752164544
