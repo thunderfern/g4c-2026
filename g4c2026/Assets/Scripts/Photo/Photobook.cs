@@ -122,7 +122,7 @@ public class Photobook : MonoBehaviour {
             GetCurrentPage();
         });
         ForwardButton.onClick.AddListener(() => {
-            currentPage = Math.Min(currentPage + 1, PhotobookPages.Count / 2);
+            currentPage = Math.Min(currentPage + 1, (PhotobookPages.Count - 1) / 2);
             GetCurrentPage();
         });
         ExitButton.onClick.AddListener(() => {

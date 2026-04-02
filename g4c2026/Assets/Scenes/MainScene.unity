@@ -862,6 +862,14 @@ PrefabInstance:
       propertyPath: characterBackgroundObject
       value: 
       objectReference: {fileID: 2002682531}
+    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
+      propertyPath: CharacterNameBackground.Array.data[6].characterName
+      value: Sammy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3498448278237793379, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
+      propertyPath: CharacterNameBackground.Array.data[7].characterName
+      value: Peter
+      objectReference: {fileID: 0}
     - target: {fileID: 3867679359504916609, guid: fb067846f594fbf4c924d21ce4acbb88, type: 3}
       propertyPath: MaxProgress
       value: 1000
@@ -1219,7 +1227,7 @@ PrefabInstance:
     - target: {fileID: 5955045112698634390, guid: b999a4327a13b804a89347a864cb86fa, type: 3}
       propertyPath: WorldFile
       value: 
-      objectReference: {fileID: 4900000, guid: 854a5b90c7b6e164d80c36624337e24f, type: 3}
+      objectReference: {fileID: 4900000, guid: a97c74ddf82af8e4b81eebecbe868527, type: 3}
     - target: {fileID: 5955045112698634390, guid: b999a4327a13b804a89347a864cb86fa, type: 3}
       propertyPath: ObjectPrefabsI.Array.size
       value: 55
