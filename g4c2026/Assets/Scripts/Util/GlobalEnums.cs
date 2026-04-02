@@ -179,6 +179,7 @@ public enum ThreatSubSection {
     PetersBoat,
     TommysLunch,
     TimTamFox,
+    RockGarden,
 }
 
 // World Generation

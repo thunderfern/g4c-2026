@@ -57,6 +57,7 @@ public class Photobook : MonoBehaviour {
         new List<ThreatSubSection>{ThreatSubSection.PetersBoat},
         new List<ThreatSubSection>{ThreatSubSection.TommysLunch},
         new List<ThreatSubSection>{ThreatSubSection.TimTamFox},
+        new List<ThreatSubSection>{ThreatSubSection.RockGarden},
     };
 
     private List<string> PhotobookPageNames = new List<string> {
@@ -76,6 +77,7 @@ public class Photobook : MonoBehaviour {
         "Port",
         "Port",
         "Fish Stash",
+        "Easter Egg",
         "Easter Egg",
         "Easter Egg",
         "Easter Egg",
