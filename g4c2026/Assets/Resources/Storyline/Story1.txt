@@ -44,7 +44,7 @@ Next: "New Beginnings 6"
 
 Name: "New Beginnings 6"
 Narrator: "You are also able to turn into other animals as well. Each number 1-3 corresponds to a different form. Use this to help you out on your journey."
-Narrator: "Since you have accumulated enough points, a trail has appeared to lead you to the next animal."
+Narrator: "Continue to find animals and take pictures of them. Good luck!"
 Narrator: "Good luck!"
 Goal: Picture Forest1SB "Take a picture of an animal who has lost their habitat."
 Goal: Picture Forest1SC "Take a picture of an animal who has lost their habitat."

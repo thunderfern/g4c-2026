@@ -120,6 +120,7 @@ public class PlayerAction : MonoBehaviour {
     }
 
     void TransformAnimal(int num) {
+        GetComponent<InteractionRigidbody>().interactions.Clear();
         playerData.playerAnimal = (PlayerAnimal)num;
         for (int i = 0; i < AnimalGameObjects.Count; i++) AnimalGameObjects[i].SetActive(false);
         AnimalGameObjects[num].SetActive(true);
