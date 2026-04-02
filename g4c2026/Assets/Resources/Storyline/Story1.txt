@@ -52,7 +52,7 @@ Next: "New Beginnings 7"
 
 Name: "New Beginnings 7"
 Player: "There are so many animals whose habitats have been destroyed. There must be some cause resulting in this."
-Player: "Deforestation is taking place, let me find where the person causing this is."
+Player: "Deforestation is taking place, let me find where the person causing this is and take a picture of them."
 Goal: Picture Forest1A "Take a picture of the deforestation area."
 Goal: Inform Forest1 "Inform the person who is harming the environment."
 Next: "The First Healing 1"
