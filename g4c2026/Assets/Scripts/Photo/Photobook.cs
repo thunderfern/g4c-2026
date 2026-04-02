@@ -57,6 +57,7 @@ public class Photobook : MonoBehaviour {
         new List<ThreatSubSection>{ThreatSubSection.PetersBoat},
         new List<ThreatSubSection>{ThreatSubSection.TommysLunch},
         new List<ThreatSubSection>{ThreatSubSection.TimTamFox},
+        new List<ThreatSubSection>{ThreatSubSection.RockGarden},
     };
 
     private List<string> PhotobookPageNames = new List<string> {
@@ -76,6 +77,7 @@ public class Photobook : MonoBehaviour {
         "Port",
         "Port",
         "Fish Stash",
+        "Easter Egg",
         "Easter Egg",
         "Easter Egg",
         "Easter Egg",
@@ -136,6 +138,7 @@ public class Photobook : MonoBehaviour {
     void Update() {
         if (GameManager.I().CurrentGameState == GameState.Photobook && !PhotobookObject.activeInHierarchy) {
             PhotobookObject.SetActive(true);
+            GetCurrentPage();
         }
         else if (GameManager.I().CurrentGameState != GameState.Photobook) {
             PhotobookObject.SetActive(false);
@@ -191,7 +194,7 @@ public class Photobook : MonoBehaviour {
     public string GetPhotoCaption(ThreatSubSection threatSubSection, bool checkFound = false) {
         for (int i = 0; i < PhotoCaptions.Count; i++) {
             if (PhotoCaptions[i].ThreatSubSection == threatSubSection) {
-                if (checkFound && !ImageCache.TryGetValue(threatSubSection, out var tmp)) return "???";
+                //if (checkFound && !ImageCache.TryGetValue(threatSubSection, out var tmp)) return "???";
                 return PhotoCaptions[i].PhotoTitle;
             }
         }

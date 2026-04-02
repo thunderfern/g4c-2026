@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: dock
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 904039b9525754592874464c2dc188d2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1129496810705857465, guid: 904039b9525754592874464c2dc188d2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -112,7 +116,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2662431761710399468}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 81c3a24e3ccfce94b8402ebda23bbe33, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
